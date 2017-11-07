@@ -23,5 +23,12 @@ namespace OpticSolutions.Controllers
 
             return View(data);
         }
+
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+
     }
 }
