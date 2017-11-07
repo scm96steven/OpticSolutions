@@ -1,4 +1,5 @@
-﻿using OpticSolutions.Services;
+﻿using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,31 @@ namespace OpticSolutions.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(Product prod)
+        {
+            repo.CreateProduct(prod);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(Product prod)
+        {
+            repo.DeleteProduct(prod);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(Product prod)
+        {
+            Product data = repo.GetProductById(prod);
+
+            return View(data);
+        }
+
+
 
     }
 }
