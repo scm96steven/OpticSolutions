@@ -1,0 +1,4 @@
+*.suo
+.vs/OpticSolutions/v14/.suo
+OpticSolutions.Repositories/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
