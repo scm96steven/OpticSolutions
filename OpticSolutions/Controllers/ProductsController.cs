@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpticSolutions.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,19 @@ namespace OpticSolutions.Controllers
 {
     public class ProductsController : Controller
     {
+        ProductService repo;
+
+        public ProductsController()
+        {
+            repo = new ProductService();
+        }
+
         // GET: Products
         public ActionResult Index()
         {
-            return View();
+            var data = repo.GetProducts();
+
+            return View(data);
         }
     }
 }
