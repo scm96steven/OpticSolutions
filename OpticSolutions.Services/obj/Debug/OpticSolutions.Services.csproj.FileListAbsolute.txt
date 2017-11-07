@@ -7,3 +7,12 @@ c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\Op
 c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.pdb
 C:\Users\Steven Madaschi\Documents\Visual Studio 2015\Projects\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.dll
 C:\Users\Steven Madaschi\Documents\Visual Studio 2015\Projects\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.xml
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.pdb
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.xml
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.csprojResolveAssemblyReference.cache
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.pdb

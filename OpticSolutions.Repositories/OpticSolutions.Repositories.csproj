@@ -48,6 +48,7 @@
     <Compile Include="AppointmentRepository.cs" />
     <Compile Include="Entitys\Appointment.cs" />
     <Compile Include="Entitys\Client.cs" />
+    <Compile Include="Entitys\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

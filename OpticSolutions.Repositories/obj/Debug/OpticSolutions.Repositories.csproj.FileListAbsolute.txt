@@ -5,3 +5,10 @@ c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\Op
 c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csprojResolveAssemblyReference.cache
 c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
 c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Dapper.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Dapper.xml
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
