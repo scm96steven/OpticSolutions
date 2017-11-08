@@ -55,6 +55,15 @@ namespace OpticSolutions.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult EditProduct(Product prod)
+        {
+            repo.EditProduct(prod);
+
+            return RedirectToAction("Index");
+        }
+
+
 
     }
 }

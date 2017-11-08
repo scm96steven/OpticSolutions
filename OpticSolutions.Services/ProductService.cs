@@ -37,5 +37,11 @@ namespace OpticSolutions.Services
             return data;
         }
 
+        public void EditProduct(Product prod)
+        {
+            repo.EditProduct(prod);
+
+        }
+
     }
 }

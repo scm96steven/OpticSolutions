@@ -59,7 +59,19 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public void EditProduct(Product prod)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@name", prod.Name);
+            queryParameters.Add("@price", prod.Price);
+            queryParameters.Add("@product_type_id", prod.ProductTypeId);
+            queryParameters.Add("@description", prod.Description);
+            queryParameters.Add("@req_work", prod.ReqWork);
+            queryParameters.Add("@productid", prod.ProductId);
 
+            var data = conn.Query<Product>("EDIT_PRODUCT", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            
+        }
 
     }
 }

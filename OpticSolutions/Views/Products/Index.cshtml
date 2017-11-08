@@ -56,9 +56,9 @@
                         @Html.DisplayFor(modelItem => item.ReqWork)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { ProductId = item.ProductId }) |
+                        @Html.ActionLink("Edit", "Edit", new { ProductId = item.ProductId }, new { @class = "btn btn-primary" }) |
                      
-                        @Html.ActionLink("Delete", "Delete", new { ProductId = item.ProductId })
+                        @Html.ActionLink("Delete", "Delete", new { ProductId = item.ProductId },new{ @class="btn btn-danger" } )
                     </td>
                 </tr>
         }
