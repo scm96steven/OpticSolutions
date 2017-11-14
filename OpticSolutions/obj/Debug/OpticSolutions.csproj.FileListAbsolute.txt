@@ -1,275 +1,88 @@
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\ApplicationInsights.config
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CSharp.Core.targets
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.VisualBasic.Core.targets
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\System.Collections.Immutable.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\System.Reflection.Metadata.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\vbc.exe
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe.config
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll.config
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.pdb
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\AdminLte.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\EntityFramework.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Agent.Intercept.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.PerfCounterCollector.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Web.Infrastructure.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Owin.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Razor.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\WebGrease.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\AdminLte.pdb
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\AdminLte.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.Razor.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.pdb
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\EntityFramework.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csprojResolveAssemblyReference.cache
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.dll
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.pdb
-c:\users\steven madaschi\documents\visual studio 2015\Projects\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.pdb
-C:\Users\Steven Madaschi\Documents\Visual Studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Dapper.dll
-C:\Users\Steven Madaschi\Documents\Visual Studio 2015\Projects\OpticSolutions\OpticSolutions\bin\Dapper.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\ApplicationInsights.config
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\vbc.exe
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll.config
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Owin.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Razor.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\WebGrease.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Dapper.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Razor.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Dapper.xml
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csprojResolveAssemblyReference.cache
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\ApplicationInsights.config
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\vbc.exe
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll.config
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Owin.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Razor.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\WebGrease.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Dapper.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\AdminLte.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.Web.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.Razor.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\System.Web.WebPages.Razor.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.pdb
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\EntityFramework.SqlServer.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Dapper.xml
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csprojResolveAssemblyReference.cache
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csproj.CoreCompileInputs.cache
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
-C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csproj.CoreCompileInputs.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe.config
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csc.rsp
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csi.exe
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csi.exe.config
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\csi.rsp
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.AppContext.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Console.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.IO.Compression.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Claims.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.ValueTuple.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\vbc.exe
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\vbc.exe.config
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\vbc.rsp
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll.config
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\RouteJs.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\RouteJs.Mvc5.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Razor.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.Razor.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\WebActivatorEx.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\WebGrease.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\WebHelpers.Mvc5.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Antlr3.Runtime.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Newtonsoft.Json.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Helpers.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Razor.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Webpages.Razor.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Mvc.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\System.Web.Optimization.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\WebHelpers.Mvc5.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csprojResolveAssemblyReference.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csproj.CoreCompileInputs.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Dapper.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\OpticSolutions.Services.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions\bin\Dapper.xml
