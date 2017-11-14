@@ -20,3 +20,4 @@ C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repo
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
