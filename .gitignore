@@ -305,3 +305,5 @@ __pycache__/
 OpenCover/
 *.cache
 *.suo
+*.cache
+.vs/config/applicationhost.config
