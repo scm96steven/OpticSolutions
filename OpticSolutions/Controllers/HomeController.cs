@@ -13,5 +13,10 @@ namespace OpticSolutions.Controllers
         {
             return View("Index");
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
