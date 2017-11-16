@@ -18,5 +18,10 @@ namespace OpticSolutions.Controllers
         {
             return View();
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }

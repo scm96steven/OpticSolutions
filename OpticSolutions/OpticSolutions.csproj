@@ -109,6 +109,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\RegisterUser.css" />
+    <Content Include="Content\img\login\LoginBackground.jpg" />
     <Content Include="Global.asax" />
     <Content Include="OSContent\img\Optic solutions logo.png" />
     <Content Include="Web.config" />
@@ -119,6 +122,7 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
