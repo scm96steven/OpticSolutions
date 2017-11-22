@@ -21,3 +21,11 @@ C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repo
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\bin\Debug\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\bin\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Dapper.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Dapper.xml
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
+C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb

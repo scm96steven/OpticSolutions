@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using OpticSolutions.App_Start;
+using OpticSolutions.Models;
 
 namespace OpticSolutions
 {
@@ -13,6 +14,8 @@ namespace OpticSolutions
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

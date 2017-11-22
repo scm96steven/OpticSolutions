@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+    Layout = null;
+}
+
+
+<html>
+<head>
+ 
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme  -->
+    <link href="~/Content/css/login.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- //font-awesome icons -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="~/Content/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-form w3_form">
+        <!--  Title-->
+        <div class="login-title w3_title">
+            <h1>OpticSolutions</h1>
+        </div>
+        <div class="login w3_login">
+            <h2 class="login-header w3_header">Log in</h2>
+            <div class="w3l_grid">
+                @*<img class="logo-mini centerImage"  src="~/OSContent/img/Optic solutions logo.png" style="height:150px; width:auto" />*@
+                @Html.ValidationSummary(true)
+                <form class="login-container" action="#" method="post">
+                    <input type="email" placeholder="Email" Name="Email" required="">
+                    <input type="password" placeholder="Password" Name="password" required="">
+                    <input type="submit" value="Entrar">
+                </form>
+               <div class="second-section w3_section">
+                    <div class="bottom-header w3_bottom">
+                        <h3>OR</h3>
+                    </div>
+                </div>
+
+                <div class="bottom-text w3_bottom_text">
+                    <p>No tienes cuenta?<a href="@Url.Action("Register", "Auth")">Registrate</a></p>
+               
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="footer-w3l">
+        <p class="agile"> &copy; 2017 OpticSolutions . All Rights Reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+    </div>
+</body>
+</html>
