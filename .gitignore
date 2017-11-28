@@ -310,3 +310,7 @@ OpenCover/
 *.pdb
 *.dll
 *.cache
+*.dll
+OpticSolutions/bin/OpticSolutions.pdb
+*.dll
+*.cache

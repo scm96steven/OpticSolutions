@@ -12,9 +12,8 @@ namespace OpticSolutions.App_Start
                 .Include("~/Content/css/select2.min.css")
                 .Include("~/Content/css/bootstrap-datepicker3.min.css")
                 .Include("~/Content/css/font-awesome.min.css", new CssRewriteUrlTransformAbsolute())
-                .Include("~/Content/css/icheck/blue.min.css", new CssRewriteUrlTransformAbsolute())
+                .Include("~/Content/css/icheck/blue.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/AdminLTE.css", new CssRewriteUrlTransformAbsolute())
-        
                   .Include("~/Content/css/skins/skin-blue.css"));
 
             bundles.Add(new ScriptBundle("~/Bundles/js")
