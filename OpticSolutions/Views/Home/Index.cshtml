@@ -1,9 +1,63 @@
 ﻿@{
-    ViewBag.Title = "Home";
     ViewBag.Description = "Home Page";
 }
 
+    <style type="text/css">
+        .home-box{
+            height: 150px;
+        }
+    </style>
+
 <div class="row">
+    @*Nuevo elemento cajas*@
+
+    <div class="col-md-4">
+          <!-- small box -->
+        <a href="@Url.Action("Index", "Home")">
+            <div class="small-box bg-aqua home-box">
+                <div class="inner">
+                    <h2>Generar Factura</h2>
+
+                </div>
+
+                <div class="icon">
+                    <i class="fa fa-calculator"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "Home")">
+            <div class="small-box bg-yellow home-box">
+                <div class="inner">
+                    <h2>Registrar Cliente</h2>
+
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-circle-o"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "Home")">
+            <div class="small-box bg-red home-box">
+                <div class="inner">
+                    <h2>Citas Pendientes</h2>
+
+                </div>
+                <div class="icon">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+    @*Final de nuevo elemento*@
+
     <div class="col-xs-12 col-md-5">
         <div class="box box-solid">
             <div class="box-header with-border">
