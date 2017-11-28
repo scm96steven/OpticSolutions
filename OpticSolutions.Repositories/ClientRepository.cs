@@ -22,11 +22,18 @@ namespace OpticSolutions.Repositories
     
         }
 
-        public void DatabaseTest()
-        {
+        //public List<Client> SearchClients(Client cli)
+        //{
+        //    var queryParameters = new DynamicParameters();
+        //    queryParameters.Add("@name", cli.Names);
+        //    queryParameters.Add("@price", prod.Price);
+        //    queryParameters.Add("@product_type_id", prod.ProductTypeId);
+        //    queryParameters.Add("@description", prod.Description);
+        //    queryParameters.Add("@req_work", prod.ReqWork);
 
+        //    conn.Query("INSERT_PRODUCT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
 
-        }
+        //}
 
 
     }
