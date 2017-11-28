@@ -26,5 +26,17 @@ namespace OpticSolutions.Controllers
         {
             return View("ProfileMenu");
         }
+
+        public ActionResult ConsultaCliente()
+        {
+            return View("ConsultaCliente");
+        }
+
+        public ActionResult HistorialCliente()
+        {
+            return View("HistorialCliente");
+        }
+
+   
     }
 }

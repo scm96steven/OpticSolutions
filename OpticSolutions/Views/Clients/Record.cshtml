@@ -1,0 +1,49 @@
+﻿@model OpticSolutions.Repositories.Entitys.Client
+
+@{
+
+}
+
+
+<div class="box box-widget widget-user">
+    
+    <!-- Add the bg color to the header using any of the bg-* classes -->
+    <div class="widget-user-header bg-aqua-active">
+        <h3 class="widget-user-username"><strong>Record</strong> <br />@Model.Names @Model.Last_Names</h3>
+        <h5 class="widget-user-desc"></h5>
+    </div>
+    <div class="box-footer">
+        <div class="row">
+            <div class="col-sm-4 border-right">
+                <div class="description-block">
+                    <h5 class="description-header">@Model.Phone </h5>
+                    <span class="description-text">Telefono</span>
+                </div>
+                <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4 border-right">
+                <div class="description-block">
+                    <h5 class="description-header">@Model.Email</h5>
+                    <span class="description-text">Correo</span>
+                </div>
+                <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+            <div class="col-sm-4">
+                <div class="description-block">
+                    <h5 class="description-header">@Model.IdentificationCard</h5>
+                    <span class="description-text">Cedula</span>
+                </div>
+                <!-- /.description-block -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+
+<p>
+ 
+    @Html.ActionLink("Back to List", "Index")
+</p>

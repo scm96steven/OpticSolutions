@@ -1,26 +1,39 @@
 ﻿
 @{
-    ViewBag.Title = "ConsultaCliente";
+   
 }
 
-<h2>ConsultaCliente</h2>
-
-<html>
-<head>
-
-</head>
-
-<body>
-
-    <form>
-        <div>
 
 
+<div class="panel panel-primary ">
+    <div class="panel-heading">
+        <h1 class="panel-title">Buscar cliente</h1>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-4">
+            <form>
+                <label for="Cedula">Cedula</label>
+                <input type="text" id="Cedula" placeholder="Cedula" class="form-control"/>
+                 <br />
+                
+                <label for="Phone">Telefono</label>
+                <input type="tel" id="Phone" placeholder="Telefono" class="form-control"/>
+                <br />
+
+                <label for="FirstName">Nombre del cliente</label>
+                <input type="text" id="FirstName" placeholder="Nombre" class="form-control" />
+                <br />
+
+                <label for="LastName">Apellido del cliente</label>
+                <input type="text" id="LastName" placeholder="Apellido" class="form-control" />
+                <br />
+
+
+                <input type="submit" class="btn btn-success" value="Buscar Cliente" />
+            </form>
         </div>
+    </div>
+</div>
+    
 
-    </form>
-</body>
-
-
-</html>
 

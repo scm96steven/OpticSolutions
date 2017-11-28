@@ -152,6 +152,8 @@
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\Home\ProfileMenu.cshtml" />
     <Content Include="Views\Home\ConsultaCliente.cshtml" />
+    <Content Include="Views\Home\HistorialCliente.cshtml" />
+    <Content Include="Views\Clients\Record.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

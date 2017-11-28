@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,11 @@ namespace OpticSolutions.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [NotMapped]
+        [Required]
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
 
         [Required]
         public string FirstName { get; set; }
