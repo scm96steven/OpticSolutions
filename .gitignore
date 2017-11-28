@@ -316,3 +316,10 @@ OpticSolutions/bin/OpticSolutions.pdb
 *.cache
 *.pdb
 *.pdb
+*.dll
+OpticSolutions.Repositories/bin/Debug/OpticSolutions.Repositories.pdb
+*.cache
+OpticSolutions/obj/Debug/OpticSolutions.dll
+*.pdb
+OpticSolutions/bin/OpticSolutions.Services.pdb
+OpticSolutions/bin/OpticSolutions.Repositories.dll
