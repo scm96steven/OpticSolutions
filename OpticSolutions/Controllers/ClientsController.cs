@@ -99,5 +99,11 @@ namespace OpticSolutions.Controllers
 
             return View(client);
         }
+
+        public ActionResult ConsultaCliente()
+        {
+            return View("ConsultaCliente");
+        }
+
     }
 }

@@ -147,6 +147,12 @@ namespace OpticSolutions.Controllers
             return RedirectToAction("index", "home");
         }
 
-    
+        public ActionResult ProfileMenu()
+        {
+            return View("ProfileMenu");
+        }
+
+
+
     }
 }
