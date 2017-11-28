@@ -13,15 +13,18 @@ namespace OpticSolutions.Controllers
         public ActionResult Index()
         {
 
-        
-          
-
             return View();
         }
 
         public ActionResult AnotherLink()
         {
             return View("Index");
+        }
+
+
+        public ActionResult ProfileMenu()
+        {
+            return View("ProfileMenu");
         }
     }
 }
