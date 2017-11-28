@@ -307,3 +307,6 @@ OpenCover/
 *.suo
 *.cache
 .vs/config/applicationhost.config
+*.pdb
+*.dll
+*.cache

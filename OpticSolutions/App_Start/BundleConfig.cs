@@ -15,7 +15,7 @@ namespace OpticSolutions.App_Start
                 .Include("~/Content/css/icheck/blue.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/AdminLTE.css", new CssRewriteUrlTransformAbsolute())
         
-                  .Include("~/Content/css/skins/skin-green.css"));
+                  .Include("~/Content/css/skins/skin-blue.css"));
 
             bundles.Add(new ScriptBundle("~/Bundles/js")
                 .Include("~/Content/js/plugins/jquery/jquery-2.2.4.js")
