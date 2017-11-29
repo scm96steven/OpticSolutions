@@ -316,6 +316,12 @@ OpticSolutions/bin/OpticSolutions.pdb
 *.cache
 *.pdb
 *.pdb
+
+.vs/config/applicationhost.config
+OpticSolutions/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+OpticSolutions/obj/Debug/OpticSolutions.csproj.FileListAbsolute.txt
+OpticSolutions/obj/Debug/OpticSolutions.csprojResolveAssemblyReference.cache
+
 *.dll
 OpticSolutions.Repositories/bin/Debug/OpticSolutions.Repositories.pdb
 *.cache
@@ -323,6 +329,12 @@ OpticSolutions/obj/Debug/OpticSolutions.dll
 *.pdb
 OpticSolutions/bin/OpticSolutions.Services.pdb
 OpticSolutions/bin/OpticSolutions.Repositories.dll
+<<<<<<< HEAD
 *.pdb
 OpticSolutions/obj/Debug/OpticSolutions.dll
 *.dll
+
+*.config
+OpticSolutions/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.txt
+OpticSolutions/obj/Debug/OpticSolutions.csprojResolveAssemblyReference.cache
