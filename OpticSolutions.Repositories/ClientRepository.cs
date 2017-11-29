@@ -22,18 +22,19 @@ namespace OpticSolutions.Repositories
     
         }
 
-        //public List<Client> SearchClients(Client cli)
-        //{
-        //    var queryParameters = new DynamicParameters();
-        //    queryParameters.Add("@name", cli.Names);
-        //    queryParameters.Add("@price", prod.Price);
-        //    queryParameters.Add("@product_type_id", prod.ProductTypeId);
-        //    queryParameters.Add("@description", prod.Description);
-        //    queryParameters.Add("@req_work", prod.ReqWork);
+        public List<Client> SearchClients(Client cli)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@names", cli.Names);
+            queryParameters.Add("@last_names", cli.Last_Names);
+            queryParameters.Add("@email", cli.Email);
+            queryParameters.Add("@phone", cli.Phone);
+            queryParameters.Add("@cedula", cli.IdentificationCard);
 
-        //    conn.Query("INSERT_PRODUCT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            var data = conn.Query<Client>("SEARCH_CLIENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
-        //}
+            return data;
+        }
 
 
     }

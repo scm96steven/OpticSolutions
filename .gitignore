@@ -323,3 +323,6 @@ OpticSolutions/obj/Debug/OpticSolutions.dll
 *.pdb
 OpticSolutions/bin/OpticSolutions.Services.pdb
 OpticSolutions/bin/OpticSolutions.Repositories.dll
+*.pdb
+OpticSolutions/obj/Debug/OpticSolutions.dll
+*.dll

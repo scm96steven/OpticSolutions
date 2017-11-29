@@ -1,4 +1,5 @@
 ﻿using OpticSolutions.Repositories;
+using OpticSolutions.Repositories.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,15 @@ namespace OpticSolutions.Services
     {
        public ClientRepository repo = new ClientRepository();
 
-    }
+
+        public List<Client> SearchClients(Client cli)
+        {
+            var data = repo.SearchClients(cli);
+
+            return data;
+        }
+}
+
+
+
 }

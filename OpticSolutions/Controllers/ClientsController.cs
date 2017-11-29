@@ -1,4 +1,5 @@
 ﻿using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,8 +103,19 @@ namespace OpticSolutions.Controllers
 
         public ActionResult ConsultaCliente()
         {
-            return View("ConsultaCliente");
+
+
+            return View();
         }
 
+
+        [HttpPost]
+        public ActionResult ConsultaCliente(Client cli)
+        {
+            ClientService svc = new ClientService();
+            var data = svc.SearchClients(cli);
+
+            return View(data);
+        }
     }
 }
