@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Web;
 
-namespace OpticSolutions.Models
+namespace OpticSolutions.Repositories.Entitys
 {
     public class AppUser:IdentityUser
     {
@@ -14,6 +14,11 @@ namespace OpticSolutions.Models
         public DateTime CreatedDate { get; set; }
         public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
+
+        public string FullName()
+        {
+            return FirstName + " " + LastName;
+        }
 
     }
 }

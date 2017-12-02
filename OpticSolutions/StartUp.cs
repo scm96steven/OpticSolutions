@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using OpticSolutions.Models;
+using OpticSolutions.Repositories.Entitys;
 using Owin;
 using System;
 using System.Collections.Generic;

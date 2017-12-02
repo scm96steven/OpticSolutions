@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using OpticSolutions.Models;
+using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +18,11 @@ namespace OpticSolutions.Controllers
     {
 
         private readonly UserManager<AppUser> userManager;
-
+        private UserService repo;
         public AuthController()
             : this(Startup.UserManagerFactory.Invoke())
         {
+            repo = new UserService();
         }
 
         public AuthController(UserManager<AppUser> userManager)
@@ -103,6 +106,10 @@ namespace OpticSolutions.Controllers
             {
                 var identity = await userManager.CreateIdentityAsync(
                     user, DefaultAuthenticationTypes.ApplicationCookie);
+
+                AppUser data = repo.GetUserInfoById(model.Email);
+                Session["UserFullName"] = data.FirstName+" "+data.LastName;
+                Session["UserCreatedDate"] = data.CreatedDate;
 
                 GetAuthenticationManager().SignIn(identity);
 

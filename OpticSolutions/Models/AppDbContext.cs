@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using OpticSolutions.Repositories.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
