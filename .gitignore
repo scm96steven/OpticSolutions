@@ -338,3 +338,8 @@ OpticSolutions/obj/Debug/OpticSolutions.dll
 OpticSolutions/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *.txt
 OpticSolutions/obj/Debug/OpticSolutions.csprojResolveAssemblyReference.cache
+*.config
+*.dll
+*.pdb
+*.cache
+*.cache
