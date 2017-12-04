@@ -155,6 +155,7 @@
     <Content Include="Views\Auth\ProfileMenu.cshtml" />
     <Content Include="Views\Clients\ConsultaCliente.cshtml" />
     <Content Include="Views\Clients\Record.cshtml" />
+    <Content Include="Views\Consults\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -357,7 +358,6 @@
     <Folder Include="Views\Appointments\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Billing\" />
-    <Folder Include="Views\Consults\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpticSolutions.Repositories\OpticSolutions.Repositories.csproj">

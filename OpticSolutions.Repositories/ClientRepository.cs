@@ -36,6 +36,31 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public void CreateClient(Client cli)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@names", cli.Names);
+            queryParameters.Add("@last_names", cli.Last_Names);
+            queryParameters.Add("@email", cli.Email);
+            queryParameters.Add("@phone", cli.Phone);
+            queryParameters.Add("@address", cli.Address);
+            queryParameters.Add("@cedula", cli.IdentificationCard);
+
+            conn.Query("CREATE_CLIENT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+        }
+
+        public void CreateRecord(Consult con)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@date", con.Date);
+            queryParameters.Add("@doctor_user_name", con.DoctorUserName);
+            queryParameters.Add("@client_id", con.Client.ClientId);
+            queryParameters.Add("@description", con.Description);
+
+        
+            conn.Query("CREATE_RECORD", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+        }
+
 
     }
 }

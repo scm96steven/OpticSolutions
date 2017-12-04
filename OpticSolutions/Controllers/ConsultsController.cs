@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,12 @@ namespace OpticSolutions.Controllers
 {
     public class ConsultsController : Controller
     {
+
+        ClientService repo;
+        public ConsultsController()
+        {
+            repo = new ClientService();
+        }
         // GET: Consults
         public ActionResult Index()
         {
@@ -15,26 +23,51 @@ namespace OpticSolutions.Controllers
         }
 
         // GET: Consults/Details/5
+
+
         public ActionResult Details(int id)
         {
             return View();
         }
 
         // GET: Consults/Create
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Create(Client cli)
         {
-            return View();
+
+            return View(cli);
         }
 
         // POST: Consults/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Consult con)
         {
+
+            con.DoctorUserName = User.Identity.Name;
+            con.Date = DateTime.Now;
             try
             {
+
+                if (con.Description.Length>2)
+                {
+
+                    repo.CreateRecord(con);
+
+                    return RedirectToAction("ConsultaCliente","Clients");
+                }
+                else
+                {
+
+
+
+                    return View(con.Client);
+                }
+        
+        
+
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+             
             }
             catch
             {

@@ -19,6 +19,20 @@ namespace OpticSolutions.Services
 
             return data;
         }
+
+        public void CreateClient(Client cli)
+        {
+
+            repo.CreateClient(cli);
+
+        }
+
+        public void CreateRecord(Consult con)
+        {
+
+            repo.CreateRecord(con);
+
+        }
 }
 
 

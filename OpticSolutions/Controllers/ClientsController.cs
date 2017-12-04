@@ -10,10 +10,22 @@ namespace OpticSolutions.Controllers
 {
     public class ClientsController : Controller
     {
+
+        ClientService repo;
+
+
+        public ClientsController()
+        {
+            repo = new ClientService();
+        }
+
+
         // GET: Clients
         public ActionResult Index()
         {
-            return View();
+            ClientService svc = new ClientService();
+            var data = svc.SearchClients(new Client());
+            return View(data);
         }
 
         // GET: Clients/Details/5
@@ -30,15 +42,27 @@ namespace OpticSolutions.Controllers
 
         // POST: Clients/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Client cli)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
 
-                return RedirectToAction("Index");
+                    repo.CreateClient(cli);
+                    return RedirectToAction("ConsultaCliente");
+              
+                }
+                else
+                {
+
+
+                    return View(cli);
+                }
+
+               
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
