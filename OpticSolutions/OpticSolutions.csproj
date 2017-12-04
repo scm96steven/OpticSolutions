@@ -139,6 +139,7 @@
     <Content Include="Content\css\datatables.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\RegisterUser.css" />
+    <Content Include="Content\Favicon.ico" />
     <Content Include="Content\img\login\LoginBackground.jpg" />
     <Content Include="Content\js\plugins\datatables.js" />
     <Content Include="Global.asax" />

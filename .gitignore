@@ -354,3 +354,5 @@ OpticSolutions.Repositories/obj/Debug/OpticSolutions.Repositories.csproj.FileLis
 *.pdb
 OpticSolutions.Repositories/bin/Debug/OpticSolutions.Repositories.dll
 *.dll
+*.dll
+OpticSolutions/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
