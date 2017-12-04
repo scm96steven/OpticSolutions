@@ -1,5 +1,6 @@
 ﻿using OpticSolutions.Repositories.Entitys;
 using OpticSolutions.Services;
+using OpticSolutions.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -141,5 +142,16 @@ namespace OpticSolutions.Controllers
 
             return View(data);
         }
+
+        [HttpGet]
+        public ActionResult Record(Client cli)
+        {
+           RecordViewModel data = new RecordViewModel();
+            data.Records = repo.GetRecord(cli, User.Identity.Name);
+            data.Client = repo.GetClientById(cli);
+
+            return View(data);
+        }
+
     }
 }

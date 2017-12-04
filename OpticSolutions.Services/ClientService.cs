@@ -33,6 +33,24 @@ namespace OpticSolutions.Services
             repo.CreateRecord(con);
 
         }
+
+        public List<Consult> GetRecord(Client cli, string doctorUserName)
+        {
+
+           var data = repo.GetRecord(cli, doctorUserName);
+
+            return data;
+        }
+
+        public Client GetClientById(Client cli)
+        {
+
+            var data = repo.GetClientById(cli);
+
+            return data;
+
+        }
+
 }
 
 

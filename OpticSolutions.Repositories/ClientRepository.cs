@@ -61,6 +61,26 @@ namespace OpticSolutions.Repositories
             conn.Query("CREATE_RECORD", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
         }
 
+        public List<Consult> GetRecord(Client cli, string doctorUserName)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@doctor_username", doctorUserName);
+            queryParameters.Add("@client_id", cli.ClientId);
+            var data = conn.Query<Consult>("GET_RECORD_BY_ID", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+
+            return data;
+        }
+
+        public Client GetClientById(Client cli)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@Id", cli.ClientId);
+
+            var data = conn.Query<Client>("GET_CLIENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            return data;
+        }
+
 
     }
 }

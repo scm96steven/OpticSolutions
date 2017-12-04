@@ -12,7 +12,7 @@ namespace OpticSolutions.Repositories.Entitys
 
         [Required]
         public DateTime Date { get; set; }
-
+        
 
         [Required]
         public string DoctorUserName { get; set; }
@@ -21,6 +21,7 @@ namespace OpticSolutions.Repositories.Entitys
 
         [Required]
         public string Description { get; set; }
+
 
     }
 }

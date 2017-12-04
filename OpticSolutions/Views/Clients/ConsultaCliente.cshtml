@@ -85,7 +85,7 @@
                                 <td>@client.Phone</td>
                                 <td>@client.IdentificationCard</td>
                                 <td>
-                                    @Html.ActionLink("Historial", "Record", "Clients",new  { ClientId= client.ClientId, Names = client.Names, Last_Names = client.Last_Names}, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Historial", "Record", "Clients",new  { ClientId= client.ClientId}, new { @class = "btn btn-primary" })
                                     @Html.ActionLink("Consultar", "Create", "Consults", new { ClientId = client.ClientId, Names = client.Names, Last_Names = client.Last_Names }, new { @class = "btn btn-success" })
                                 </td>
                             </tr>
