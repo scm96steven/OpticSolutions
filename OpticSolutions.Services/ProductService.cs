@@ -49,13 +49,20 @@ namespace OpticSolutions.Services
             repo.EditProduct(prod);
 
         }
-/*
+
         public List<PendingWork> GetPendingWork()
         {
             var data = repo.GetPendingWork();
 
             return data;
-        }*/
+        }
+
+
+        public void CompletePendingWork(PendingWork pw)
+        {
+
+            repo.CompletePendingWork(pw);
+        }
 
     }
 }

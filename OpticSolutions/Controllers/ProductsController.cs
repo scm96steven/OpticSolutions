@@ -70,9 +70,16 @@ namespace OpticSolutions.Controllers
         public ActionResult PenWork()
         {
             ProductService svc = new ProductService();
-            var data = svc.GetPendingWork(new PendingWork());
+            var data = svc.GetPendingWork();
             return View(data);
         }
 
+        [HttpGet]
+        public ActionResult CompletePending(PendingWork pw)
+        {
+            repo.CompletePendingWork(pw);
+
+           return RedirectToAction("PenWork");
+        }
     }
 }

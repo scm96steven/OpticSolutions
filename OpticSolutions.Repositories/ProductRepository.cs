@@ -82,7 +82,7 @@ namespace OpticSolutions.Repositories
             
         }
 
-       /* public List<PendingWork> GetPendingWork()
+        public List<PendingWork> GetPendingWork()
         {
             
             var data = conn.Query<PendingWork>("GET_PENDING_WORK",null, 
@@ -90,7 +90,16 @@ namespace OpticSolutions.Repositories
 
 
             return data;
-        }*/
+        }
+
+        public void CompletePendingWork(PendingWork pw)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@order_id", pw.OrderId);
+
+            conn.Query("COMPLETE_PENDING_WORK", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+
+        }
 
     }
 }
