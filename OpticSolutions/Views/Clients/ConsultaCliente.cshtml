@@ -3,114 +3,124 @@
 
 }
 
-
-
-
-
-
-
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="col-md-12">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="box box-primary box-solid ">
+                <div class="box-header">
+                    <h2>Busqueda de pacientes</h2>
+        
+                </div>
+                <div class="box-body">
 
-<div class="box box-primary box-solid ">
-    <div class="box-header">
-        <h2>Busqueda de pacientes</h2>
-        @Html.ActionLink("Crear nuevo cliente", "Create", "Clients", new { @class = "btn btn-success" })
-    </div>
-    <div class="box-body">
-        <div class="col-md-4">
-            @using (Html.BeginForm("ConsultaCliente", "Clients", FormMethod.Post))
+                    @using (Html.BeginForm("ConsultaCliente", "Clients", FormMethod.Post))
             {
-                <label for="Cedula">Cedula</label>
-                <input type="text" id="IdentificationCard" name="IdentificationCard" placeholder="Cedula" class="form-control" />
-                <br />
+                        <label for="Cedula">Cedula</label>
+                        <input type="text" id="IdentificationCard" name="IdentificationCard" placeholder="Cedula" class="form-control" />
+                        <br />
 
-                <label for="Phone">Telefono</label>
-                <input type="tel" id="Phone" name="Phone" placeholder="Telefono" class="form-control" />
-                <br />
+                        <label for="Phone">Telefono</label>
+                        <input type="tel" id="Phone" name="Phone" placeholder="Telefono" class="form-control" />
+                        <br />
 
-                <label for="FirstName">Nombre del cliente</label>
-                <input type="text" id="Names" name="Names" placeholder="Nombre" class="form-control" />
-                <br />
+                        <label for="FirstName">Nombre del cliente</label>
+                        <input type="text" id="Names" name="Names" placeholder="Nombre" class="form-control" />
+                        <br />
 
-                <label for="LastName">Apellido del cliente</label>
-                <input type="text" id="Last_Names" name="Last_Names" placeholder="Apellido" class="form-control" />
-                <br />
+                        <label for="LastName">Apellido del cliente</label>
+                        <input type="text" id="Last_Names" name="Last_Names" placeholder="Apellido" class="form-control" />
+                        <br />
 
 
-                <input type="submit" class="btn btn-success" value="Buscar" />
-            }
+                        <input type="submit" class="btn btn-info" value="Buscar" />
+                        <span class="pad">No existe el paciente?</span>
+                        @Html.ActionLink("Registrar nuevo paciente", "Create", "Clients", new { @class = "btn btn-success" })
+                    }
+
+                </div>
+            </div>
         </div>
     </div>
+
+    @if (Model != null)
+    {
+
+        if (Model.Count>0)
+        {
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="box box-success box-solid">
+                        <div class="box-header">
+                            <h1 class="panel-title">Resultados de la busqueda:</h1>
+                        </div>
+                        <div class="box-body">
+                            <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Nombres</th>
+                                        <th>Apellidos </th>
+                                        <th>Email</th>
+                                        <th>Telefono</th>
+                                        <th>Cedula</th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var client in Model)
+                                    {
+                                        <tr>
+
+                                            <td>@client.Names</td>
+                                            <td>@client.Last_Names</td>
+                                            <td>@client.Email</td>
+                                            <td>@client.Phone</td>
+                                            <td>@client.IdentificationCard</td>
+                                            <td>
+                                                @Html.ActionLink("Historial", "Record", "Clients", new { ClientId = client.ClientId }, new { @class = "btn btn-primary" })
+                                                @Html.ActionLink("Consultar", "Create", "Consults", new { ClientId = client.ClientId, Names = client.Names, Last_Names = client.Last_Names }, new { @class = "btn btn-success" })
+                                            </td>
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {  <div class="col-md-12">
+        <div class="row">
+            <h3>No se encontraron resultados</h3>
+        </div>
+    </div>
+
+        }
+
+    }
+
+
 </div>
+            <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+            <script type="text/javascript">
 
+                $(document).ready(function () {
 
-@if (Model != null)
-{
+                    $('#example').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                });
 
-    <div class="box box-success ">
-        <div class="box-header">
-            <h1 class="panel-title">Resultados de la busqueda:</h1>
-        </div>
-        <div class="box-body">
-            <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>Apellidos </th>
-                        <th>Email</th>
-                        <th>Telefono</th>
-                        <th>Cedula</th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-                @*<tfoot>
-                        <tr>
-                            <th>Nombres</th>
-                            <th>Apellidos </th>
-                            <th>Email</th>
-                            <th>Telefono</th>
-                            <th>Cedula</th>
-                        </tr>
-                    </tfoot>*@
-                <tbody>
-                 
-                        @foreach (var client in Model)
-                        {
-                            <tr>
-
-                                <td>@client.Names</td>
-                                <td>@client.Last_Names</td>
-                                <td>@client.Email</td>
-                                <td>@client.Phone</td>
-                                <td>@client.IdentificationCard</td>
-                                <td>
-                                    @Html.ActionLink("Historial", "Record", "Clients",new  { ClientId= client.ClientId}, new { @class = "btn btn-primary" })
-                                    @Html.ActionLink("Consultar", "Create", "Consults", new { ClientId = client.ClientId, Names = client.Names, Last_Names = client.Last_Names }, new { @class = "btn btn-success" })
-                                </td>
-                            </tr>
-                        }
-
-                  
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-}
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
-
-    $(document).ready(function () {
-      
-        $('#example').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
-        });
-    });
-
-</script>
+            </script>
 
 

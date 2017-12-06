@@ -28,6 +28,15 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+
+        public List<ProductType> GetProductTypeList()
+        {
+            var data = conn.Query<ProductType>("GET_PRODUCT_TYPES", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return data;
+        }
+
+
         public void CreateProduct( Product prod)
         {
             var queryParameters = new DynamicParameters();

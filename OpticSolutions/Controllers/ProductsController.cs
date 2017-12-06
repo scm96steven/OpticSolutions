@@ -22,11 +22,14 @@ namespace OpticSolutions.Controllers
         {
             var data = repo.GetProducts();
 
+
+
             return View(data);
         }
 
         public ActionResult Create()
         {
+            ViewData["ProductTypes"] = repo.GetProductTypeList();
 
             return View();
         }

@@ -60,6 +60,7 @@
     <Compile Include="Entitys\AppUser.cs" />
     <Compile Include="Entitys\Consult.cs" />
     <Compile Include="Entitys\PendingWork.cs" />
+    <Compile Include="Entitys\ProductType.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="ClientRepository.cs" />

@@ -362,3 +362,6 @@ OpticSolutions/bin/OpticSolutions.dll.config
 .vs/config/applicationhost.config
 *.pdb
 OpticSolutions/obj/Debug/OpticSolutions.dll
+*.dll
+OpticSolutions.Services/obj/Debug/OpticSolutions.Services.pdb
+*.pdb

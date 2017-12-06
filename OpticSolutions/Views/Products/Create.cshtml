@@ -29,10 +29,10 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.ProductTypeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <label for="ProductTypeId" class="control-label col-md-2"> Tipo de producto</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.ProductTypeId, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
-                            @Html.ValidationMessageFor(model => model.ProductTypeId, "", new { @class = "text-danger" })
+                                @Html.DropDownList("ProductTypeId",
+                                new SelectList((IEnumerable<OpticSolutions.Repositories.Entitys.ProductType>) ViewData["ProductTypes"], "TypeId", "Description"))
                         </div>
                     </div>
 
@@ -53,10 +53,14 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.ReqWork, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <label for="ReqWork" class = "control-label col-md-2"> Requiere trabajo?</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.ReqWork, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
-                            @Html.ValidationMessageFor(model => model.ReqWork, "", new { @class = "text-danger" })
+                         
+                            <select name="ReqWork" class="select" style="width:100%">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+
+                            </select>
                         </div>
                     </div>
 
@@ -64,6 +68,9 @@
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Create" class="btn btn-success" />
                         </div>
+
+
+
                     </div>
                 </div>
 

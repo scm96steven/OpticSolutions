@@ -18,6 +18,14 @@ namespace OpticSolutions.Services
            var data = repo.GetProductsList();
             return data;
         }
+
+        public List<ProductType> GetProductTypeList()
+        {
+            var data = repo.GetProductTypeList();
+            return data;
+        }
+
+
         public void CreateProduct(Product prod)
         {
             repo.CreateProduct(prod);
