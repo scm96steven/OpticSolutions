@@ -104,12 +104,17 @@ namespace OpticSolutions.Controllers
 
             if (user != null)
             {
+                AppUser data = repo.GetUserInfoById(model.Email);
                 var identity = await userManager.CreateIdentityAsync(
                     user, DefaultAuthenticationTypes.ApplicationCookie);
+                identity.AddClaims(new[] {
+                new Claim("FullName",data.FirstName+" "+data.LastName),
+               new Claim("UserCreatedDate",data.CreatedDate.ToShortDateString())
+                   });
 
-                AppUser data = repo.GetUserInfoById(model.Email);
-                Session["UserFullName"] = data.FirstName+" "+data.LastName;
-                Session["UserCreatedDate"] = data.CreatedDate;
+                //AppUser data = repo.GetUserInfoById(model.Email);
+                //Session["UserFullName"] = data.FirstName+" "+data.LastName;
+                //Session["UserCreatedDate"] = data.CreatedDate;
 
                 GetAuthenticationManager().SignIn(identity);
 

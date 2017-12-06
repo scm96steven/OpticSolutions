@@ -102,7 +102,19 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="~/Content/img/user.jpg" class="user-image" alt="User Image">
                        
-                        <span class="hidden-xs">@Session["UserFullName"]</span>
+                        <span class="hidden-xs">
+                            @{
+                                System.Security.Claims.ClaimsIdentity user = (System.Security.Claims.ClaimsIdentity)(User.Identity);
+                                foreach (var item in user.Claims)
+                                {
+                                    if (item.Type == "FullName")
+                                    {
+                                       <span>@item.Value</span>
+                                    }
+                                }
+                            }
+
+                            </span>
 
                     </a>
                     <ul class="dropdown-menu">
@@ -111,7 +123,19 @@
 
                             <p>
                                @Session["UserFullName"]
-                                <small>Member since @Session["UserCreatedDate"]</small>
+                                <small>Member since 
+                                
+                                    @{
+                                     
+                                        foreach (var item in user.Claims)
+                                        {
+                                            if (item.Type == "UserCreatedDate")
+                                            {
+                                                <span>@item.Value</span>
+                                            }
+                                        }
+                                    }
+                                </small>
                             </p>
                         </li>
                         <li class="user-body">

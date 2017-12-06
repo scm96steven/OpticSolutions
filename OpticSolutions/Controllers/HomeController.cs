@@ -8,10 +8,18 @@ namespace OpticSolutions.Controllers
 
         public HomeController()
         {
-           
+            if (User != null)
+            {
+                Session["UserFullName"] = User.Identity.Name;
+            }
+
         }
         public ActionResult Index()
         {
+            if (HttpContext.User != null)
+            {
+                Session["UserFullName"] = User.Identity.Name;
+            }
 
             return View();
         }

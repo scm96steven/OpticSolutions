@@ -8,7 +8,6 @@ namespace OpticSolutions.Controllers
 {
     public class BaseController : Controller
     {
-     
-   
+      
     }
 }

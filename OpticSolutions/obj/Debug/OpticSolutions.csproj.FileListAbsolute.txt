@@ -524,3 +524,7 @@ C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\Op
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csproj.CoreCompileInputs.cache
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
+C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml

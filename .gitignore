@@ -356,3 +356,9 @@ OpticSolutions.Repositories/bin/Debug/OpticSolutions.Repositories.dll
 *.dll
 *.dll
 OpticSolutions/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+OpticSolutions/bin/OpticSolutions.dll.config
+*.cache
+.vs/config/applicationhost.config
+*.pdb
+OpticSolutions/obj/Debug/OpticSolutions.dll
