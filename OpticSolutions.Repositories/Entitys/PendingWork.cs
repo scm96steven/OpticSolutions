@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace OpticSolutions.Repositories.Entitys
 {
-    class PendingWork
+    public class PendingWork
     {
+        public DateTime AssignDate { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

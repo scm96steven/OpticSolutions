@@ -82,5 +82,15 @@ namespace OpticSolutions.Repositories
             
         }
 
+       /* public List<PendingWork> GetPendingWork()
+        {
+            
+            var data = conn.Query<PendingWork>("GET_PENDING_WORK",null, 
+                commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+
+            return data;
+        }*/
+
     }
 }

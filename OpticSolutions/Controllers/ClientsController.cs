@@ -115,15 +115,8 @@ namespace OpticSolutions.Controllers
 
         public ActionResult Record()
         {
-            Client client = new Client();
-            client.Names = "Frederick";
-            client.Last_Names = "Ramirez Luciano";
-            client.Phone = "809-481-6005";
-            client.Email = "frederick5@hotmail.com";
-            client.IdentificationCard = "402-0042418-8";
-           
 
-            return View(client);
+            return View();
         }
 
         public ActionResult ConsultaCliente()
