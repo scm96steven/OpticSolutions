@@ -147,6 +147,7 @@
     <Content Include="Content\css\RegisterUser.css" />
     <Content Include="Content\Favicon.ico" />
     <Content Include="Content\img\login\LoginBackground.jpg" />
+    <Content Include="Content\img\userProfile.gif" />
     <Content Include="Content\js\plugins\datatables.js" />
     <Content Include="Global.asax" />
     <Content Include="OSContent\img\Optic solutions logo.png" />
@@ -166,6 +167,7 @@
     <Content Include="Views\Clients\CrearCita.cshtml" />
     <Content Include="Views\Consults\ConsultPen.cshtml" />
     <Content Include="Views\Products\PenWork.cshtml" />
+    <Content Include="Views\Auth\Editttttt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

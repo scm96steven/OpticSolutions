@@ -27,7 +27,7 @@ namespace OpticSolutions.Repositories
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@username", username);
 
-            var data = conn.Query<AppUser>("GET_USER_INFO", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            var data = conn.Query<AppUser>("GET_USER_BY_UN", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
 
             return data;
         }

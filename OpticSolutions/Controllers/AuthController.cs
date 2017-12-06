@@ -161,7 +161,9 @@ namespace OpticSolutions.Controllers
 
         public ActionResult ProfileMenu()
         {
-            return View("ProfileMenu");
+
+            var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
+            return View(data);
         }
 
 
