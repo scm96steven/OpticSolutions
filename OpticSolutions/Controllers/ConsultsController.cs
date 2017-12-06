@@ -121,7 +121,10 @@ namespace OpticSolutions.Controllers
 
 
      
-
+        public ActionResult ConsultPen()
+        {
+            return View();
+        }
 
 
     }

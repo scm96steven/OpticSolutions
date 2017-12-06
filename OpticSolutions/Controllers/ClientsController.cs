@@ -153,5 +153,10 @@ namespace OpticSolutions.Controllers
             return View(data);
         }
 
+        public ActionResult CrearCita()
+        {
+            return View();
+        }
+
     }
 }

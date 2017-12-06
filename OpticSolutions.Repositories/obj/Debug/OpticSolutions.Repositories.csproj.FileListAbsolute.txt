@@ -70,3 +70,11 @@ C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

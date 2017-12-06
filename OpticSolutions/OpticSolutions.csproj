@@ -157,6 +157,8 @@
     <Content Include="Views\Clients\ConsultaCliente.cshtml" />
     <Content Include="Views\Clients\Record.cshtml" />
     <Content Include="Views\Consults\Create.cshtml" />
+    <Content Include="Views\Clients\CrearCita.cshtml" />
+    <Content Include="Views\Consults\ConsultPen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
