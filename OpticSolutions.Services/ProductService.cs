@@ -12,7 +12,6 @@ namespace OpticSolutions.Services
     {
        public ProductRepository repo = new ProductRepository();
 
-
         public List<Product>  GetProducts()
         {
            var data = repo.GetProductsList();
@@ -42,6 +41,13 @@ namespace OpticSolutions.Services
             repo.EditProduct(prod);
 
         }
+/*
+        public List<PendingWork> GetPendingWork()
+        {
+            var data = repo.GetPendingWork();
+
+            return data;
+        }*/
 
     }
 }

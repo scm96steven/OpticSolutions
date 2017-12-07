@@ -165,6 +165,7 @@
     <Content Include="Views\Consults\Create.cshtml" />
     <Content Include="Views\Clients\CrearCita.cshtml" />
     <Content Include="Views\Consults\ConsultPen.cshtml" />
+    <Content Include="Views\Products\PenWork.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

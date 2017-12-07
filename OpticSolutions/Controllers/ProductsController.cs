@@ -64,6 +64,12 @@ namespace OpticSolutions.Controllers
         }
 
 
+        public ActionResult PenWork()
+        {
+            ProductService svc = new ProductService();
+            var data = svc.GetPendingWork(new PendingWork());
+            return View(data);
+        }
 
     }
 }
