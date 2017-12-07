@@ -532,3 +532,7 @@ C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\Microsoft.Owin.Security.OAuth.xml

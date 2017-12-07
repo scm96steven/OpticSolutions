@@ -168,6 +168,9 @@
     <Content Include="Views\Consults\ConsultPen.cshtml" />
     <Content Include="Views\Products\PenWork.cshtml" />
     <Content Include="Views\Auth\Editttttt.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Products\WorkCompleted.cshtml" />
+    <Content Include="Views\Appointments\PendingAppointments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,6 +186,7 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ConsultsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\FilterConfig.cs" />
     <Compile Include="Models\LogInModel.cs" />
@@ -368,7 +372,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Appointments\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Billing\" />
   </ItemGroup>

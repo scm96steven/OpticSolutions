@@ -14,6 +14,13 @@ namespace OpticSolutions.Controllers
             return View();
         }
 
+
+        public ActionResult PendingAppointments()
+        {
+            return View();
+        }
+
+
         // GET: Appointments/Details/5
         public ActionResult Details(int id)
         {

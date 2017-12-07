@@ -81,5 +81,11 @@ namespace OpticSolutions.Controllers
 
            return RedirectToAction("PenWork");
         }
+
+        public ActionResult WorkCompleted()
+        {
+           
+            return View();
+        }
     }
 }
