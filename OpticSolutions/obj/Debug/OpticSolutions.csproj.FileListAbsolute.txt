@@ -418,7 +418,6 @@ C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug
 C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.csproj.CoreCompileInputs.cache
 C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.dll
 C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions\obj\Debug\OpticSolutions.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions\bin\OpticSolutions.Repositories.dll.config
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\csc.exe
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll

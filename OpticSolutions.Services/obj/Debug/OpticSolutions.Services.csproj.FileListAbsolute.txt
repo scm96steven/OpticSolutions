@@ -40,7 +40,6 @@ C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Services\obj
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.dll
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.dll.config
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.xml
