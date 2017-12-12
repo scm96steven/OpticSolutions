@@ -1,4 +1,5 @@
 ﻿using OpticSolutions.Repositories;
+using OpticSolutions.Repositories.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,16 @@ namespace OpticSolutions.Services
     {
        public AppointmentRepository repo = new AppointmentRepository();
 
-    }
+
+
+
+        public void CreateAppointment(Appointment ap)
+        {
+            //Codigo para armar el date
+
+            repo.CreateAppointment(ap);
+
+         }
+
+}
 }
