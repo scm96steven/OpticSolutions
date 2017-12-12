@@ -164,13 +164,13 @@
     <Content Include="Views\Clients\ConsultaCliente.cshtml" />
     <Content Include="Views\Clients\Record.cshtml" />
     <Content Include="Views\Consults\Create.cshtml" />
-    <Content Include="Views\Clients\CrearCita.cshtml" />
     <Content Include="Views\Consults\ConsultPen.cshtml" />
     <Content Include="Views\Products\PenWork.cshtml" />
     <Content Include="Views\Auth\Editttttt.cshtml" />
     <Content Include="Views\Reports\Index.cshtml" />
     <Content Include="Views\Products\WorkCompleted.cshtml" />
     <Content Include="Views\Appointments\PendingAppointments.cshtml" />
+    <Content Include="Views\Appointments\CrearCita.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
