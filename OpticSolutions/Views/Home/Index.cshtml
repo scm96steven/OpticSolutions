@@ -17,6 +17,7 @@
         <div class="row">
             @*Nuevo elemento cajas*@
 
+            @*Generar Factura*@
             <div class="col-md-4">
                 <!-- small box -->
                 <a href="@Url.Action("Index", "Home")">
@@ -33,6 +34,7 @@
                 </a>
             </div>
 
+            @*Registrar Cliente*@
             <div class="col-md-4">
                 <a href="@Url.Action("Create", "Clients")">
                     <div class="small-box bg-yellow home-box">
@@ -46,7 +48,38 @@
                     </div>
                 </a>
             </div>
-   
+
+            @*Crear Cita*@
+            <div class="col-md-4">
+                <a href="@Url.Action("Create", "Clients")">
+                    <div class="small-box bg-purple home-box">
+                        <div class="inner">
+                            <h2>Registrar Cita</h2>
+
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            @*Generar Reporte*@
+            <div class="col-md-4">
+                <a href="@Url.Action("Create", "Clients")">
+                    <div class="small-box bg-green home-box">
+                        <div class="inner">
+                            <h2>Generar Reporte</h2>
+
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-history"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            @*Trabajos Pendientes*@
             <div class="col-md-4">
                 <a href="@Url.Action("PenWork", "Products")">
                     <div class="small-box bg-red home-box">

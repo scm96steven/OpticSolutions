@@ -44,22 +44,6 @@ C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.xml
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.pdb
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.pdb
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.xml
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.xml
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.csprojResolveAssemblyReference.cache
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.csproj.CoreCompileInputs.cache
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.dll
-C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.pdb
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.dll
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.pdb
 C:\Users\Scm96Steven\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.dll
@@ -82,3 +66,19 @@ C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Serv
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Frederick Ramirez L\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.xml
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Services.pdb
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\OpticSolutions.Repositories.pdb
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Dapper.xml
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\bin\Debug\EntityFramework.xml
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.csprojResolveAssemblyReference.cache
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.csproj.CoreCompileInputs.cache
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.dll
+C:\Users\edwar\OneDrive\Documents\GitHub\OpticSolutions\OpticSolutions.Services\obj\Debug\OpticSolutions.Services.pdb
