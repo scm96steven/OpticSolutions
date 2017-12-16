@@ -5,6 +5,7 @@ using OpticSolutions.Repositories.Entitys;
 using OpticSolutions.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -59,12 +60,25 @@ namespace OpticSolutions.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Register(RegisterModel model)
+        public async Task<ActionResult> Register([Bind(Exclude = "UserPhoto")]RegisterModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
+
+            // To convert the user uploaded Photo as Byte Array before save to DB
+            byte[] imageData = null;
+            if (Request.Files.Count > 0)
+            {
+                HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+
+                using (var binary = new BinaryReader(poImgFile.InputStream))
+                {
+                    imageData = binary.ReadBytes(poImgFile.ContentLength);
+                }
+            }
+            
 
             var user = new AppUser
             {
@@ -73,8 +87,9 @@ namespace OpticSolutions.Controllers
                 LastName = model.LastName,
                 BirthDate = model.BirthDate,
                 Phone = model.Phone,
-                CreatedDate = DateTime.Now
-            };
+                CreatedDate = DateTime.Now,
+                UserPhoto = imageData
+        };
 
             var result = await userManager.CreateAsync(user, model.Password);
 

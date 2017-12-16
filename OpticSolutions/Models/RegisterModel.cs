@@ -35,7 +35,7 @@ namespace OpticSolutions.Models
         [Required]
         public string Phone { get; set; }
 
-        public byte Photo { get; set; }
+        public byte[] UserPhoto { get; set; }
 
     }
 }

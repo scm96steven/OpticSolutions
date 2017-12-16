@@ -14,7 +14,7 @@ namespace OpticSolutions.Repositories.Entitys
         public DateTime CreatedDate { get; set; }
         public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
-
+        public byte[] UserPhoto { get; set; }
         public string FullName()
         {
             return FirstName + " " + LastName;

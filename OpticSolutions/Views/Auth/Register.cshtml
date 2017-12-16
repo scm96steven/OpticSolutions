@@ -72,9 +72,9 @@
 
                 @Html.ValidationSummary(false)
 
-                @using (Html.BeginForm())
+                @using (Html.BeginForm("Register", "Auth", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
-                   
+
                         <div class="editor-label"><label for="Email">Correo</label></div>
                         <div class="editor-field"><input class="text-box single-line" data-val="true" data-val-required="El campo email es obligatorio." id="Email" name="Email" value="" type="email"> <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span></div>
                        
@@ -95,7 +95,9 @@
                         
                         <div class="editor-label"><label for="Phone">Telefono</label></div>
                         <div class="editor-field"><input class="text-box single-line" data-val="true" data-val-required="El campo Phone es obligatorio." id="Phone" name="Phone" value="" type="text"> <span class="field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span></div>
-                        
+
+                        <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" />
+
                         <p>
                             <button type="submit" class="btn btn-success">Registrar</button>
                         </p>
