@@ -110,7 +110,7 @@ namespace OpticSolutions.Controllers
         public ActionResult CrearCita(CreateAppointmentViewModel ap)
         {
             CreateAppointmentViewModel newAp = new CreateAppointmentViewModel();
-            newAp.ApList = repo.GetAppointments(ap.Appointment);
+          //  newAp.ApList = repo.GetAppointments(ap.Appointment);
             ap.Appointment.Date = DateTime.Now;
             ap.Appointment.DoctorId = 1;
 
