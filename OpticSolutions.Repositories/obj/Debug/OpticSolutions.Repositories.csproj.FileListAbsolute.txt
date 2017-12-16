@@ -29,7 +29,6 @@ C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories
 C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.csproj.CoreCompileInputs.cache
 C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.dll
 C:\Users\Nelis Alcantara\source\repos\OpticSolutions\OpticSolutions.Repositories\obj\Debug\OpticSolutions.Repositories.pdb
-C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\OpticSolutions.Repositories.dll.config
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.dll
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Nelis Alcantara\Documents\GitHub\OpticSolutions\OpticSolutions.Repositories\bin\Debug\Microsoft.AspNet.Identity.Core.dll
