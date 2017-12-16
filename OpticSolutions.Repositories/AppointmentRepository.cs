@@ -17,16 +17,22 @@ namespace OpticSolutions.Repositories
         {
             conn.ConnectionString = "Server=tcp:opticsolutions.database.windows.net,1433;Initial Catalog=OpticSolutions;Persist Security Info=False;User ID=osuser;Password=p@ssw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             conn.Open();
-
-            var data = conn.Query<Appointment>("SELECT * FROM APPOINTMENTS").ToList();
     
         }
+         
 
-        public void DatabaseTest()
+        public List<Appointment> GetAppointments(Appointment ap)
         {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@date", ap.Date);
+            queryParameters.Add("@doctor_id", ap.DoctorId);
 
 
+            var data = conn.Query<Appointment>("GET_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return data;
         }
+
 
 
     }

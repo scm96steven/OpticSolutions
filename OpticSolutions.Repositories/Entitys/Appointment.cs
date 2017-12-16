@@ -15,5 +15,7 @@ namespace OpticSolutions.Repositories.Entitys
         public int Status { get; set; }
         public string Comment { get; set; }
         public DateTime Date { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

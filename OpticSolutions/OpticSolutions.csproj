@@ -164,7 +164,7 @@
     <Content Include="Views\Clients\ConsultaCliente.cshtml" />
     <Content Include="Views\Clients\Record.cshtml" />
     <Content Include="Views\Consults\Create.cshtml" />
-    <Content Include="Views\Clients\CrearCita.cshtml" />
+    <Content Include="Views\Appointments\CrearCita.cshtml" />
     <Content Include="Views\Consults\ConsultPen.cshtml" />
     <Content Include="Views\Products\PenWork.cshtml" />
     <Content Include="Views\Auth\Editttttt.cshtml" />
@@ -191,6 +191,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CreateAppointmentViewModel.cs" />
     <Compile Include="ViewModels\RecordViewModel.cs" />
     <Compile Include="StartUp.cs" />
   </ItemGroup>
@@ -368,7 +369,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Appointments\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Billing\" />
   </ItemGroup>

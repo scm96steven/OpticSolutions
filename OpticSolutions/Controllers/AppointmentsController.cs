@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
+using OpticSolutions.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,17 @@ namespace OpticSolutions.Controllers
 {
     public class AppointmentsController : Controller
     {
+
+
+        AppointmentService repo;
+
+
+        public AppointmentsController()
+        {
+            repo = new AppointmentService();
+        }
+
+
         // GET: Appointments
         public ActionResult Index()
         {
@@ -85,5 +99,23 @@ namespace OpticSolutions.Controllers
                 return View();
             }
         }
+
+
+        public ActionResult CrearCita()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearCita(CreateAppointmentViewModel ap)
+        {
+            CreateAppointmentViewModel newAp = new CreateAppointmentViewModel();
+            newAp.ApList = repo.GetAppointments(ap.Appointment);
+            ap.Appointment.Date = DateTime.Now;
+            ap.Appointment.DoctorId = 1;
+
+            return View(ap);
+        }
+
     }
 }
