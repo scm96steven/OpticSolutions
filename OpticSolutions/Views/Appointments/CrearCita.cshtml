@@ -217,7 +217,7 @@
 
                   $.each(data, function (index, item) {
                       debugger;
-                      var p = new Option(item.FirstName+""+item.LastName, item.UserName);
+                      var p = new Option(item.FirstName+" "+item.LastName, item.UserName);
                       $("#doctorSelect").append(p);
                   });
 
