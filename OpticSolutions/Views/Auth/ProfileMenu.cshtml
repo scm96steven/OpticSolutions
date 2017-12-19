@@ -102,20 +102,21 @@
 <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
+
     function readURL(input) {
 
   if (input.files && input.files[0]) {
     var reader = new FileReader();
 
     reader.onload = function(e) {
-        $('#fileUpload').attr('src', e.target.result);
+        $('#photoPreview').attr('src', e.target.result);
     }
 
     reader.readAsDataURL(input.files[0]);
   }
 }
 
- $("#photoPreview").change(function() {
+    $("#fileUpload").change(function() {
   readURL(this);
 });
 
