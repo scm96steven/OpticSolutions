@@ -199,7 +199,7 @@ namespace OpticSolutions.Controllers
             }
 
             pro.UserPhoto = imageData;
-
+            pro.UserName = User.Identity.Name;
             repo.EditProfile(pro);
            var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
             return View(data);
