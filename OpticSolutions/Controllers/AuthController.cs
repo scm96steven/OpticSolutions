@@ -184,7 +184,7 @@ namespace OpticSolutions.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProfileMenu(AppUser pro)
+        public ActionResult ProfileMenu([Bind(Exclude = "UserPhoto")]AppUser pro)
         {
             // To convert the user uploaded Photo as Byte Array before save to DB
             byte[] imageData = null;
