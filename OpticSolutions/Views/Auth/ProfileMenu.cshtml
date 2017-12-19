@@ -19,6 +19,11 @@
           
             <hr>
             <div class="row">
+
+
+
+@using (Html.BeginForm("ProfileMenu", "Auth", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
                 <!-- left column -->
                 <div class="col-md-3">
                     <div class="text-center">
@@ -36,7 +41,7 @@
 
                     <h3>Información Personal</h3>
 
-                    <form class="form-horizontal" role="form">
+                
                         <div class="form-group">
                             <label class="col-lg-3 control-label" for="FirstName">Nombre:</label>
                             <div class="col-lg-8">
@@ -77,14 +82,15 @@
                                 <input type="reset" class="btn btn-default" value="Cancelar">
                             </div>
                         </div>
-                    </form>
+             
                 </div>
+}
             </div>
         </div>
     </div>
 </div>
 
-
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
 
 <script type="text/javascript">
     function readURL(input) {

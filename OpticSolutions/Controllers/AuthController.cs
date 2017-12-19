@@ -186,8 +186,22 @@ namespace OpticSolutions.Controllers
         [HttpPost]
         public ActionResult ProfileMenu(AppUser pro)
         {
+            // To convert the user uploaded Photo as Byte Array before save to DB
+            byte[] imageData = null;
+            if (Request.Files.Count > 0)
+            {
+                HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+
+                using (var binary = new BinaryReader(poImgFile.InputStream))
+                {
+                    imageData = binary.ReadBytes(poImgFile.ContentLength);
+                }
+            }
+
+            pro.UserPhoto = imageData;
+
             repo.EditProfile(pro);
-                        var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
+           var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
             return View(data);
         }
 
