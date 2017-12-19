@@ -5,12 +5,13 @@
 
 }
 
-<div class="box box-primary box-solid ">
+<div class="box box-primary">
     <div class="box-header">
         <h2>Registrar cita</h2>
        
     </div>
     <div class="box-body">
+        <hr />
         <div class="col-md-6">
 
             @using (Html.BeginForm())
@@ -81,11 +82,12 @@
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-
+                        <input type="hidden" value=@Model.Appointment.DoctorUsername />
+                        <input type="hidden" value=@Model.Appointment.Date />
                         <div class="form-horizontal">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+                            <h2>Datos del paciente:</h2>
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Appointment.Names, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
@@ -137,15 +139,6 @@
 
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Appointment.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Appointment.Comment, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Appointment.Comment, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Siguiente" class="btn btn-success" />
                                 </div>
@@ -178,15 +171,20 @@
         dataTable.addColumn({ type: 'date', id: 'Start' });
         dataTable.addColumn({ type: 'date', id: 'End' });
         dataTable.addRows([
-            ['Magnolia Room', 'Beginning JavaScript', new Date(0, 0, 0, 12, 0, 0), new Date(0, 0, 0, 13, 30, 0)],
-            ['Magnolia Room', 'Intermediate JavaScript', new Date(0, 0, 0, 14, 0, 0), new Date(0, 0, 0, 15, 30, 0)],
-            ['Magnolia Room', 'Advanced JavaScript', new Date(0, 0, 0, 16, 0, 0), new Date(0, 0, 0, 17, 30, 0)],
-            ['Willow Room', 'Beginning Google Charts', new Date(0, 0, 0, 12, 30, 0), new Date(0, 0, 0, 14, 0, 0)],
-            ['Willow Room', 'Intermediate Google Charts', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
-            ['Willow Room', 'Advanced Google Charts', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 0, 0)]]);
+            ['Magnolia Room', 'CSS Fundamentals', new Date(0, 0, 0, 12, 0, 0), new Date(0, 0, 0, 14, 0, 0)],
+            ['Magnolia Room', 'Intro JavaScript', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
+            ['Magnolia Room', 'Advanced JavaScript', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 19, 0, 0)],
+            ['Gladiolus Room', 'Intermediate Perl', new Date(0, 0, 0, 12, 30, 0), new Date(0, 0, 0, 14, 0, 0)],
+            ['Gladiolus Room', 'Advanced Perl', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
+            ['Gladiolus Room', 'Applied Perl', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 0, 0)],
+            ['Petunia Room', 'Google Charts', new Date(0, 0, 0, 12, 30, 0), new Date(0, 0, 0, 14, 0, 0)],
+            ['Petunia Room', 'Closure', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
+            ['Petunia Room', 'App Engine', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 30, 0)]]);
 
         var options = {
-            timeline: { colorByRowLabel: true }
+            timeline: { colorByRowLabel: true },
+            backgroundColor: '#ffd',
+            title: "Disponibilidad del doctor"
         };
 
         chart.draw(dataTable);

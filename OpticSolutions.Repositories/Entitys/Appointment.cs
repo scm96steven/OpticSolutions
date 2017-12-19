@@ -30,6 +30,7 @@ namespace OpticSolutions.Repositories.Entitys
         public string IdentificationCard { get; set; }
         public string Comment { get; set; }
         public DateTime Date { get; set; }
+        public string StartHour { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
     }
