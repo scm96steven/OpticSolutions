@@ -4,119 +4,124 @@
     ViewBag.Title = "Confirm";
 }
 
-<h2>Confirm</h2>
+<div class="box box-primary">
+    <div class="box-header">
+        <h2>Registrar cita</h2>
 
-<div>
-    <h4>Appointment</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DoctorUsername)
-        </dt>
+    </div>
+    <div class="box-body">
+        <div>
+            <h4>Appointment</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DoctorUsername)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DoctorUsername)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DoctorUsername)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CellPhone)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CellPhone)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CellPhone)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CellPhone)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Names)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Names)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Names)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Names)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Last_Names)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Last_Names)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Last_Names)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Last_Names)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IdentificationCard)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdentificationCard)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdentificationCard)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.IdentificationCard)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Comment)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Comment)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Comment)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Comment)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartHour)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartHour)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartHour)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.StartHour)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.StartDate)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.EndDate)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            </dl>
+        </div>
+   </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
