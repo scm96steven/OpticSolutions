@@ -209,7 +209,7 @@
 
           $.ajax({
               type: 'GET',
-              url: '~/Auth/GetDoctors',
+              url: '@Url.Action("GetDoctors", "Auth")',
 
               success: function (data) {
                   console.log(data);
