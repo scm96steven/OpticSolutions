@@ -28,7 +28,7 @@
 
                         <label for="Doctor_id" class="control-label col-md-2">Doctor</label>
                         <div class="col-md-10">
-                            <select style="width:100%">
+                            <select style="width:100%" id="doctorSelect"
                                 <option>Doctor  1</option>
                                 <option>Doctor 2</option>
                                 <option>Doctor  3</option>
@@ -213,6 +213,14 @@
 
               success: function (data) {
                   console.log(data);
+                  $("#doctorSelect").empty();
+
+                  $.each(data, function (index, item) {
+                      debugger;
+                      var p = new Option(item.FirstName+""+item.LastName, item.UserName);
+                      $("#doctorSelect").append(p);
+                  });
+
               }
           });
 

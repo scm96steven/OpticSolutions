@@ -214,8 +214,11 @@ namespace OpticSolutions.Controllers
         public JsonResult GetDoctors()
         {
 
-            var list = new List<AppUser>();
-            var data = repo.GetUserInfoById("scm_96@hotmail.com");
+            var list = new List<Doctor>();
+            var data = new Doctor();
+            data.FirstName = "Steven";
+            data.LastName = "Madaschi";
+            data.UserName = "scm_96@hotmail.com";
             list.Add(data);
 
             return Json(list, JsonRequestBehavior.AllowGet);
