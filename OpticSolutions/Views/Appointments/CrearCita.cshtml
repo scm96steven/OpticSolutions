@@ -50,7 +50,7 @@
                     </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Comprobar disponibilidad" class="btn btn-default" />
+                                <input type="submit" value="Comprobar disponibilidad" class="btn btn-primary" />
                             </div>
                         </div>
 
@@ -68,13 +68,14 @@
     {
         <div class="box box-success">
             <div class="box-header">
-                <h2>Disponibilidad del doctor</h2>
+                <h3>Disponibilidad del doctor:</h3>
 
             </div>
             <div class="box-body">
-
+                <hr />
                 <div id="timeline" style="height: 180px;"></div>
 
+                <hr />
                 <div class="col-md-6">
 
                     @using (Html.BeginForm())
@@ -84,6 +85,32 @@
                         <div class="form-horizontal">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Appointment.Names, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Appointment.Names, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Appointment.Names, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Appointment.Last_Names, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Appointment.Last_Names, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Appointment.Last_Names, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Appointment.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Appointment.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Appointment.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Appointment.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
@@ -92,6 +119,21 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Appointment.CellPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Appointment.CellPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Appointment.CellPhone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Appointment.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Appointment.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Appointment.Comment, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
 
                             <div class="form-group">
@@ -103,10 +145,9 @@
                             </div>
 
 
-
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Siguiente" class="btn btn-default" />
+                                    <input type="submit" value="Siguiente" class="btn btn-success" />
                                 </div>
                             </div>
 
@@ -132,14 +173,21 @@
         var container = document.getElementById('timeline');
         var chart = new google.visualization.Timeline(container);
         var dataTable = new google.visualization.DataTable();
-
-        dataTable.addColumn({ type: 'string', id: 'President' });
+        dataTable.addColumn({ type: 'string', id: 'Room' });
+        dataTable.addColumn({ type: 'string', id: 'Name' });
         dataTable.addColumn({ type: 'date', id: 'Start' });
         dataTable.addColumn({ type: 'date', id: 'End' });
         dataTable.addRows([
-          [ 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-          [ 'Adams',      new Date(1797, 2, 4),  new Date(1801, 2, 4) ],
-          [ 'Jefferson',  new Date(1801, 2, 4),  new Date(1809, 2, 4) ]]);
+            ['Magnolia Room', 'Beginning JavaScript', new Date(0, 0, 0, 12, 0, 0), new Date(0, 0, 0, 13, 30, 0)],
+            ['Magnolia Room', 'Intermediate JavaScript', new Date(0, 0, 0, 14, 0, 0), new Date(0, 0, 0, 15, 30, 0)],
+            ['Magnolia Room', 'Advanced JavaScript', new Date(0, 0, 0, 16, 0, 0), new Date(0, 0, 0, 17, 30, 0)],
+            ['Willow Room', 'Beginning Google Charts', new Date(0, 0, 0, 12, 30, 0), new Date(0, 0, 0, 14, 0, 0)],
+            ['Willow Room', 'Intermediate Google Charts', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
+            ['Willow Room', 'Advanced Google Charts', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 0, 0)]]);
+
+        var options = {
+            timeline: { colorByRowLabel: true }
+        };
 
         chart.draw(dataTable);
       }
