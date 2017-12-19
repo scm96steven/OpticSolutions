@@ -206,6 +206,20 @@
 <script type="text/javascript">
 
       $(document).ready(function () {
+
+          $.ajax({
+              type: 'GET',
+              url: '~/Auth/GetDoctors',
+
+              success: function (data) {
+                  console.log(data);
+              }
+          });
+
+
+
+
+          
           $('#startHour').timepicker({});
       });
 
