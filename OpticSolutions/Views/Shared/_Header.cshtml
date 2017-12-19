@@ -122,7 +122,15 @@
                            <img src="@Url.Action("UserPhotos", "Base" )" class="img-circle" alt="User Image">
 
                             <p>
-                               @Session["UserFullName"]
+                                @{
+                                   foreach (var item in user.Claims)
+                                    {
+                                        if (item.Type == "FullName")
+                                        {
+                                            <span>@item.Value</span>
+                                        }
+                                    }
+                                }
                                 <small>Member since 
                                 
                                     @{

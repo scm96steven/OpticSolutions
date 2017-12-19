@@ -196,9 +196,14 @@ namespace OpticSolutions.Controllers
                 {
                     imageData = binary.ReadBytes(poImgFile.ContentLength);
                 }
+                pro.UserPhoto = imageData;
+            }
+            else
+            {
+                pro.UserPhoto = null;
             }
 
-            pro.UserPhoto = imageData;
+          
             pro.UserName = User.Identity.Name;
             repo.EditProfile(pro);
            var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
