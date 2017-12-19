@@ -388,3 +388,6 @@ OpticSolutions.Services/bin/Debug/OpticSolutions.Repositories.pdb
 *.dll
 *.cache
 *.cache
+*.dll
+*.pdb
+*.cache
