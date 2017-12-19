@@ -18,7 +18,14 @@ namespace OpticSolutions.Services
             var data = repo.GetUserInfoById(UserName);
             return data;
         }
-       
+
+        public void EditProfile(AppUser user)
+        {
+            repo.EditProfile(user);
+        }
+
+
+
 
     }
 }

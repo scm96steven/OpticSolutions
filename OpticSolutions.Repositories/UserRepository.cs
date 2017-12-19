@@ -31,7 +31,18 @@ namespace OpticSolutions.Repositories
 
             return data;
         }
+        public void EditProfile(AppUser user)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@firstname", user.FirstName);
+            queryParameters.Add("@lastname", user.LastName);
+            queryParameters.Add("@phone", user.Phone);
+            queryParameters.Add("@userphoto", user.UserPhoto);
+            queryParameters.Add("@username", user.UserName);
 
+            conn.Query("EDIT_PROFILE", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+
+        }
 
     }
 }

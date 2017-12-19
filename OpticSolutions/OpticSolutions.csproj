@@ -192,6 +192,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CreateAppointmentViewModel.cs" />
+    <Compile Include="ViewModels\ProfileMenuViewModel.cs" />
     <Compile Include="ViewModels\RecordViewModel.cs" />
     <Compile Include="StartUp.cs" />
   </ItemGroup>

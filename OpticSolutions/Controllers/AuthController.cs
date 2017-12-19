@@ -3,6 +3,7 @@ using Microsoft.Owin.Security;
 using OpticSolutions.Models;
 using OpticSolutions.Repositories.Entitys;
 using OpticSolutions.Services;
+using OpticSolutions.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -178,6 +179,15 @@ namespace OpticSolutions.Controllers
         {
 
             var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult ProfileMenu(AppUser pro)
+        {
+            repo.EditProfile(pro);
+                        var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
             return View(data);
         }
 
