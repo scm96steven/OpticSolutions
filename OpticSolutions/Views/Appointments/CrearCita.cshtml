@@ -85,8 +85,8 @@
                     @using (Html.BeginForm("Confirm", "Appointments", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
-                        <input type="hidden" value=@Model.Appointment.DoctorUsername />
-                        <input type="hidden" value=@Model.Appointment.Date />
+                        <input type="hidden" value=@Model.Appointment.DoctorUsername name="Appointment.DoctorUsername" />
+                        <input type="hidden" value=@Model.Appointment.Date name="Appointment.Date" />
                         <div class="form-horizontal">
 
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
