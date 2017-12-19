@@ -168,7 +168,7 @@
     <Content Include="Views\Consults\ConsultPen.cshtml" />
     <Content Include="Views\Products\PenWork.cshtml" />
     <Content Include="Views\Auth\Editttttt.cshtml" />
-    <Content Include="Views\Appointments\View.cshtml" />
+    <Content Include="Views\Appointments\Confirm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
