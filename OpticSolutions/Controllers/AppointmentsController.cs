@@ -120,9 +120,9 @@ namespace OpticSolutions.Controllers
         }
 
         [HttpPost]
-        public ActionResult Confirm(Appointment ap)
+        public ActionResult Confirm(CreateAppointmentViewModel ap)
         {
-            var data = ap;
+            var data = ap.Appointment;
 
             return View(data);
         }
