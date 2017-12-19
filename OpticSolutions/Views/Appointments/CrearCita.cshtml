@@ -79,7 +79,7 @@
                 <hr />
                 <div class="col-md-6">
 
-                    @using (Html.BeginForm("Confirm","Appointment"))
+                    @using (Html.BeginForm("Confirm","Appointment", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
                         <input type="hidden" value=@Model.Appointment.DoctorUsername />
