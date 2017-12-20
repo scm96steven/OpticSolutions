@@ -44,5 +44,13 @@ namespace OpticSolutions.Repositories
 
         }
 
+        public List<Doctor> GetDoctors()
+        {
+
+            var data = conn.Query<Doctor>("GET_DOCTORS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return data;
+        }
+
     }
 }

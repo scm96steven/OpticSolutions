@@ -24,6 +24,12 @@ namespace OpticSolutions.Services
             repo.EditProfile(user);
         }
 
+        public List<Doctor> GetDoctors()
+        {
+            var data = repo.GetDoctors();
+
+            return data;
+        }
 
 
 
