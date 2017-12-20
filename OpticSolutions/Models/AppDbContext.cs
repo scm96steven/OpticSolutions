@@ -13,5 +13,7 @@ namespace OpticSolutions.Models
             : base("OSConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<OpticSolutions.Repositories.Entitys.Appointment> Appointments { get; set; }
     }
 }

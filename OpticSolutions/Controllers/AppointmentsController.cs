@@ -127,6 +127,11 @@ namespace OpticSolutions.Controllers
             return View(data);
         }
 
+        public ActionResult PendingAppointment()
+        {
+            return View();
+        }
+
 
     }
 }
