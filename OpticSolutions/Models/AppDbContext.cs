@@ -14,6 +14,6 @@ namespace OpticSolutions.Models
         {
         }
 
-        public System.Data.Entity.DbSet<OpticSolutions.Repositories.Entitys.Appointment> Appointments { get; set; }
+
     }
 }

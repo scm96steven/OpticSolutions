@@ -65,7 +65,7 @@ namespace OpticSolutions.Controllers
             }
             catch(Exception ex)
             {
-                return View();
+                throw ex;
             }
         }
 
