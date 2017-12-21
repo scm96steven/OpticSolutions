@@ -101,25 +101,39 @@ namespace OpticSolutions.Controllers
         }
 
 
-        public ActionResult CrearCita()
-        {
-            return View();
-        }
 
-        [HttpPost]
+
         public ActionResult CrearCita(CreateAppointmentViewModel ap)
         {
-
 
             return View(ap);
         }
 
+
         [HttpPost]
         public ActionResult Confirm(CreateAppointmentViewModel ap)
         {
-            var data = ap.Appointment;
+            if (!ModelState.IsValid)
+            {
 
+                return View("CrearCita", ap);
+            }
+            var data = ap.Appointment;
+            data.Date = DateTime.Now;
+
+            string start = data.StartDateStr + " " + data.StartHourStr;
+            data.StartDate = DateTime.Parse(start);
             return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult CreateAppointment(Appointment ap)
+        {
+
+            //ap.StartDate = DateTime.Parse(ap.StartDateStr);
+            repo.CreateAppointment(ap);
+
+            return RedirectToAction("Index", "Home",null);
         }
 
         public ActionResult PendingAppointment(Appointment ap)
@@ -129,6 +143,15 @@ namespace OpticSolutions.Controllers
             var data = asv.GetAppointments(ap);
             return View(data);
         }
+        
+      
+        public JsonResult GetAppointments(Appointment ap)
+        {
+            var list = repo.GetAppointments(ap);
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
 
 
     }

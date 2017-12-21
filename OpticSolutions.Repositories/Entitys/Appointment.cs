@@ -11,7 +11,8 @@ namespace OpticSolutions.Repositories.Entitys
     {
         public int Id { get; set; }
         public string DoctorUsername { get; set; }
-        public string CellPhone { get; set; }
+        public string DoctorFullname { get; set; }
+
         public int Status { get; set; }
 
         [Required(ErrorMessage = "El campo nombres es requerido")]
@@ -30,8 +31,16 @@ namespace OpticSolutions.Repositories.Entitys
         public string IdentificationCard { get; set; }
         public string Comment { get; set; }
         public DateTime Date { get; set; }
-        public string StartHour { get; set; }
+
+        [Required(ErrorMessage = "El campo hora es requerido")]
+        public string StartHourStr { get; set; }
+
+        [Required(ErrorMessage = "El campo fecha es requerido")]
+        public string StartDateStr { get; set; }
+        public string EndDateStr { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+  
     }
 }

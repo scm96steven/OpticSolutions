@@ -26,12 +26,33 @@ namespace OpticSolutions.Repositories
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@date", ap.Date);
             queryParameters.Add("@doctor_username", ap.DoctorUsername);
-            queryParameters.Add("@appointment_id", 10);
-
 
             var data = conn.Query<Appointment>("GET_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
+
+
             return data;
+        }
+
+        public void CreateAppointment(Appointment ap)
+        {
+            ap.EndDate = ap.StartDate.AddMinutes(30);
+            ap.Date = DateTime.Now;
+
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@date", ap.Date);
+            queryParameters.Add("@doctor_username", ap.DoctorUsername);
+            queryParameters.Add("@names", ap.Names);
+            queryParameters.Add("@last_names", ap.Last_Names);
+            queryParameters.Add("@email", ap.Email);
+            queryParameters.Add("@phone", ap.Phone);
+            queryParameters.Add("@cedula", ap.IdentificationCard);
+            queryParameters.Add("@comment", ap.Comment);
+            queryParameters.Add("@start_date", ap.StartDate);
+            queryParameters.Add("@end_date", ap.EndDate);
+
+             conn.Query("CREATE_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            
         }
 
 

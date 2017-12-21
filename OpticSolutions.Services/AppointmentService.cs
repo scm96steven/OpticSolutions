@@ -22,7 +22,13 @@ namespace OpticSolutions.Services
             return data;
          }
 
-      
+
+        public void CreateAppointment(Appointment ap)
+        {
+            repo.CreateAppointment(ap);
+        }
+
+
 
     }
 

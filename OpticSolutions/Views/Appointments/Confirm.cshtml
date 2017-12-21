@@ -4,6 +4,8 @@
 
 }
 
+@using (Html.BeginForm("CreateAppointment", "Appointments", FormMethod.Post, null))
+{
 <div class="box box-primary">
     <div class="box-header">
         <h4>Appointment</h4>
@@ -15,29 +17,30 @@
             <hr />
             <dl class="dl-horizontal">
                 <dt>
-                    @Html.DisplayNameFor(model => model.DoctorUsername)
+                  Doctor
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.DoctorUsername)
+                    <input type="hidden" name="DoctorUsername" value='@Model.DoctorUsername' />
                 </dd>
 
-
-
                 <dt>
-                    Nombre
+                    Nombres
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.Names)
+                    <input type="hidden" name="Names" value=@Model.Names />
                 </dd>
 
                 <dt>
-                    Apellido
+                    Apellidos
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.Last_Names)
+                    <input type="hidden" name="Last_Names" value=@Model.Last_Names />
                 </dd>
 
                 <dt>
@@ -46,69 +49,51 @@
 
                 <dd>
                     @Html.DisplayFor(model => model.Email)
+                    <input type="hidden" name="Email" value=@Model.Email />
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.CellPhone)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CellPhone)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Phone)
+                  Telefono
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.Phone)
+                    <input type="hidden" name="Phone" value=@Model.Phone />
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.IdentificationCard)
+                   Cedula
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.IdentificationCard)
+                    <input type="hidden" name="IdentificationCard" value=@Model.IdentificationCard />
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.Comment)
+               Comentario
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.Comment)
+                    <input type="hidden" name="Comment" value=@Model.Comment />
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.Date)
+                    Fecha y hora
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Date)
-                </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.StartHour)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.StartHour)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.StartDate)
-                </dt>
-
-                <dd>
                     @Html.DisplayFor(model => model.StartDate)
+                    <input type="hidden" name="StartDate" value='@Model.StartDate' />
                 </dd>
-
-                <input type="submit" value="Confirmar Cita" class="btn btn-success"/>
 
             </dl>
+
+            <input type="submit" value="Confirmar Cita" class="btn btn-success" />
+
         </div>
     </div>
 </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
+
+}
