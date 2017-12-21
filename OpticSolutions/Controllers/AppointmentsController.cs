@@ -122,9 +122,12 @@ namespace OpticSolutions.Controllers
             return View(data);
         }
 
-        public ActionResult PendingAppointment()
+        public ActionResult PendingAppointment(Appointment ap)
         {
-            return View();
+            AppointmentService asv = new AppointmentService();
+            ap.Date = new DateTime(2001, 1, 1);
+            var data = asv.GetAppointments(ap);
+            return View(data);
         }
 
 
