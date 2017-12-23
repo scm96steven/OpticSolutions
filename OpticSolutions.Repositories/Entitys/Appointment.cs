@@ -41,6 +41,14 @@ namespace OpticSolutions.Repositories.Entitys
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-  
+        public int StartHour { get; set; }
+        public int StartMinute { get; set; }
+
+        public int EndHour { get; set; }
+        public int EndMinute { get; set; }
+
+
+
+
     }
 }

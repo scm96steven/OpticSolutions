@@ -178,15 +178,19 @@
 
                 var data = new google.visualization.DataTable();
                 data.addColumn('string', 'Doctor');
-                data.addColumn('datetime', 'Start');
-                data.addColumn('datetime', 'End');
-
+                data.addColumn('date', 'Start');
+                data.addColumn('date', 'End');
+                debugger;
                 $.each(jsonData, function (i, jsonData) {
-                    var name = jsonData.DoctorUsername;
-                    var startDate =  jsonData.StartDate;
-                    var endDate =  jsonData.EndDate;
+                    var name = jsonData.DoctorFullname;
+                    var startHour = jsonData.StartHour;
+                    var endHour = jsonData.EndHour;
 
-                    data.addRows([[name, startDate, endDate]]);
+                    var startMinute = jsonData.StartMinute;
+                    var endMinute = jsonData.EndMinute;
+
+
+                    data.addRows([[name, new Date(0, 0, 0, startHour, startMinute, 0), new Date(0, 0, 0, endHour, endMinute, 0)]]);
                 });
 
 
