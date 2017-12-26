@@ -6,23 +6,22 @@
 
 @using (Html.BeginForm("Confirm", "Appointments", FormMethod.Post, null))
 {
-<div class="box box-primary">
+<div class="box box-primary box-solid">
     <div class="box-header">
-        <h4>Registrar cita</h4>
-
+        <p class="box-title">Crear nueva cita</p>
     </div>
     <div class="box-body">
-        <hr />
+
         <div class="col-md-6">
 
                 @Html.AntiForgeryToken()
-
+        
                 <div class="form-horizontal">
                     <div class="form-group">
-                        <label for="StartDate" class="control-label col-md-2">Seleccione una fecha:</label>
-                        <div class="col-md-10">
+                        <label for="StartDate" class="control-label col-md-3">Seleccione una fecha</label>
+                        <div class="col-md-4">
 
-                            <input type="date" name="Appointment.StartDateStr" id="appDate">
+                            <input type="date" name="Appointment.StartDateStr" id="appDate" class = "form-control">
                         </div>
                     </div>
 
@@ -34,14 +33,14 @@
 
 
 
- <div class="box box-success" id="test" style="display:none">
+ <div class="box box-success box-solid" id="test" style="display:none">
             <div class="box-header">
-                <h4>Disponibilidad del dia</h4>
+                <p class="box-title">Disponibilidad del dia</p>
 
             </div>
             <div class="box-body">
-                <hr />
-                <div id="timeline" style="height: 180px;">
+         
+                <div id="timeline" >
 
                 </div>
 
@@ -78,7 +77,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Appointment.IdentificationCard, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <label for="Appointment.IdentificationCard" class="control-label col-md-2">Cedula</label>
                                     <div class="col-md-10">
                                         @Html.EditorFor(model => model.Appointment.IdentificationCard, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.Appointment.IdentificationCard, "", new { @class = "text-danger" })
@@ -123,7 +122,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Siguiente" class="btn btn-success" />
+                                        <input type="submit" value="Siguiente" class="btn btn-success form-control" />
                                     </div>
                                 </div>
 
@@ -171,39 +170,51 @@
                 success: function (data) {
                     console.log(data);
                     jsonData = data;
+
+                    if (jsonData.length > 0)
+                    {
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'Doctor');
+                        data.addColumn('date', 'Start');
+                        data.addColumn('date', 'End');
+                        debugger;
+                        $.each(jsonData, function (i, jsonData) {
+                            var name = jsonData.DoctorFullname;
+                            var startHour = jsonData.StartHour;
+                            var endHour = jsonData.EndHour;
+
+                            var startMinute = jsonData.StartMinute;
+                            var endMinute = jsonData.EndMinute;
+
+
+                            data.addRows([[name, new Date(0, 0, 0, startHour, startMinute, 0), new Date(0, 0, 0, endHour, endMinute, 0)]]);
+                        });
+
+
+
+                        var options = {
+                            timeline: { colorByRowLabel: true },
+                            backgroundColor: '#ffd',
+                            title: "Disponibilidad del dia",
+
+                        };
+
+                        chart.draw(data);
+
+                    }
+                    else
+                    {
+                        var text = $('<h3/>', {
+                            'html': 'No hay citas pautadas para ese dia, todos los doctores estan disponibles'
+                        });
+                        $("#timeline").append(text);
+                    }
                  
                 }
-          });
-
-
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Doctor');
-                data.addColumn('date', 'Start');
-                data.addColumn('date', 'End');
-                debugger;
-                $.each(jsonData, function (i, jsonData) {
-                    var name = jsonData.DoctorFullname;
-                    var startHour = jsonData.StartHour;
-                    var endHour = jsonData.EndHour;
-
-                    var startMinute = jsonData.StartMinute;
-                    var endMinute = jsonData.EndMinute;
-
-
-                    data.addRows([[name, new Date(0, 0, 0, startHour, startMinute, 0), new Date(0, 0, 0, endHour, endMinute, 0)]]);
-                });
+                 });
 
 
 
-            var options = {
-                timeline: { colorByRowLabel: true },
-                backgroundColor: '#ffd',
-                title: "Disponibilidad del doctor",
-                'width': 1000,
-                'height': 300
-            };
-
-            chart.draw(data);
         }
     };
 
@@ -219,8 +230,11 @@
           }
           else
           {
+              $("#timeline").empty();
               $("#test").show("slow");
-              drawDoctorChart();
+
+              setTimeout(drawDoctorChart, 5);
+             
 
           }
 
@@ -229,7 +243,7 @@
           $("#appDate").change(function () {
 
               $("#test").hide("slow");
-
+              $("#timeline").empty();
 
 
               if ($("#appDate").val().length == 0) {
@@ -237,7 +251,7 @@
               }
               else {
                   $("#test").show("slow");
-                  drawDoctorChart();
+                  setTimeout(drawDoctorChart, 5);
           
               }
 
