@@ -6,15 +6,14 @@
 
 @using (Html.BeginForm("CreateAppointment", "Appointments", FormMethod.Post, null))
 {
-<div class="box box-primary">
+<div class="box box-primary box-solid">
     <div class="box-header">
-        <h4>Appointment</h4>
+        <p class="box-title">Appointment</p>
 
     </div>
     <div class="box-body">
         <div>
 
-            <hr />
             <dl class="dl-horizontal">
                 <dt>
                   Doctor
@@ -90,7 +89,9 @@
 
             </dl>
 
+            <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Atras" class="btn btn-danger" />
             <input type="submit" value="Confirmar Cita" class="btn btn-success" />
+    
 
         </div>
     </div>
