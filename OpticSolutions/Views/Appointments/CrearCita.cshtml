@@ -55,7 +55,7 @@
 
                                     <label for="DoctorUsername" class="control-label col-md-2">Doctor</label>
                                     <div class="col-md-10">
-                                        <select style="width:100%" id="doctorSelect" name="Appointment.DoctorUsername"></select>
+                                        <select style="width:100%" id="doctorSelect" name="DoctorUsername"></select>
                                     </div>
                                 </div>
 
@@ -98,8 +98,18 @@
                                 <div class="form-group">
                                     <label for="Phone" class="control-label col-md-2">Telefono</label>
                                     <div class="col-md-10">
-                                        <input type="number" name="Appointment.Phone"
-                                               pattern="[1-9]{11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355">
+                                        @if (Model.Phone != null)
+                                        {
+                                            <input type="text" name="Phone"
+                                                   pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355"
+                                                   value="@Model.Phone">
+                                        }
+                                        else
+                                        {
+                                            <input type="text" name="Phone"
+                                                   pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355">
+                                        }
+                                  
                                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -118,13 +128,28 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Hora de inicio</label>
                                     <div class="col-md-10">
-                                        <input name="Appointment.StartHourStr" id="startHour" class="timepicker" type="time" />
+                                        @if (Model.StartHourStr != null)
+                                        {
+                                            <input name="StartHourStr" id="startHour" class="timepicker" type="time" 
+                                                   value="@Model.StartHourStr"/>
+                                        }
+                                        else
+                                        {
+                                            <input name="StartHourStr" id="startHour" class="timepicker" type="time" />
+                                        }
+                                      
                                         @Html.ValidationMessageFor(model => model.StartHourStr, "", new { @class = "text-danger" })
+
+                                        @if (Model.NumberOfAppointments > 0)
+                                        {
+                                            <p class="text-danger">Seleccione otra hora, @Model.StartHourStr no esta disponible</p>
+                                        }
                                     </div>
                                 </div>
-
+                              
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
+                                       
                                         <input type="submit" value="Siguiente" class="btn btn-success form-control" />
                                     </div>
                                 </div>

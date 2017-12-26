@@ -28,7 +28,11 @@ namespace OpticSolutions.Services
             repo.CreateAppointment(ap);
         }
 
-
+        public int CheckAppointments(Appointment ap)
+        {
+           var data = repo.CheckAppointments(ap);
+            return data;
+        }
 
     }
 

@@ -51,5 +51,10 @@ namespace OpticSolutions.Repositories.Entitys
 
 
 
+        public int NumberOfAppointments { get; set; }
+
+
+
+
     }
 }

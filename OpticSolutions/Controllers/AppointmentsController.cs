@@ -113,7 +113,11 @@ namespace OpticSolutions.Controllers
         [HttpPost]
         public ActionResult CrearCita(Appointment ap)
         {
-            if (!ModelState.IsValid)
+            string start = ap.StartDateStr + " " + ap.StartHourStr;
+            ap.StartDate = DateTime.Parse(start);
+
+            ap.NumberOfAppointments = repo.CheckAppointments(ap);
+            if (!ModelState.IsValid || ap.NumberOfAppointments>0)
             {
 
                 return View(ap);
@@ -127,7 +131,7 @@ namespace OpticSolutions.Controllers
           
         }
 
-        [HttpPost]
+    
         public ActionResult Confirm(Appointment ap)
         {
          

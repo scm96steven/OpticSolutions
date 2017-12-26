@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SqlClient;
 using OpticSolutions.Repositories.Entitys;
+using System.Data;
 
 namespace OpticSolutions.Repositories
 {
@@ -36,7 +37,8 @@ namespace OpticSolutions.Repositories
 
         public void CreateAppointment(Appointment ap)
         {
-            ap.EndDate = ap.StartDate.AddMinutes(30);
+            ap.EndDate = ap.StartDate.AddMinutes(29);
+            ap.EndDate = ap.StartDate.AddSeconds(59);
             ap.Date = DateTime.Now;
 
             var queryParameters = new DynamicParameters();
@@ -55,6 +57,26 @@ namespace OpticSolutions.Repositories
             
         }
 
+        public int CheckAppointments(Appointment ap)
+        {
+            ap.EndDate = ap.StartDate.AddMinutes(29);
+            ap.EndDate = ap.StartDate.AddSeconds(59);
+            ap.Date = DateTime.Now;
+
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@startdate", ap.StartDate);
+            queryParameters.Add("@enddate", ap.EndDate);
+            queryParameters.Add("@doctor_username", ap.DoctorUsername);
+            queryParameters.Add("@num_of_app", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+
+            conn.Query("CHECK_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            var data = queryParameters.Get<int>("@num_of_app");
+
+            return data;
+
+        }
 
 
     }
