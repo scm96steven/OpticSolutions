@@ -103,27 +103,40 @@ namespace OpticSolutions.Controllers
 
 
 
-        public ActionResult CrearCita(CreateAppointmentViewModel ap)
+        public ActionResult CrearCita()
         {
-
+            Appointment ap = new Appointment();
             return View(ap);
         }
 
 
         [HttpPost]
-        public ActionResult Confirm(CreateAppointmentViewModel ap)
+        public ActionResult CrearCita(Appointment ap)
         {
             if (!ModelState.IsValid)
             {
 
-                return View("CrearCita", ap);
+                return View(ap);
             }
-            var data = ap.Appointment;
-            data.Date = DateTime.Now;
 
-            string start = data.StartDateStr + " " + data.StartHourStr;
-            data.StartDate = DateTime.Parse(start);
-            return View(data);
+            else
+            {
+
+                return RedirectToAction("Confirm", ap);
+            }
+          
+        }
+
+        [HttpPost]
+        public ActionResult Confirm(Appointment ap)
+        {
+         
+          
+            ap.Date = DateTime.Now;
+
+            string start = ap.StartDateStr + " " + ap.StartHourStr;
+            ap.StartDate = DateTime.Parse(start);
+            return View(ap);
         }
 
         [HttpPost]

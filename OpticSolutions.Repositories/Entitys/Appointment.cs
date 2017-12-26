@@ -36,6 +36,7 @@ namespace OpticSolutions.Repositories.Entitys
         public string StartHourStr { get; set; }
 
         [Required(ErrorMessage = "El campo fecha es requerido")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-dd-mm}", ApplyFormatInEditMode = true)]
         public string StartDateStr { get; set; }
         public string EndDateStr { get; set; }
         public DateTime StartDate { get; set; }
