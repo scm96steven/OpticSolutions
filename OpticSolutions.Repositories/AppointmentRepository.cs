@@ -38,7 +38,7 @@ namespace OpticSolutions.Repositories
         public void CreateAppointment(Appointment ap)
         {
             ap.EndDate = ap.StartDate.AddMinutes(29);
-            ap.EndDate = ap.StartDate.AddSeconds(59);
+          
             ap.Date = DateTime.Now;
 
             var queryParameters = new DynamicParameters();

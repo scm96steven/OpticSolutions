@@ -140,6 +140,12 @@ namespace OpticSolutions.Controllers
 
             string start = ap.StartDateStr + " " + ap.StartHourStr;
             ap.StartDate = DateTime.Parse(start);
+            var userRepo = new UserService();
+            var user = userRepo.GetUserInfoById(ap.DoctorUsername);
+            ap.DoctorFullname = user.FullName();
+
+
+
             return View(ap);
         }
 

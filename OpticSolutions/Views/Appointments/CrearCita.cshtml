@@ -297,13 +297,16 @@
               success: function (data) {
                   console.log(data);
                   $("#doctorSelect").empty();
+                  var selected = "@Model.DoctorUsername";
 
                   $.each(data, function (index, item) {
-
+                      var userName = item.UserName;
                       var p = new Option(item.FirstName + " " + item.LastName, item.UserName);
+                      console.log(selected);
                       $("#doctorSelect").append(p);
+                      
                   });
-
+                  $("#doctorSelect").val(selected);
               }
           });
     });

@@ -19,6 +19,26 @@
         </form>*@
         @* END Search *@
 
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="@Url.Action("UserPhotos", "Base" )" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                @{
+                    System.Security.Claims.ClaimsIdentity user = (System.Security.Claims.ClaimsIdentity)(User.Identity);
+                    foreach (var item in user.Claims)
+                    {
+                        if (item.Type == "FullName")
+                        {
+                            <p>@item.Value</p>
+                        }
+                    }
+                }
+
+
+                @*<a href="#"><i class="fa fa-circle text-success"></i> Online</a>*@
+            </div>
+        </div>
 
 
         @* BEGIN Menu *@
