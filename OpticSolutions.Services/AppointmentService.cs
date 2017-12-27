@@ -22,6 +22,13 @@ namespace OpticSolutions.Services
             return data;
          }
 
+        public List<Appointment> GetAllAppointments(Appointment ap)
+        {
+            var data = repo.GetAllAppointments(ap);
+
+            return data;
+        }
+
 
         public void CreateAppointment(Appointment ap)
         {

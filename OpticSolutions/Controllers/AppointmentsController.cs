@@ -163,7 +163,7 @@ namespace OpticSolutions.Controllers
         {
             AppointmentService asv = new AppointmentService();
             ap.Date = new DateTime(2001, 1, 1);
-            var data = asv.GetAppointments(ap);
+            var data = asv.GetAllAppointments(ap);
             return View(data);
         }
         

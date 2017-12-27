@@ -10,13 +10,13 @@
         <h2>Citas Pendientes</h2>
     </div>
     <div class="box-body">
-        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
+        <table class="hover stripe table-bordered"  width="100%" cellspacing="0">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.DoctorUsername)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CellPhone)
+                    @Html.DisplayNameFor(model => model.Phone)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Status)
@@ -60,7 +60,7 @@
                         @Html.DisplayFor(modelItem => item.DoctorUsername)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CellPhone)
+                        @Html.DisplayFor(modelItem => item.Phone)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Status)
@@ -93,9 +93,8 @@
                         @Html.DisplayFor(modelItem => item.StartDate)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary"}) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                     </td>
                 </tr>
             }
@@ -109,4 +108,4 @@
 <br />
 
 
-<a class="btn btn-primary" href="/CrearCita/Create">Crear Nueva Cita</a>
+<a class="btn btn-primary" @Html.ActionLink("Crear Nueva Cita", "CrearCita")</a>

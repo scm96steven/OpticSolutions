@@ -35,6 +35,15 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public List<Appointment> GetAllAppointments(Appointment ap)
+        {
+            var data = conn.Query<Appointment>("GET_ALL_APPOINTMENTS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+
+
+            return data;
+        }
+
         public void CreateAppointment(Appointment ap)
         {
             ap.EndDate = ap.StartDate.AddMinutes(29);
