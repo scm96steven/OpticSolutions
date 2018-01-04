@@ -7,7 +7,7 @@
 {
 <div class="box box-primary box-solid">
     <div class="box-header">
-        <p class="box-title">Crear nueva cita</p>
+        <p class="box-title">Crear Nueva Cita</p>
     </div>
     <div class="box-body">
 
@@ -258,6 +258,7 @@
           }
           else
           {
+              console.log($("#appDate").val().length);
               $("#timeline").empty();
               $("#test").show("slow");
 
@@ -273,7 +274,7 @@
               $("#test").hide("slow");
               $("#timeline").empty();
 
-
+              console.log($("#appDate").val().length);
               if ($("#appDate").val().length == 0) {
 
               }
