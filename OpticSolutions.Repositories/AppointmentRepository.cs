@@ -17,13 +17,14 @@ namespace OpticSolutions.Repositories
         public AppointmentRepository()
         {
             conn.ConnectionString = "Server=tcp:opticsolutions.database.windows.net,1433;Initial Catalog=OpticSolutions;Persist Security Info=False;User ID=osuser;Password=p@ssw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            conn.Open();
+            
     
         }
          
 
         public List<Appointment> GetAppointments(Appointment ap)
         {
+            conn.Open();
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@date", ap.Date);
             queryParameters.Add("@doctor_username", ap.DoctorUsername);
@@ -31,21 +32,23 @@ namespace OpticSolutions.Repositories
             var data = conn.Query<Appointment>("GET_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
 
-
+            conn.Close();
             return data;
         }
 
         public List<Appointment> GetAllAppointments(Appointment ap)
         {
+            conn.Open();
             var data = conn.Query<Appointment>("GET_ALL_APPOINTMENTS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
 
-
+            conn.Close();
             return data;
         }
 
         public void CreateAppointment(Appointment ap)
         {
+            conn.Open();
             ap.EndDate = ap.StartDate.AddMinutes(29);
           
             ap.Date = DateTime.Now;
@@ -63,11 +66,12 @@ namespace OpticSolutions.Repositories
             queryParameters.Add("@end_date", ap.EndDate);
 
              conn.Query("CREATE_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
-            
+            conn.Close();
         }
 
         public int CheckAppointments(Appointment ap)
         {
+            conn.Open();
             ap.EndDate = ap.StartDate.AddMinutes(29);
             ap.EndDate = ap.StartDate.AddSeconds(59);
             ap.Date = DateTime.Now;
@@ -82,7 +86,7 @@ namespace OpticSolutions.Repositories
             conn.Query("CHECK_APPOINTMENTS", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var data = queryParameters.Get<int>("@num_of_app");
-
+            conn.Close();
             return data;
 
         }
