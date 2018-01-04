@@ -16,11 +16,12 @@ namespace OpticSolutions.Repositories
         public BillingRepository()
         {
             con.ConnectionString = "Server=tcp:opticsolutions.database.windows.net,1433;Initial Catalog=OpticSolutions;Persist Security Info=False;User ID=osuser;Password=p@ssw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            con.Open();
+            
         }
 
         public Orders ShowOrderDetails(Orders Or)
         {
+            con.Open();
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@order_id", Or.order_id);
             //queryParameters.Add("@order_status_id", Or.order_status_id);
@@ -35,13 +36,14 @@ namespace OpticSolutions.Repositories
 
           
             var data = con.Query<Orders>("SHOW_ORDER_DETAILS", null, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
-
+            con.Close();
             return data;
 
         }
 
         public Orders ShowOrders(Orders Or)
         {
+            con.Open();
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@order_id", Or.order_id);
             //queryParameters.Add("@order_status_id", Or.order_status_id);
@@ -56,7 +58,7 @@ namespace OpticSolutions.Repositories
 
 
             var data = con.Query<Orders>("SHOW_ORDERS", null, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
-
+            con.Close();
             return data;
 
         }
