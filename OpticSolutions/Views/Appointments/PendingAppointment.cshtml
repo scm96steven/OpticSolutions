@@ -4,13 +4,14 @@
 
 }
 
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 <div class="box box-primary box-solid ">
     <div class="box-header">
         <h2>Citas Pendientes</h2>
     </div>
     <div class="box-body">
-        <table class="hover stripe table-bordered"  width="100%" cellspacing="0">
+        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.DoctorUsername)
@@ -93,7 +94,7 @@
                         @Html.DisplayFor(modelItem => item.StartDate)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary"}) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                     </td>
                 </tr>
@@ -109,3 +110,19 @@
 
 
 <a class="btn btn-primary" @Html.ActionLink("Crear Nueva Cita", "CrearCita")</a>
+
+
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+                $(document).ready(function () {
+                    
+                    $('#appointment').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                });
+
+</script>
