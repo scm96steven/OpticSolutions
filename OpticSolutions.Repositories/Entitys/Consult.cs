@@ -16,6 +16,7 @@ namespace OpticSolutions.Repositories.Entitys
 
         [Required]
         public string DoctorUserName { get; set; }
+        public string DoctorFullName { get; set; }
 
         public Client Client { get; set; }
 

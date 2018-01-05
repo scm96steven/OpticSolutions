@@ -252,17 +252,22 @@
 
       $(document).ready(function () {
 
-          if ($("#appDate").val().length == 0)
-          {
 
-          }
-          else
+          var startDt = document.getElementById("appDate").value;
+          var endDt = new Date();
+
+          if ((new Date(startDt).getTime() >= new Date(endDt).getTime()))
           {
+              console.log($("#appDate").val());
               console.log($("#appDate").val().length);
               $("#timeline").empty();
               $("#test").show("slow");
 
-              setTimeout(drawDoctorChart, 300);
+              setTimeout(drawDoctorChart, 600);
+          }
+          else
+          {
+            
              
 
           }
@@ -274,13 +279,17 @@
               $("#test").hide("slow");
               $("#timeline").empty();
 
-              console.log($("#appDate").val().length);
-              if ($("#appDate").val().length == 0) {
+              var startDt = document.getElementById("appDate").value;
+              var endDt = new Date();
 
+
+              if ((new Date(startDt).getTime() >= new Date(endDt).getTime()))
+              {
+                  $("#test").show("slow");
+                  setTimeout(drawDoctorChart, 600);
               }
               else {
-                  $("#test").show("slow");
-                  setTimeout(drawDoctorChart, 300);
+            
           
               }
 
