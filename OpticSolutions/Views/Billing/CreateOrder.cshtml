@@ -78,14 +78,21 @@
 
 </ul>
 
-
-                    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-
-                    <script type="text/javascript">
-
-    $(document).ready(function () {
+<input type="button" class=" btn btn-success btn-lg pull-right" id="confirmOrder" value="Completar orden" />
 
 
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+        //boton de confirmar orden
+            $("#confirmOrder").on("click", function () {
+                var productList = $(".ProductId").val();
+                console.log(productList);
+                console.log("completar orden");
+
+        });
         //boton de borrar producto
         $('#billDetail').on('click', '.btn-delete', function () {
             console.log("click delete");
@@ -113,8 +120,8 @@
                         var cantidad = $("#quantity").val();
                         var html = ' <li class="list-group-item productDetail">' +
                             ' <!-- Modelo -->' +
-                            ' @Html.Hidden("ProductId", 0)' +
-
+                            ' <input type="hidden" class="ProductId" name="ProductId" value=' + prod.ProductId + '>' +
+                            ' <input type="hidden" class="ProductQuantity" name="Quantity" value=' + cantidad + '>' +
                             ' <div class="row">' +
                             '<div class="col-xs-1 text-right">' +
                             '  <button class="btn btn-danger  btn-block btn-delete" type="submit" >' +
