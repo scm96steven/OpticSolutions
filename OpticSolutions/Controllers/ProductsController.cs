@@ -81,5 +81,24 @@ namespace OpticSolutions.Controllers
 
            return RedirectToAction("PenWork");
         }
+
+
+
+        public JsonResult GetProducts()
+        {
+
+            var list = repo.GetProducts();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult GetProductById(Product prod)
+        {
+
+            var data = repo.GetProductById(prod);
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

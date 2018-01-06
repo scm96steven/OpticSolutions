@@ -1,0 +1,176 @@
+﻿
+@{
+//ViewBag.Title = "CreateOrder";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Facturacion</h1>
+    </div>
+    @*<p>This is some text.</p>
+    <p>This is another text.</p>*@
+</div>
+
+<div class="box box-primary box-solid ">
+    <div class="box-header">
+        <p class="box-title">Agregar productos y/o servicios</p>
+
+    </div>
+    <div class="box-body">
+   
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-xs-7">
+                    <select style="width:100%" id="productSelect" name="productSelect"></select>
+                    
+                </div>
+                <div class="col-xs-2">
+                        Cantidad
+                    <input  type="number" value="1" id="quantity"/>
+                </div>
+                @*<div class="col-xs-2">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">S/.</span>
+            
+                    </div>
+                </div>*@
+                <div class="col-xs-1">
+                    <button class="btn btn-primary plusButton" type="submit"  name="plusButton">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<ul id="billDetail" class="list-group">
+        <li class="list-group-item list-group-item-info">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-3">
+                    <b>Producto</b>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <b>Cantidad</b>
+                </div>
+                <div class="col-xs-2 text-right">
+                    <b>Precio Unitario</b>
+                </div>
+                <div class="col-xs-2 text-right">
+                    <b>Impuesto p/u</b>
+                </div>
+                <div class="col-xs-2 text-right">
+                    <b>Monto</b>
+                </div>
+            </div>
+        </li>
+
+
+    @*iterador de productos agregados*@
+
+
+
+
+
+</ul>
+
+
+                    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+
+                    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        //boton de borrar producto
+        $('#billDetail').on('click', '.btn-delete', function () {
+            console.log("click delete");
+            $(this).closest("li").remove();
+
+        });
+
+
+        //botton de agregar producto
+        $(".plusButton").on("click", function () {
+
+            var id = $("#productSelect").val();
+                        console.log(id);
+
+
+                   $.ajax({
+              type: 'GET',
+              url: '@Url.Action("GetProductById", "Products")',
+               data: { ProductId: id },
+
+              success: function (data) {
+                  console.log(data);
+
+                        var prod = data;
+                        var cantidad = $("#quantity").val();
+                        var html = ' <li class="list-group-item productDetail">' +
+                            ' <!-- Modelo -->' +
+                            ' @Html.Hidden("ProductId", 0)' +
+
+                            ' <div class="row">' +
+                            '<div class="col-xs-1 text-right">' +
+                            '  <button class="btn btn-danger  btn-block btn-delete" type="submit" >' +
+                            '<i class="glyphicon glyphicon-remove"></i>' +
+                            ' </button>' +
+                            ' </div>' +
+                            '  <div class="col-xs-3">' +
+                                prod.Name +
+                            ' </div>' +
+                            '<div class="col-xs-2 text-center">' +
+                            cantidad +
+                            '  </div>' +
+                            ' <div class="col-xs-2 text-right">' +
+                            prod.Price +
+                            '  </div>' +
+                            '<div class="col-xs-2 text-right">' +
+                            prod.Price * 0.18 +
+                            ' </div>' +
+                            '<div class="col-xs-2 text-right">' +
+                            prod.Price*1.18*cantidad +
+                            ' </div>' +
+                            '</div>' +
+                            ' </li>    ';
+                        $("#billDetail").append(html);
+
+              }
+        });
+
+
+        })
+
+        //Ajax para llenar lista de productos
+        $.ajax({
+              type: 'GET',
+              url: '@Url.Action("GetProducts", "Products")',
+
+              success: function (data) {
+                  console.log(data);
+                  $("#productSelect").empty();
+                  @*var selected = "@Model.DoctorUsername";*@
+
+                  $.each(data, function (index, item) {
+                      var userName = item.UserName;
+                      var p = new Option(item.Name + " - $" + item.Price, item.ProductId);
+
+                      $("#productSelect").append(p);
+
+                  });
+                  //$("#doctorSelect").val(selected);
+              }
+        });
+
+
+
+    });
+
+
+
+                    </script>
