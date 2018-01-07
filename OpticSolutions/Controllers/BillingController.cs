@@ -20,8 +20,8 @@ namespace OpticSolutions.Controllers
             return View();
         }
 
-        // GET: Billing/Create
-        public ActionResult Create()
+ 
+        public ActionResult CreateOrder()
         {
             return View();
         }

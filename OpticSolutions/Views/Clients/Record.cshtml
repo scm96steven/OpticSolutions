@@ -74,7 +74,7 @@
                         <tr>
 
                             <td>@record.Date</td>
-                            <td>@record.DoctorUserName</td>
+                            <td>@record.DoctorFullName</td>
                             <td>@record.Description</td>
                         </tr>
                     }
@@ -88,7 +88,8 @@
 }
 
 <div>
-    @Html.ActionLink("Atras", "ConsultaCliente", "Clients", "", new { @class = "btn btn-danger" })
+
+    <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Atras" class="btn btn-danger" />
 </div>
 
 

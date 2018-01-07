@@ -170,6 +170,7 @@
     <Content Include="Views\Auth\Editttttt.cshtml" />
     <Content Include="Views\Appointments\Confirm.cshtml" />
     <Content Include="Views\Appointments\PendingAppointment.cshtml" />
+    <Content Include="Views\Billing\CreateOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -373,7 +374,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Billing\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpticSolutions.Repositories\OpticSolutions.Repositories.csproj">

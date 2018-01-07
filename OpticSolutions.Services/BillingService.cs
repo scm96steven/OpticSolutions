@@ -20,7 +20,7 @@ namespace OpticSolutions.Services
 
         public void BillList(Orders Ord)
         {
-            repo.BillList(Ord);
+            //repo.BillList(Ord);
         }
 
 
