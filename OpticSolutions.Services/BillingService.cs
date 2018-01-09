@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OpticSolutions.Services
 {
-    class BillingService
+    public class BillingService
     {
         public BillingRepository repo = new BillingRepository();
 
@@ -21,6 +21,14 @@ namespace OpticSolutions.Services
         public void BillList(Orders Ord)
         {
             //repo.BillList(Ord);
+        }
+
+
+        public void CreateOrder(Orders Ord)
+        {
+
+            repo.CreateOrder(Ord);
+
         }
 
 
