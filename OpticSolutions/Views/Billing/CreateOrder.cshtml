@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-xs-1"></div>
                     <div class="col-xs-3">
-                        <b>Producto</b>
+                        <b>Descripcion</b>
                     </div>
                     <div class="col-xs-2 text-center">
                         <b>Cantidad</b>
@@ -70,10 +70,10 @@
                         <b>Precio Unitario</b>
                     </div>
                     <div class="col-xs-2 text-right">
-                        <b>Impuesto p/u</b>
+                        <b>ITBIS</b>
                     </div>
                     <div class="col-xs-2 text-right">
-                        <b>Monto</b>
+                        <b>Valor</b>
                     </div>
                 </div>
             </li>
@@ -90,18 +90,42 @@
 
 
         </ul>
-    </div>
+
+        <hr />
+</div>
     <hr />
+    <ul id="" class="list-group pad">
+        <li class="list-group-item list-group-item-success">
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-3">
+                    @*<b>Producto</b>*@
+                </div>
+                <div class="col-xs-2 text-center">
+                    @*<b>Cantidad</b>*@
+                </div>
+                <div class="col-xs-2 text-right">
+                    @*<b>Precio Unitario</b>*@
+                </div>
+             
+                <div class="col-xs-4 text-right">
+                    <b>Subtotal: </b><span id="Subtotal">0</span><br />
+                    <b>Total: </b> <span id="Total">0</span>
+              
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div class="container">
 
         <div class="row">
+             <div class="col-md-6"></div>
             <div class="col-md-4">
-                <label class="">Subtotal:</label>
-                <label class="">Total:</label>
+                <br />
                 <label for="PaymentMethod">Metodo de pago:</label>
-                <select style="width:100%" class="" id="PaymentMethod" name="PaymentMethod">
+                <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod">
                     <option value="1">
                         Efectivo
                     </option>
@@ -109,15 +133,17 @@
                         Tarjeta de credito
                     </option>
                 </select>
+                <br />
+        
+            </div>
+            <div class="col-md-2">
+                <br /><br />
+                <input type="button" class="btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
             </div>
 
         </div>
 
-        <div class="row">
-            <div class="col-md-4 pad">
-                <input type="button" class=" btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
-            </div>
-        </div>
+
 
 
 
@@ -138,7 +164,12 @@
 
         <script type="text/javascript">
 
-        $(document).ready(function () {
+            $(document).ready(function () {
+
+                var subtotal = 0;
+                var total = 0;
+
+
         //boton de confirmar orden
 
             $("#confirmOrder").on("click", function () {
@@ -179,87 +210,152 @@
 
             });
 
-            var subtotal = 0;
-            var total = 0;
+     
 
         //boton de borrar producto
         $('#billDetail').on('click', '.btn-delete', function () {
             console.log("click delete");
-            var prod = $(this).closest(".ProductPrice").val();
-            var qua = $(this).closest(".ProductQuantity").val();
+
+            var prod = $(this).closest("li").find('.ProductPrice').val();
+            var qua = $(this).closest("li").find('.ProductQuantity').val();
+            console.log("prod borrado es " + prod)
+            console.log("cant prod borrado es " + qua)
 
             subtotal = subtotal - (prod * qua);
-            total = total - (prod * qua*1.18);
+            total = subtotal * 1.18;
+
             console.log(subtotal);
             console.log(total);
 
+            $("#Subtotal").html(subtotal);
+            $("#Total").html(total);
 
             $(this).closest("li").remove();
 
         });
 
 
-    
+
         //botton de agregar producto
-        $(".plusButton").on("click", function () {
+            $(".plusButton").on("click", function () {
 
-            var id = $("#productSelect").val();
-                        console.log(id);
+                var id = $("#productSelect").val();
+                var exist = $(".productId" + id);
 
 
-                        $.ajax({
+                //var priceHidden = $(".productId" + id).find('.ProductPrice');
+                var quantityHidden = $(".productId" + id).find('.ProductQuantity');
+
+                console.log(exist.length);
+
+
+                if (exist.length > 0)
+                {
+                    console.log("No ajax");
+                    var plusQuantity = Math.abs($("#quantity").val())
+                    var quantity = parseInt($(".productId" + id + " .quantity").html());
+                    var price = parseInt($(".productId" + id + " .price").html());
+                    var itbis = parseInt($(".productId" + id + " .itbis").html());
+                    var total = parseInt($(".productId" + id + " .total").html());
+
+                    //para pintar en el row de item
+                    var newQuantity = quantity + plusQuantity;
+                    var newItbis = price * newQuantity * 0.18;
+                    var newTotal = price * newQuantity * 1.18;
+
+                    quantityHidden.val(newQuantity);
+
+                    $(".productId" + id + " .quantity").html(newQuantity);
+                    $(".productId" + id + " .itbis").html(newItbis);
+                    $(".productId" + id + " .total").html(newTotal);
+
+                    console.log("datos nuevos");
+                    console.log(price);
+                    console.log(plusQuantity);
+                    var plusTotal = plusQuantity * price * 1.18;
+
+                    console.log(plusTotal);
+                    subtotal = subtotal + plusQuantity * price;
+
+
+                    total = subtotal*1.18 ;
+
+                    console.log(subtotal);
+                    console.log(total);
+
+
+                    $("#Subtotal").html(subtotal);
+                    $("#Total").html(total);
+                }
+                else
+                {
+                      $.ajax({
                             type: 'GET',
                             url: '@Url.Action("GetProductById", "Products")',
                             data: { ProductId: id },
 
                             success: function (data) {
-                                console.log(data);
+
 
                                 var prod = data;
-                                var cantidad = Math.abs($("#quantity").val())
+                                var cantidad = Math.abs($("#quantity").val());
+                            
+                                    var html = ' <li class="list-group-item productDetail productId' + prod.ProductId +'" >' +
+                                        ' <!-- Modelo -->' +
+                                        ' <input type="hidden" class="ProductId" name="ProductId" value=' + prod.ProductId + '>' +
+                                        ' <input type="hidden" class="ProductQuantity" name="Quantity" value=' + cantidad + '>' +
+                                        ' <input type="hidden" class="ProductPrice" name="ProductPrice" value=' + prod.Price + '>' +
+                                        ' <div class="row">' +
+                                        '<div class="col-xs-1 text-right">' +
+                                        '  <button class="btn btn-danger  btn-block btn-delete" type="submit" >' +
+                                        '<i class="glyphicon glyphicon-remove"></i>' +
+                                        ' </button>' +
+                                        ' </div>' +
+                                        '  <div class="col-xs-3">' +
+                                        prod.Name +
+                                        ' </div>' +
+                                        '<div class="col-xs-2 text-center quantity">' +
+                                        cantidad + 
+                                        '  </div>' +
+                                        ' <div class="col-xs-2 text-right price">' +
+                                        +prod.Price +
+                                        '  </div>' +
+                                        '<div class="col-xs-2 text-right itbis">' +
+                                        prod.Price * 0.18 * cantidad +
+                                        ' </div>' +
+                                        '<div class="col-xs-2 text-right total">' +
+                                        prod.Price * 1.18 * cantidad +
+                                        ' </div>' +
+                                        '</div>' +
+                                        ' </li>    ';
+                                    $("#billDetail").append(html);
+
+                                    console.log("Datos");
+                                    console.log(prod.Price * cantidad* 1.18);
+                                    console.log(cantidad);
+
+
+                                    subtotal = subtotal + (prod.Price * cantidad);
 
 
 
-                                var html = ' <li class="list-group-item productDetail">' +
-                                    ' <!-- Modelo -->' +
-                                    ' <input type="hidden" class="ProductId" name="ProductId" value=' + prod.ProductId + '>' +
-                                    ' <input type="hidden" class="ProductQuantity" name="Quantity" value=' + cantidad + '>' +
-                                    ' <input type="hidden" class="ProductPrice" name="ProductPrice" value=' + prod.Price + '>' +
-                                    ' <div class="row">' +
-                                    '<div class="col-xs-1 text-right">' +
-                                    '  <button class="btn btn-danger  btn-block btn-delete" type="submit" >' +
-                                    '<i class="glyphicon glyphicon-remove"></i>' +
-                                    ' </button>' +
-                                    ' </div>' +
-                                    '  <div class="col-xs-3">' +
-                                    prod.Name +
-                                    ' </div>' +
-                                    '<div class="col-xs-2 text-center">' +
-                                    cantidad +
-                                    '  </div>' +
-                                    ' <div class="col-xs-2 text-right">' +
-                                    +prod.Price +
-                                    '  </div>' +
-                                    '<div class="col-xs-2 text-right">' +
-                                    prod.Price * 0.18 +
-                                    ' </div>' +
-                                    '<div class="col-xs-2 text-right">' +
-                                    prod.Price * 1.18 * cantidad + 
-                                    ' </div>' +
-                                    '</div>' +
-                                    ' </li>    ';
-                                $("#billDetail").append(html);
-                                subtotal = subtotal + (prod.Price * cantidad);
-                                total = total + (prod.Price * cantidad * 1.18);
+                                    total = subtotal * 1.18;
 
                                 console.log(subtotal);
                                 console.log(total);
 
-              }
-        });
+
+                                $("#Subtotal").html(subtotal);
+                                $("#Total").html(total);
+
+                             }
+                          });
+
+                }
 
 
-        })
+
+            });
 
         //Ajax para llenar lista de productos
         $.ajax({
@@ -267,7 +363,7 @@
               url: '@Url.Action("GetProducts", "Products")',
 
               success: function (data) {
-                  console.log(data);
+
                   $("#productSelect").empty();
                   @*var selected = "@Model.DoctorUsername";*@
 
