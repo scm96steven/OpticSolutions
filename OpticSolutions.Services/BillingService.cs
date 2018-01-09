@@ -46,5 +46,13 @@ namespace OpticSolutions.Services
             return x;
         }
 
+        public List<Orders> GetOrders()
+        {
+
+            var list = repo.GetOrders();
+
+            return list;
+        }
+
     }
 }

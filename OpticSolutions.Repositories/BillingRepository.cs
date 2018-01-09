@@ -131,6 +131,17 @@ namespace OpticSolutions.Repositories
             return order;
         }
 
+
+        public List<Orders> GetOrders()
+        {
+
+
+            var list = con.Query<Orders>("GET_ORDERS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
+        
+
+            return list;
+        }
+
     }
 
           

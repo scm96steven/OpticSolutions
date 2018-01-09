@@ -20,7 +20,10 @@
                         <label for="StartDateStr" class="control-label col-md-3">Seleccione una fecha</label>
                         <div class="col-md-4">
 
-                            <input type="date" name="StartDateStr" id="appDate" class = "form-control" value="@Model.StartDateStr">
+                            <input type="date" name="StartDateStr" id="appDate" class = "form-control datepicker" value="@Model.StartDateStr">
+
+                            @*@Html.TextBoxFor(m => m.StartDateStr, "{0:yyyy-MM-dd}", new { @type = "date", name = "StartDateStr", id = "appDate", @class = "form-control datepicker", value = @Model.StartDateStr })*@
+
                         </div>
                     </div>
 
@@ -251,6 +254,8 @@
 <script type="text/javascript">
 
       $(document).ready(function () {
+
+          //$('.appDate').datepicker();
 
 
           var startDt = document.getElementById("appDate").value;

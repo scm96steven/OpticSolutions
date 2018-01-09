@@ -30,14 +30,14 @@
 
 
 
-            @*@foreach (var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
+                @item.CreatedDate.ToShortDateString()
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderStatusId)
@@ -46,10 +46,10 @@
                 @Html.DisplayFor(modelItem => item.OrderStatusDesc)
             </td>
             <td>
-                @Html.ActionLink("Mostrar Detalles", "CrearCita", new {id = item.OrderDetails }, new {@class = "btn btn-success"})
+                @Html.ActionLink("Mostrar Detalles", "ViewOrder", new {OrderId = item.OrderId }, new {@class = "btn btn-success"})
             </td>
         </tr>
-}*@
+}
 
 
         </table>

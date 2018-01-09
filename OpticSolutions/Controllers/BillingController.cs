@@ -34,7 +34,10 @@ namespace OpticSolutions.Controllers
 
         public ActionResult OrderList()
         {
-            return View();
+
+            var list = repo.GetOrders();
+
+            return View(list);
         }
 
 
