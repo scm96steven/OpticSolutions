@@ -93,7 +93,7 @@
 
         <hr />
 </div>
-    <hr />
+  
     <ul id="" class="list-group pad">
         <li class="list-group-item list-group-item-success">
             <div class="row">
@@ -105,10 +105,13 @@
                     @*<b>Cantidad</b>*@
                 </div>
                 <div class="col-xs-2 text-right">
-                    @*<b>Precio Unitario</b>*@
+              
+                </div>
+                <div class="col-xs-2 text-right">
+                    <b>Total ITBIS: </b><span id="Itbis">0</span>
                 </div>
              
-                <div class="col-xs-4 text-right">
+                <div class="col-xs-2 text-right">
                     <b>Subtotal: </b><span id="Subtotal">0</span><br />
                     <b>Total: </b> <span id="Total">0</span>
               
@@ -151,13 +154,6 @@
             <p>This is another text.</p>*@
 
     </div>
-<div class="row">
-
-    <div class="col-md-4">
-
-        </div>
-   
-    </div>
 
 
         <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
@@ -168,11 +164,13 @@
 
                 var subtotal = 0;
                 var total = 0;
+                var itbis = 0;
 
 
         //boton de confirmar orden
 
-            $("#confirmOrder").on("click", function () {
+                $("#confirmOrder").on("click", function ()
+            {
                 var productList = $(".ProductId");
                 var quantityList = $(".ProductQuantity");
                 var priceList = $(".ProductPrice");
@@ -196,7 +194,7 @@
                 console.log(itemsList);
 
                 var paymentMethod = $("#PaymentMethod").val();
-           $.ajax({
+               $.ajax({
               type: 'POST',
               url: '@Url.Action("CompleteOrder", "Billing")',
               data: { OrderDetails: itemsList, PaymentMethod: paymentMethod },
@@ -204,13 +202,17 @@
               success: function (data) {
 
               }
-        });
+                });
 
+
+               var x = ' @Url.Action("ViewOrder", "Billing")';
+                  console.log(x);
+                  window.location.href =x;
 
 
             });
 
-     
+
 
         //boton de borrar producto
         $('#billDetail').on('click', '.btn-delete', function () {
@@ -223,12 +225,14 @@
 
             subtotal = subtotal - (prod * qua);
             total = subtotal * 1.18;
+            itbis = total - subtotal;
 
             console.log(subtotal);
             console.log(total);
 
             $("#Subtotal").html(subtotal);
             $("#Total").html(total);
+            $("#Itbis").html(itbis);
 
             $(this).closest("li").remove();
 
@@ -261,7 +265,7 @@
                     //para pintar en el row de item
                     var newQuantity = quantity + plusQuantity;
                     var newItbis = price * newQuantity * 0.18;
-                    var newTotal = price * newQuantity * 1.18;
+                    var newTotal = price * newQuantity ;
 
                     quantityHidden.val(newQuantity);
 
@@ -279,6 +283,7 @@
 
 
                     total = subtotal*1.18 ;
+                    itbis = total - subtotal;
 
                     console.log(subtotal);
                     console.log(total);
@@ -286,6 +291,7 @@
 
                     $("#Subtotal").html(subtotal);
                     $("#Total").html(total);
+                    $("#Itbis").html(itbis);
                 }
                 else
                 {
@@ -299,7 +305,7 @@
 
                                 var prod = data;
                                 var cantidad = Math.abs($("#quantity").val());
-                            
+
                                     var html = ' <li class="list-group-item productDetail productId' + prod.ProductId +'" >' +
                                         ' <!-- Modelo -->' +
                                         ' <input type="hidden" class="ProductId" name="ProductId" value=' + prod.ProductId + '>' +
@@ -315,7 +321,7 @@
                                         prod.Name +
                                         ' </div>' +
                                         '<div class="col-xs-2 text-center quantity">' +
-                                        cantidad + 
+                                        cantidad +
                                         '  </div>' +
                                         ' <div class="col-xs-2 text-right price">' +
                                         +prod.Price +
@@ -324,7 +330,7 @@
                                         prod.Price * 0.18 * cantidad +
                                         ' </div>' +
                                         '<div class="col-xs-2 text-right total">' +
-                                        prod.Price * 1.18 * cantidad +
+                                        prod.Price  * cantidad +
                                         ' </div>' +
                                         '</div>' +
                                         ' </li>    ';
@@ -340,6 +346,7 @@
 
 
                                     total = subtotal * 1.18;
+                                    itbis = total - subtotal;
 
                                 console.log(subtotal);
                                 console.log(total);
@@ -347,7 +354,7 @@
 
                                 $("#Subtotal").html(subtotal);
                                 $("#Total").html(total);
-
+                                $("#Itbis").html(itbis);
                              }
                           });
 

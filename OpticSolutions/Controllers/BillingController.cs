@@ -42,15 +42,26 @@ namespace OpticSolutions.Controllers
         public ActionResult CompleteOrder(Orders ord)
         {
 
-            ord.CreatedDate = DateTime.Now;
-            ord.CreatedBy = User.Identity.Name;
-      
+            if (ord.OrderDetails.Count>0)
+            {
+                ord.CreatedDate = DateTime.Now;
+                ord.CreatedBy = User.Identity.Name;
+                repo.CreateOrder(ord);
 
-            repo.CreateOrder(ord);
+                
+
+                return View("CompleteOrder");
+            }
+
+
+            return View("CompleteOrder");
+        }
+
+        public ActionResult ViewOrder()
+        {
 
             return View();
         }
-
 
     }
 }
