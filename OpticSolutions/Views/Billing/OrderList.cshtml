@@ -1,0 +1,79 @@
+﻿@model IEnumerable<OpticSolutions.Repositories.Entitys.Orders>
+
+@{
+
+}
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<div class="box box-primary box-solid ">
+    <div class="box-header">
+        <h2>Ordenes</h2>
+    </div>
+    <div class="box-body">
+        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatusId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatusDesc)
+                </th>
+                <th></th>
+            </tr>
+
+
+
+            @*@foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatusDesc)
+            </td>
+            <td>
+                @Html.ActionLink("Mostrar Detalles", "CrearCita", new {id = item.OrderDetails }, new {@class = "btn btn-success"})
+            </td>
+        </tr>
+}*@
+
+
+        </table>
+
+    </div>
+
+</div>
+
+<br />
+
+
+
+
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+                $(document).ready(function () {
+
+                    $('#appointment').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                });
+
+</script>

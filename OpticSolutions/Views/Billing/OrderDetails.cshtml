@@ -1,0 +1,66 @@
+﻿@model OpticSolutions.Repositories.Entitys.Orders
+
+@{
+
+}
+
+<h2>Detalles de la Orden</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderId)
+        </dd>
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatusId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatusId)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatusDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatusDesc)
+        </dd>
+
+        <br />
+
+    </dl>
+</div>
+
+<p class="btn btn-default">
+    @Html.ActionLink("Devuelta a la orden", "OrderList")
+</p>

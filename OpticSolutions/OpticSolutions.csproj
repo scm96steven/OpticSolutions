@@ -170,6 +170,8 @@
     <Content Include="Views\Appointments\Confirm.cshtml" />
     <Content Include="Views\Appointments\PendingAppointment.cshtml" />
     <Content Include="Views\Billing\CreateOrder.cshtml" />
+    <Content Include="Views\Billing\OrderList.cshtml" />
+    <Content Include="Views\Billing\OrderDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
