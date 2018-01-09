@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpticSolutions.Repositories.Entitys;
+using OpticSolutions.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,14 @@ namespace OpticSolutions.Controllers
 {
     public class BillingController : Controller
     {
+
+        BillingService repo;
+
+        public BillingController()
+        {
+            repo = new BillingService();
+        }
+
         // GET: Billing
         public ActionResult Index()
         {
@@ -26,64 +36,23 @@ namespace OpticSolutions.Controllers
             return View();
         }
 
-        // POST: Billing/Create
+
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CompleteOrder(Orders ord)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            ord.CreatedDate = DateTime.Now;
+            ord.CreatedBy = User.Identity.Name;
+      
 
-        // GET: Billing/Edit/5
-        public ActionResult Edit(int id)
-        {
+            repo.CreateOrder(ord);
+
             return View();
         }
 
-        // POST: Billing/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Billing/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Billing/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
