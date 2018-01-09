@@ -110,7 +110,26 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public Orders GetOrderById(Orders ord)
+        {
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@order_id",ord.OrderId);
 
+            var list = con.Query<Orders>("GET_ORDER_BY_ID", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+            var productList = con.Query<Product>("GET_ORDER_BY_ID", queryParameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            Orders order = list.FirstOrDefault();
+            order.OrderDetails = productList;
+            ord.Total = 0;
+
+            foreach (Product item in order.OrderDetails)
+            {
+                order.Total = order.Total + (item.Quantity * item.Price);
+            }
+
+
+            return order;
+        }
 
     }
 

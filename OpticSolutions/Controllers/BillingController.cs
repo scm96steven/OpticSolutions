@@ -56,11 +56,28 @@ namespace OpticSolutions.Controllers
 
             return View("CompleteOrder");
         }
-
-        public ActionResult ViewOrder()
+        [HttpGet]
+        public ActionResult ViewOrder(Orders ord)
         {
 
-            return View();
+           ord = repo.GetOrderById(ord);
+
+
+            return View(ord);
+        }
+
+        [HttpGet]
+        public int GetOrderId()
+        {
+
+
+            Orders ord = new Orders();
+            ord.CreatedBy = User.Identity.Name;
+
+            
+
+
+            return repo.GetOrderId(ord);
         }
 
     }

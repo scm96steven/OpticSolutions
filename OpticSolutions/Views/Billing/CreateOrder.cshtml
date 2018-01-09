@@ -80,20 +80,11 @@
 
 
 
-
-
-
-            @*iterador de productos agregados*@
-
-
-
-
-
         </ul>
 
         <hr />
-</div>
-  
+    </div>
+
     <ul id="" class="list-group pad">
         <li class="list-group-item list-group-item-success">
             <div class="row">
@@ -105,16 +96,16 @@
                     @*<b>Cantidad</b>*@
                 </div>
                 <div class="col-xs-2 text-right">
-              
+
                 </div>
                 <div class="col-xs-2 text-right">
                     <b>Total ITBIS: </b><span id="Itbis">0</span>
                 </div>
-             
+
                 <div class="col-xs-2 text-right">
                     <b>Subtotal: </b><span id="Subtotal">0</span><br />
                     <b>Total: </b> <span id="Total">0</span>
-              
+
                 </div>
             </div>
         </li>
@@ -123,44 +114,49 @@
 
 <div class="container">
 
-        <div class="row">
-             <div class="col-md-6"></div>
-            <div class="col-md-4">
-                <br />
-                <label for="PaymentMethod">Metodo de pago:</label>
-                <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod">
-                    <option value="1">
-                        Efectivo
-                    </option>
-                    <option value="2">
-                        Tarjeta de credito
-                    </option>
-                </select>
-                <br />
-        
-            </div>
-            <div class="col-md-2">
-                <br /><br />
-                <input type="button" class="btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
-            </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-4">
+            <br />
+            <label for="PaymentMethod">Metodo de pago:</label>
+            <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod">
+                <option value="1">
+                    Efectivo
+                </option>
+                <option value="2">
+                    Tarjeta de credito
+                </option>
+            </select>
+            <br />
 
         </div>
-
-
-
-
-
-        @*<p>This is some text.</p>
-            <p>This is another text.</p>*@
+        <div class="col-md-2">
+            <br /><br />
+            <input type="button" class="btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
+        </div>
 
     </div>
 
 
-        <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
 
-        <script type="text/javascript">
+
+
+    @*<p>This is some text.</p>
+        <p>This is another text.</p>*@
+
+</div>
+
+
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
 
             $(document).ready(function () {
+
+
+               var x = ' @Url.Action("ViewOrder", "Billing")';
+                console.log(x);
+
 
                 var subtotal = 0;
                 var total = 0;
@@ -170,143 +166,141 @@
         //boton de confirmar orden
 
                 $("#confirmOrder").on("click", function ()
-            {
-                var productList = $(".ProductId");
-                var quantityList = $(".ProductQuantity");
-                var priceList = $(".ProductPrice");
-
-
-
-                console.log("completar orden");
-                var itemsList=[];
-
-                debugger;
-                $.each(productList, function (i, item) {
-
-                    var itemId = item.value;
-                    var itemQuantity = quantityList[i].value;
-                    var itemPrice = priceList[i].value;
-
-                    itemsList.push({ "ProductId": itemId, "Quantity": itemQuantity, "Price": itemPrice });
-                });
-
-
-                console.log(itemsList);
-
-                var paymentMethod = $("#PaymentMethod").val();
-               $.ajax({
-              type: 'POST',
-              url: '@Url.Action("CompleteOrder", "Billing")',
-              data: { OrderDetails: itemsList, PaymentMethod: paymentMethod },
-
-              success: function (data) {
-
-              }
-                });
-
-
-               var x = ' @Url.Action("ViewOrder", "Billing")';
-                  console.log(x);
-                  window.location.href =x;
-
-
-            });
-
-
-
-        //boton de borrar producto
-        $('#billDetail').on('click', '.btn-delete', function () {
-            console.log("click delete");
-
-            var prod = $(this).closest("li").find('.ProductPrice').val();
-            var qua = $(this).closest("li").find('.ProductQuantity').val();
-            console.log("prod borrado es " + prod)
-            console.log("cant prod borrado es " + qua)
-
-            subtotal = subtotal - (prod * qua);
-            total = subtotal * 1.18;
-            itbis = total - subtotal;
-
-            console.log(subtotal);
-            console.log(total);
-
-            $("#Subtotal").html(subtotal);
-            $("#Total").html(total);
-            $("#Itbis").html(itbis);
-
-            $(this).closest("li").remove();
-
-        });
-
-
-
-        //botton de agregar producto
-            $(".plusButton").on("click", function () {
-
-                var id = $("#productSelect").val();
-                var exist = $(".productId" + id);
-
-
-                //var priceHidden = $(".productId" + id).find('.ProductPrice');
-                var quantityHidden = $(".productId" + id).find('.ProductQuantity');
-
-                console.log(exist.length);
-
-
-                if (exist.length > 0)
                 {
-                    console.log("No ajax");
-                    var plusQuantity = Math.abs($("#quantity").val())
-                    var quantity = parseInt($(".productId" + id + " .quantity").html());
-                    var price = parseInt($(".productId" + id + " .price").html());
-                    var itbis = parseInt($(".productId" + id + " .itbis").html());
-                    var total = parseInt($(".productId" + id + " .total").html());
-
-                    //para pintar en el row de item
-                    var newQuantity = quantity + plusQuantity;
-                    var newItbis = price * newQuantity * 0.18;
-                    var newTotal = price * newQuantity ;
-
-                    quantityHidden.val(newQuantity);
-
-                    $(".productId" + id + " .quantity").html(newQuantity);
-                    $(".productId" + id + " .itbis").html(newItbis);
-                    $(".productId" + id + " .total").html(newTotal);
-
-                    console.log("datos nuevos");
-                    console.log(price);
-                    console.log(plusQuantity);
-                    var plusTotal = plusQuantity * price * 1.18;
-
-                    console.log(plusTotal);
-                    subtotal = subtotal + plusQuantity * price;
+                    var productList = $(".ProductId");
+                    var quantityList = $(".ProductQuantity");
+                    var priceList = $(".ProductPrice");
 
 
-                    total = subtotal*1.18 ;
-                    itbis = total - subtotal;
 
-                    console.log(subtotal);
-                    console.log(total);
+                    console.log("completar orden");
+                    var itemsList = [];
 
+                    $.each(productList, function (i, item)
+                    {
 
-                    $("#Subtotal").html(subtotal);
-                    $("#Total").html(total);
-                    $("#Itbis").html(itbis);
-                }
-                else
-                {
-                      $.ajax({
-                            type: 'GET',
-                            url: '@Url.Action("GetProductById", "Products")',
-                            data: { ProductId: id },
+                        var itemId = item.value;
+                        var itemQuantity = quantityList[i].value;
+                        var itemPrice = priceList[i].value;
 
-                            success: function (data) {
+                        itemsList.push({ "ProductId": itemId, "Quantity": itemQuantity, "Price": itemPrice });
+                    });
 
 
-                                var prod = data;
-                                var cantidad = Math.abs($("#quantity").val());
 
-                                    var html = ' <li class="list-group-item productDetail productId' + prod.ProductId +'" >' +
+                    var paymentMethod = $("#PaymentMethod").val();
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("CompleteOrder", "Billing")',
+                        data: { OrderDetails: itemsList, PaymentMethod: paymentMethod }
+                    });
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("GetOrderId", "Billing")',
+                        success: function (data) {
+                            var url = ' @Url.Action("ViewOrder", "Billing")';
+                            console.log(url);
+                            console.log(data);
+                            window.location.href = url + "?OrderId=" + data;
+                        }
+
+                    });
+                });
+                
+
+                    //boton de borrar producto
+                    $('#billDetail').on('click', '.btn-delete', function ()
+                    {
+                        console.log("click delete");
+
+                        var prod = $(this).closest("li").find('.ProductPrice').val();
+                        var qua = $(this).closest("li").find('.ProductQuantity').val();
+                        console.log("prod borrado es " + prod)
+                        console.log("cant prod borrado es " + qua)
+
+                        subtotal = subtotal - (prod * qua);
+                        total = subtotal * 1.18;
+                        itbis = total - subtotal;
+
+                        console.log(subtotal);
+                        console.log(total);
+
+                        $("#Subtotal").html(subtotal);
+                        $("#Total").html(total);
+                        $("#Itbis").html(itbis);
+
+                        $(this).closest("li").remove();
+
+                    });
+
+
+
+                    //botton de agregar producto
+                    $(".plusButton").on("click", function () {
+
+                        var id = $("#productSelect").val();
+                        var exist = $(".productId" + id);
+
+
+                        //var priceHidden = $(".productId" + id).find('.ProductPrice');
+                        var quantityHidden = $(".productId" + id).find('.ProductQuantity');
+
+                        console.log(exist.length);
+
+
+                        if (exist.length > 0) {
+                            console.log("No ajax");
+                            var plusQuantity = Math.abs($("#quantity").val())
+                            var quantity = parseInt($(".productId" + id + " .quantity").html());
+                            var price = parseInt($(".productId" + id + " .price").html());
+                            var itbis = parseInt($(".productId" + id + " .itbis").html());
+                            var total = parseInt($(".productId" + id + " .total").html());
+
+                            //para pintar en el row de item
+                            var newQuantity = quantity + plusQuantity;
+                            var newItbis = price * newQuantity * 0.18;
+                            var newTotal = price * newQuantity;
+
+                            quantityHidden.val(newQuantity);
+
+                            $(".productId" + id + " .quantity").html(newQuantity);
+                            $(".productId" + id + " .itbis").html(newItbis);
+                            $(".productId" + id + " .total").html(newTotal);
+
+                            console.log("datos nuevos");
+                            console.log(price);
+                            console.log(plusQuantity);
+                            var plusTotal = plusQuantity * price * 1.18;
+
+                            console.log(plusTotal);
+                            subtotal = subtotal + plusQuantity * price;
+
+
+                            total = subtotal * 1.18;
+                            itbis = total - subtotal;
+
+                            console.log(subtotal);
+                            console.log(total);
+
+
+                            $("#Subtotal").html(subtotal);
+                            $("#Total").html(total);
+                            $("#Itbis").html(itbis);
+                        }
+                        else {
+                            $.ajax({
+                                type: 'GET',
+                                url: '@Url.Action("GetProductById", "Products")',
+                                data: { ProductId: id },
+
+                                success: function (data) {
+
+
+                                    var prod = data;
+                                    var cantidad = Math.abs($("#quantity").val());
+
+                                    var html = ' <li class="list-group-item productDetail productId' + prod.ProductId + '" >' +
                                         ' <!-- Modelo -->' +
                                         ' <input type="hidden" class="ProductId" name="ProductId" value=' + prod.ProductId + '>' +
                                         ' <input type="hidden" class="ProductQuantity" name="Quantity" value=' + cantidad + '>' +
@@ -330,14 +324,14 @@
                                         prod.Price * 0.18 * cantidad +
                                         ' </div>' +
                                         '<div class="col-xs-2 text-right total">' +
-                                        prod.Price  * cantidad +
+                                        prod.Price * cantidad +
                                         ' </div>' +
                                         '</div>' +
                                         ' </li>    ';
                                     $("#billDetail").append(html);
 
                                     console.log("Datos");
-                                    console.log(prod.Price * cantidad* 1.18);
+                                    console.log(prod.Price * cantidad * 1.18);
                                     console.log(cantidad);
 
 
@@ -348,42 +342,42 @@
                                     total = subtotal * 1.18;
                                     itbis = total - subtotal;
 
-                                console.log(subtotal);
-                                console.log(total);
+                                    console.log(subtotal);
+                                    console.log(total);
 
 
-                                $("#Subtotal").html(subtotal);
-                                $("#Total").html(total);
-                                $("#Itbis").html(itbis);
-                             }
-                          });
+                                    $("#Subtotal").html(subtotal);
+                                    $("#Total").html(total);
+                                    $("#Itbis").html(itbis);
+                                }
+                            });
 
-                }
+                        }
 
 
 
-            });
+                    });
 
-        //Ajax para llenar lista de productos
-        $.ajax({
-              type: 'GET',
-              url: '@Url.Action("GetProducts", "Products")',
+                    //Ajax para llenar lista de productos
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("GetProducts", "Products")',
 
-              success: function (data) {
+                        success: function (data) {
 
-                  $("#productSelect").empty();
+                            $("#productSelect").empty();
                   @*var selected = "@Model.DoctorUsername";*@
 
-                  $.each(data, function (index, item) {
-                      var userName = item.UserName;
-                      var p = new Option(item.Name + " - $" + item.Price, item.ProductId);
+                            $.each(data, function (index, item) {
+                                var userName = item.UserName;
+                                var p = new Option(item.Name + " - $" + item.Price, item.ProductId);
 
-                      $("#productSelect").append(p);
+                                $("#productSelect").append(p);
 
-                  });
-                  //$("#doctorSelect").val(selected);
-              }
-        });
+                            });
+                            //$("#doctorSelect").val(selected);
+                        }
+                    });
 
 
 
@@ -391,4 +385,4 @@
 
 
 
-        </script>
+</script>

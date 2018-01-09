@@ -31,6 +31,20 @@ namespace OpticSolutions.Services
 
         }
 
+        public Orders GetOrderById(Orders ord)
+        {
+            ord = repo.GetOrderById(ord);
+
+            return ord;
+        }
+
+        public int GetOrderId(Orders Ord)
+        {
+
+            var x = repo.GetOrderId(Ord);
+
+            return x;
+        }
 
     }
 }

@@ -17,6 +17,8 @@ namespace OpticSolutions.Repositories.Entitys
         public string OrderStatusDesc { get; set; }
         public string CreatedBy { get; set; }
         public int PaymentMethod { get; set; }
+        public string PaymentMethodDesc { get; set; }
+        public int Total { get; set; }
 
         public Orders()
         {
