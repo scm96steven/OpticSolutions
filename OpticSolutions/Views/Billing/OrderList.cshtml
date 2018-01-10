@@ -11,19 +11,17 @@
         <h2>Ordenes</h2>
     </div>
     <div class="box-body">
-        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
+        <table class="hover stripe table-bordered" width="100%" cellspacing="0" id="orders">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.OrderId)
+                    Id Factura
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CreatedDate)
+                    Fecha de cracion
                 </th>
+      
                 <th>
-                    @Html.DisplayNameFor(model => model.OrderStatusId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.OrderStatusDesc)
+                   Estado
                 </th>
                 <th></th>
             </tr>
@@ -37,13 +35,11 @@
                 @Html.DisplayFor(modelItem => item.OrderId)
             </td>
             <td>
-                @item.CreatedDate.ToShortDateString()
+                @item.CreatedDate
             </td>
+          
             <td>
-                @Html.DisplayFor(modelItem => item.OrderStatusId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderStatusDesc)
+                @Html.DisplayFor(modelItem => item.OrderStatusDescription)
             </td>
             <td>
                 @Html.ActionLink("Mostrar Detalles", "ViewOrder", new {OrderId = item.OrderId }, new {@class = "btn btn-success"})
@@ -68,7 +64,7 @@
 
                 $(document).ready(function () {
 
-                    $('#appointment').DataTable({
+                    $('#orders').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
                             'copy', 'csv', 'excel', 'pdf', 'print'

@@ -62,6 +62,7 @@
     <Compile Include="Entitys\Consult.cs" />
     <Compile Include="Entitys\Doctor.cs" />
     <Compile Include="Entitys\Orders.cs" />
+    <Compile Include="Entitys\PaymentMethod.cs" />
     <Compile Include="Entitys\PendingWork.cs" />
     <Compile Include="Entitys\ProductType.cs" />
     <Compile Include="UserRepository.cs" />

@@ -14,15 +14,15 @@ namespace OpticSolutions.Repositories.Entitys
 
         public List<Product> OrderDetails { get; set; }
         public int OrderStatusId { get; set; }
-        public string OrderStatusDesc { get; set; }
+        public string OrderStatusDescription { get; set; }
         public string CreatedBy { get; set; }
-        public int PaymentMethod { get; set; }
-        public string PaymentMethodDesc { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
         public int Total { get; set; }
 
         public Orders()
         {
             OrderDetails = new List<Product>();
+
         }
 
 

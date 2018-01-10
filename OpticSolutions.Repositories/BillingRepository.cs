@@ -70,6 +70,7 @@ namespace OpticSolutions.Repositories
             var queryParameters = new DynamicParameters();
             queryParameters.Add("@date",Ord.CreatedDate);
             queryParameters.Add("@created_by", Ord.CreatedBy);
+            queryParameters.Add("@payment_method", Ord.PaymentMethod.Id);
 
             con.Query<Orders>("CREATE_ORDER", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
 
@@ -134,7 +135,7 @@ namespace OpticSolutions.Repositories
 
         public List<Orders> GetOrders()
         {
-
+   
 
             var list = con.Query<Orders>("GET_ORDERS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
         

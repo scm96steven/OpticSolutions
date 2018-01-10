@@ -119,7 +119,7 @@
         <div class="col-md-4">
             <br />
             <label for="PaymentMethod">Metodo de pago:</label>
-            <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod">
+            <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod.Id">
                 <option value="1">
                     Efectivo
                 </option>
@@ -154,10 +154,6 @@
             $(document).ready(function () {
 
 
-               var x = ' @Url.Action("ViewOrder", "Billing")';
-                console.log(x);
-
-
                 var subtotal = 0;
                 var total = 0;
                 var itbis = 0;
@@ -188,7 +184,7 @@
 
 
 
-                    var paymentMethod = $("#PaymentMethod").val();
+                    var paymentMethod = { Id: $("#PaymentMethod").val() };
                     $.ajax({
                         type: 'POST',
                         url: '@Url.Action("CompleteOrder", "Billing")',
@@ -216,15 +212,13 @@
 
                         var prod = $(this).closest("li").find('.ProductPrice').val();
                         var qua = $(this).closest("li").find('.ProductQuantity').val();
-                        console.log("prod borrado es " + prod)
-                        console.log("cant prod borrado es " + qua)
+       
 
                         subtotal = subtotal - (prod * qua);
                         total = subtotal * 1.18;
                         itbis = total - subtotal;
 
-                        console.log(subtotal);
-                        console.log(total);
+
 
                         $("#Subtotal").html(subtotal);
                         $("#Total").html(total);
@@ -246,8 +240,7 @@
                         //var priceHidden = $(".productId" + id).find('.ProductPrice');
                         var quantityHidden = $(".productId" + id).find('.ProductQuantity');
 
-                        console.log(exist.length);
-
+             
 
                         if (exist.length > 0) {
                             console.log("No ajax");
@@ -268,9 +261,7 @@
                             $(".productId" + id + " .itbis").html(newItbis);
                             $(".productId" + id + " .total").html(newTotal);
 
-                            console.log("datos nuevos");
-                            console.log(price);
-                            console.log(plusQuantity);
+
                             var plusTotal = plusQuantity * price * 1.18;
 
                             console.log(plusTotal);
@@ -279,9 +270,6 @@
 
                             total = subtotal * 1.18;
                             itbis = total - subtotal;
-
-                            console.log(subtotal);
-                            console.log(total);
 
 
                             $("#Subtotal").html(subtotal);
@@ -330,9 +318,6 @@
                                         ' </li>    ';
                                     $("#billDetail").append(html);
 
-                                    console.log("Datos");
-                                    console.log(prod.Price * cantidad * 1.18);
-                                    console.log(cantidad);
 
 
                                     subtotal = subtotal + (prod.Price * cantidad);
@@ -341,9 +326,6 @@
 
                                     total = subtotal * 1.18;
                                     itbis = total - subtotal;
-
-                                    console.log(subtotal);
-                                    console.log(total);
 
 
                                     $("#Subtotal").html(subtotal);
