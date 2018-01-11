@@ -92,17 +92,5 @@ namespace OpticSolutions.Repositories
         }
 
 
-        public void DeleteAppointment(Appointment app)
-        {
-            conn.Open();
-            var queryParameters = new DynamicParameters();
-            queryParameters.Add("@app_id", app.Id);
-
-            conn.Query("DELETE_APPOINTMENT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
-            conn.Close();
-        }
-
-
-
     }
 }

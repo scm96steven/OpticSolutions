@@ -94,14 +94,6 @@ namespace OpticSolutions.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult DeleteAppointment(Appointment ap)
-        {
-
-            repo.DeleteAppointment(ap);
-
-            return RedirectToAction("PendingAppointment");
-        }
 
 
     }
