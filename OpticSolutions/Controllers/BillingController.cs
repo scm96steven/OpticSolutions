@@ -51,11 +51,8 @@ namespace OpticSolutions.Controllers
                 ord.CreatedBy = User.Identity.Name;
                 repo.CreateOrder(ord);
 
-                
-
                 return View("CompleteOrder");
             }
-
 
             return View("CompleteOrder");
         }
@@ -72,14 +69,8 @@ namespace OpticSolutions.Controllers
         [HttpGet]
         public int GetOrderId()
         {
-
-
             Orders ord = new Orders();
             ord.CreatedBy = User.Identity.Name;
-
-            
-
-
             return repo.GetOrderId(ord);
         }
 

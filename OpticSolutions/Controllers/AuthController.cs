@@ -128,9 +128,6 @@ namespace OpticSolutions.Controllers
                new Claim("UserCreatedDate",data.CreatedDate.ToShortDateString())
                    });
 
-                //AppUser data = repo.GetUserInfoById(model.Email);
-                //Session["UserFullName"] = data.FirstName+" "+data.LastName;
-                //Session["UserCreatedDate"] = data.CreatedDate;
 
                 GetAuthenticationManager().SignIn(identity);
 
