@@ -37,5 +37,7 @@ namespace OpticSolutions.Models
 
         public byte[] UserPhoto { get; set; }
 
+        public string UserRole { get; set; }
+
     }
 }

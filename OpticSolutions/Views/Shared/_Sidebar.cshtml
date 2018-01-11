@@ -3,22 +3,6 @@
     <section class="sidebar">
 
 
-
-
-
-        @* BEGIN Search *@
-        @*<form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>*@
-        @* END Search *@
-
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="@Url.Action("UserPhotos", "Base" )" class="img-circle" alt="User Image">
@@ -36,78 +20,31 @@
                 }
 
 
-                @*<a href="#"><i class="fa fa-circle text-success"></i> Online</a>*@
+                @*<a href="#"><i class="fa fa-circle text-success"></i> 
+                @{
+                   OpticSolutions.Controllers.AuthController.GetUserRole(User.Identity.Name).ToString();
+
+                }
+                </a>*@
             </div>
         </div>
 
 
-        @* BEGIN Menu *@
-        <ul class="sidebar-menu" data-widget="tree">
-
-            <li class="header">MAIN NAVIGATION</li>
-        <li>
-
-            <a href="@Url.Action("Index", "Home")">
-                <i class="fa fa-home "></i>
-                <span>Inicio</span>
-            </a>
-
-         
-</li>
-        
-
-            @*MENU DE MEDICO*@
-            <li class=" treeview">
-                <a href="#">
-                    <i class="fa fa-medkit"></i> <span>Portal medico</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-
-                    @*<li class="active"><a href="~/products/create"><i class="fa fa-eye"></i>Realizar consulta</a></li>*@
-
-                    <li class="active"><a href="@Url.Action("PendingAppointment", "Appointments")"><i class="fa fa-clock-o"></i>Citas pendientes</a></li>
-
-                    <li class="active"><a href="@Url.Action("ConsultaCliente", "Clients")"><i class="fa fa-history"></i>Portal de pacientes</a></li>
-
-                </ul>
-            </li>
-            @*MENU DE MEDICO*@
+    
+        @if (User.IsInRole("Administrador"))
+        {
+            @Html.Partial("~/Views/Shared/Menu/_AdminMenu.cshtml");
+        }
+        else if (User.IsInRole("Doctor(a)"))
+        {
+            @Html.Partial("~/Views/Shared/Menu/_DoctorMenu.cshtml");
+        }
+        else if (User.IsInRole("Secretario(a)"))
+        {
+            @Html.Partial("~/Views/Shared/Menu/_AssistantMenu.cshtml");
+        }
+     
 
 
-            @*MENU DE OPERACIONES*@
-            <li class=" treeview">
-                <a href="#">
-                    <i class="fa fa-tasks "></i> <span>Operaciones</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-
-
-                    <li class="active"><a href="@Url.Action("CrearCita", "Appointments")"><i class="fa fa-pencil-square" "></i>Registrar cita</a></li>
-                    <li class="active"><a href="@Url.Action("CreateOrder", "Billing")"><i class="fa fa-dollar" ></i>Facturacion</a></li>
-                    <li class="active"><a href="@Url.Action("PenWork", "Products")"><i class="fa fa-bell-o" ></i>Trabajos pendientes</a></li>
-                    <li class="active"><a href="@Url.Action("PendingDelivery", "Products")"><i class="fa fa-envelope-open-o"></i>Entregas pendientes</a></li>
-                </ul>
-            </li>
-            @*MENU DE OPERACIONES*@
-
-
-
-
-            @*MENU DE ADMINISTRACION*@
-            <li class=" treeview">
-                <a href="#">
-                    <i class="fa fa-gears"></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="@Url.Action("Index", "Products")"><i class="fa fa-product-hunt "></i>Productos</a></li>
-                    <li><a href="@Url.Action("Index", "Clients")"><i class="fa fa-users "></i>Pacientes</a></li>
-                    <li><a href="@Url.Action("OrderList", "Billing")"><i class="fa fa-archive "></i>Facturas</a></li>
-                    @*<li class="active"><a href="~/products/create"><i class="fa fa-circle-o"></i>Crear producto</a></li>*@
-                </ul>
-            </li>
-            @*MENU DE ADMINISTRACION*@
-
-        </ul>
-        @* END Menu *@
     </section>
 </aside>

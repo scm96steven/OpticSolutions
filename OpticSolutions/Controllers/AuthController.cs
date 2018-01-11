@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using OpticSolutions.Models;
 using OpticSolutions.Repositories.Entitys;
@@ -15,18 +16,21 @@ using System.Web.Mvc;
 
 namespace OpticSolutions.Controllers
 {
-    [AllowAnonymous]
+   
     public class AuthController : Controller
     {
 
         private readonly UserManager<AppUser> userManager;
         private UserService repo;
+
+
         public AuthController()
             : this(Startup.UserManagerFactory.Invoke())
         {
             repo = new UserService();
         }
 
+      
         public AuthController(UserManager<AppUser> userManager)
         {
             this.userManager = userManager;
@@ -41,9 +45,9 @@ namespace OpticSolutions.Controllers
             base.Dispose(disposing);
         }
 
-
         public string ReturnUrl { get; private set; }
 
+        [AllowAnonymous]
         public ActionResult LogIn(string returnUrl)
         {
             var model = new LogInModel();
@@ -54,12 +58,14 @@ namespace OpticSolutions.Controllers
             return View(model);
         }
 
+        [MyAuthorize(Roles = "Administrador")]
         [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
 
+        [MyAuthorize(Roles = "Administrador")]
         [HttpPost]
         public async Task<ActionResult> Register([Bind(Exclude = "UserPhoto")]RegisterModel model)
         {
@@ -96,6 +102,7 @@ namespace OpticSolutions.Controllers
 
             if (result.Succeeded)
             {
+                AddUserToRole(model.Email, model.UserRole);
                 await SignIn(user);
                 return RedirectToAction("index", "home");
             }
@@ -108,6 +115,8 @@ namespace OpticSolutions.Controllers
             return View();
         }
 
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> LogIn(LogInModel model)
         {
@@ -139,13 +148,14 @@ namespace OpticSolutions.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         private IAuthenticationManager GetAuthenticationManager()
         {
             var ctx = Request.GetOwinContext();
             return ctx.Authentication;
         }
 
+        [AllowAnonymous]
         private string GetRedirectUrl(string returnUrl)
         {
             if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
@@ -155,6 +165,8 @@ namespace OpticSolutions.Controllers
 
             return returnUrl;
         }
+
+        [AllowAnonymous]
         private async Task SignIn(AppUser user)
         {
             var identity = await userManager.CreateIdentityAsync(
@@ -205,6 +217,8 @@ namespace OpticSolutions.Controllers
           
             pro.UserName = User.Identity.Name;
             repo.EditProfile(pro);
+            //AddUserToRole(pro.UserName, "Administrador");
+
            var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
             return View(data);
         }
@@ -217,7 +231,41 @@ namespace OpticSolutions.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        internal void AddUserToRole(string userName, string roleName)
+        {
+            AppDbContext context = new AppDbContext();
+            var UserManager = new UserManager<AppUser>(new UserStore<AppUser>(context));
 
+            try
+            {
+                var user = UserManager.FindByName(userName);
+                UserManager.AddToRole(user.Id, roleName);
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static string GetUserRole(string username)
+        {
+            AppDbContext context = new AppDbContext();
+            List<string> ListOfRoleNames = new List<string>();
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+          
+            var UserManager = new UserManager<AppUser>(new UserStore<AppUser>(context));
+            var ListOfRoleIds = UserManager.FindByName(username).Roles.Select(x => x.RoleId).ToList();
+
+            foreach (string id in ListOfRoleIds)
+            {
+                string rolename = RoleManager.FindById(id).Name;
+                ListOfRoleNames.Add(rolename);
+            }
+
+            return ListOfRoleNames.FirstOrDefault();
+        }
 
     }
 }

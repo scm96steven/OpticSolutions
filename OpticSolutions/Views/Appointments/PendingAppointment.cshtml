@@ -5,101 +5,78 @@
 }
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<div class="container">
-
-    <div class="box box-primary box-solid ">
-        <div class="box-header">
-            <h2><i class="fa fa-clock-o"></i> Citas Pendientes</h2>
-        </div>
-        <div class="box-body">
-            <table class="hover stripe table-bordered" width="100%" cellspacing="0">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.DoctorUsername)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Phone)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Names)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Last_Names)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Phone)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IdentificationCard)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Comment)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Date)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StartHour)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StartDate)
-                    </th>
-
-                    <th></th>
-                </tr>
 
 
-                @foreach (var item in Model)
+<div class="box box-primary box-solid ">
+    <div class="box-header">
+        <h2><i class="fa fa-clock-o"></i> Citas Pendientes</h2>
+    </div>
+    <div class="box-body">
+        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
+            <tr>
+                <th>
+                    <label for="DoctorFullname" class="control-label col-md-2">Doctor</label>
+                </th>
+                <th>
+                    <label for="Phone" class="control-label col-md-2">Telefono</label>
+                </th>
+                <th>
+                    <label for="Names" class="control-label col-md-2">Nombre</label>
+                </th>
+                <th>
+                    <label for="Last_Names" class="control-label col-md-2">Apellido</label>
+                </th>
+                <th>
+                    <label for="Email" class="control-label col-md-2">Email</label>
+                </th>
+                <th>
+                    <label for="IdentificationCard" class="control-label col-md-2">Identificación</label>
+                </th>
+                <th>
+                    <label for="Comment" class="control-label col-md-2">Comentario</label>
+                </th>
+                <th>
+                    <label for="StartDate" class="control-label col-md-2">Fecha y Hora</label>
+                </th>
+
+                <th></th>
+            </tr>
+
+
+            @foreach (var item in Model)
             {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DoctorUsername)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Phone)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Names)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Last_Names)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Phone)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IdentificationCard)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Comment)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartHour)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-                        </td>
-                    </tr>
-                }
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorFullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Names)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Last_Names)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdentificationCard)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Borrar", "DeleteAppointment", new { Id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+
+                </tr>
+            }
 
             </table>
 
