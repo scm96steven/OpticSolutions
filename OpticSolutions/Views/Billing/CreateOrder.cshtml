@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xs-7">
                     <select style="width:100%" id="productSelect" name="productSelect"></select>
-
+                
                 </div>
                 <div class="col-xs-2">
                     Cantidad
@@ -115,7 +115,11 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <br />
+            <label for="clientSelect">Cliente y/o paciente:</label>
+        <select style="width:100%" id="clientSelect" name="clientSelect"></select>
+        </div>
         <div class="col-md-4">
             <br />
             <label for="PaymentMethod">Metodo de pago:</label>
@@ -183,12 +187,12 @@
                     });
 
 
-
+                    var client = { ClientId: $("#clientSelect").val() };
                     var paymentMethod = { Id: $("#PaymentMethod").val() };
                     $.ajax({
                         type: 'POST',
                         url: '@Url.Action("CompleteOrder", "Billing")',
-                        data: { OrderDetails: itemsList, PaymentMethod: paymentMethod }
+                        data: { OrderDetails: itemsList, PaymentMethod: paymentMethod, Client: client }
                     });
 
                     $.ajax({
@@ -203,7 +207,7 @@
 
                     });
                 });
-                
+
 
                     //boton de borrar producto
                     $('#billDetail').on('click', '.btn-delete', function ()
@@ -212,7 +216,7 @@
 
                         var prod = $(this).closest("li").find('.ProductPrice').val();
                         var qua = $(this).closest("li").find('.ProductQuantity').val();
-       
+
 
                         subtotal = subtotal - (prod * qua);
                         total = subtotal * 1.18;
@@ -240,7 +244,7 @@
                         //var priceHidden = $(".productId" + id).find('.ProductPrice');
                         var quantityHidden = $(".productId" + id).find('.ProductQuantity');
 
-             
+
 
                         if (exist.length > 0) {
                             console.log("No ajax");
@@ -348,7 +352,7 @@
                         success: function (data) {
 
                             $("#productSelect").empty();
-                  @*var selected = "@Model.DoctorUsername";*@
+ 
 
                             $.each(data, function (index, item) {
                                 var userName = item.UserName;
@@ -360,6 +364,26 @@
                             //$("#doctorSelect").val(selected);
                         }
                     });
+
+
+                  //Ajax para llenar lista de clientes
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("GetClients", "Clients")',
+
+                        success: function (data) {
+
+                            $.each(data, function (index, item) {
+                               
+                                var p = new Option(item.Names+ " " + item.Last_Names, item.ClientId);
+
+                                $("#clientSelect").append(p);
+
+                            });
+                   
+                        }
+                    });
+
 
 
 

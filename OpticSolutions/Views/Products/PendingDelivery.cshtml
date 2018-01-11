@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
+                        <th>Telefono</th>
                         <th>Descripcion</th>
                         <th>Fecha</th>
                         <th></th>
@@ -32,10 +33,11 @@
                     {
                         <tr>
 
-                            <td>@PenWork.Name</td>
-                            <td>@PenWork.Description</td>
+                            <td>@PenWork.ClientName</td>
+                            <td>@PenWork.Phone</td>
+                            <td>@PenWork.ProductName</td>
                             <td>@PenWork.AssignDate</td>
-                            <td>@Html.ActionLink("Completar pendiente", "CompletePending", "Products", new { OrderId=PenWork.OrderId }, new { @class = "btn btn-success" })</td>
+                            <td>@Html.ActionLink("Completar entrega", "CompleteDelivery", "Products", new { OrderId = PenWork.OrderId }, new { @class = "btn btn-success" })</td>
                         </tr>
                     }
 

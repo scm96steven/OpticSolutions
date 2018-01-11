@@ -146,7 +146,16 @@ namespace OpticSolutions.Controllers
             return View(data);
         }
 
-     
+
+        public JsonResult GetClients()
+        {
+
+            var list = repo.SearchClients(new Client());
+
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }

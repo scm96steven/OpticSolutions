@@ -11,7 +11,7 @@ namespace OpticSolutions.Repositories.Entitys
 
         public int OrderId { get; set; }
         public DateTime CreatedDate { get; set; }
-
+        public Client Client { get; set; }
         public List<Product> OrderDetails { get; set; }
         public int OrderStatusId { get; set; }
         public string OrderStatusDescription { get; set; }
