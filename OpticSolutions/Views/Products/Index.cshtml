@@ -9,20 +9,20 @@
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
+<div class="container">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2><i class="fa fa-list"></i> Lista de productos</h2>
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2><i class="fa fa-list"></i> Lista de productos</h2>
-
-  
-        @Html.ActionLink("Crear Nuevo", "Create", "Products", new { @class = "btn btn-success"})
+            @Html.ActionLink("Crear Nuevo", "Create", "Products", new { @class = "btn btn-success" })
 
 
-    </div>
-    <div class="panel-body">
-        <table id="products" class="table table-bordered table-hover">
-            <thead>
+        </div>
+        <div class="panel-body">
+            <table id="products" class="table table-bordered table-hover">
+                <thead>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
@@ -39,11 +39,11 @@
                     Requiere trabajo?
                 </th>
                 <th></th>
-            </thead>
+                </thead>
 
-            @foreach (var item in Model)
-        {
-                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tbody>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -57,9 +57,9 @@
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        @if (item.ReqWork==0)
-	                     {
-	                	  <p>No</p>
+                        @if (item.ReqWork == 0)
+                        {
+                            <p>No</p>
                         }
                         else
                         {
@@ -68,30 +68,30 @@
                     </td>
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { ProductId = item.ProductId }, new { @class = "btn btn-primary" }) |
-                     
-                        @Html.ActionLink("Delete", "Delete", new { ProductId = item.ProductId },new{ @class="btn btn-danger" } )
+
+                        @Html.ActionLink("Delete", "Delete", new { ProductId = item.ProductId }, new { @class = "btn btn-danger" })
                     </td>
-                </tbody>
-        }
+                    </tbody>
+                }
 
-        </table>
+            </table>
+        </div>
     </div>
-</div>
+    </div>
 
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
+        $(document).ready(function () {
 
-    $(document).ready(function () {
-
-        $('#products').DataTable({
-            dom: 'Bfrtip',
-                        buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+            $('#products').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
-    });
-
-</script>
+        
+    </script>
 
 

@@ -6,74 +6,76 @@
 }
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="container">
 
 
+    @if (Model != null)
+    {
 
-@if (Model != null)
-{
-
-    <div class="box box-primary box-solid ">
-        <div class="box-header">
-            <h2><i class="fa fa-list"></i> Lista de pacientes</h2>
-            @Html.ActionLink("Crear Nuevo Paciente", "Create", "Clients", new { @class = "btn btn-success" })
-        </div>
-        <div class="box-body">
-            <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>Apellidos </th>
-                        <th>Email</th>
-                        <th>Telefono</th>
-                        <th>Cedula</th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-                @*<tfoot>
+        <div class="box box-primary box-solid ">
+            <div class="box-header">
+                <h2><i class="fa fa-list"></i> Lista de pacientes</h2>
+                @Html.ActionLink("Crear Nuevo Paciente", "Create", "Clients", new { @class = "btn btn-success" })
+            </div>
+            <div class="box-body">
+                <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
+                    <thead>
                         <tr>
                             <th>Nombres</th>
                             <th>Apellidos </th>
                             <th>Email</th>
                             <th>Telefono</th>
                             <th>Cedula</th>
+                            <th></th>
+
                         </tr>
-                    </tfoot>*@
-                <tbody>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Apellidos </th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>Cedula</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
 
-                    @foreach (var client in Model)
-                    {
-                        <tr>
+                        @foreach (var client in Model)
+                        {
+                            <tr>
 
-                            <td>@client.Names</td>
-                            <td>@client.Last_Names</td>
-                            <td>@client.Email</td>
-                            <td>@client.Phone</td>
-                            <td>@client.IdentificationCard</td>
-                            <td>@Html.ActionLink("Historial", "Record", "Clients", new { @class = "btn btn-primary" })</td>
-                        </tr>
-                    }
+                                <td>@client.Names</td>
+                                <td>@client.Last_Names</td>
+                                <td>@client.Email</td>
+                                <td>@client.Phone</td>
+                                <td>@client.IdentificationCard</td>
+                                <td>@Html.ActionLink("Historial", "Record", "Clients", new { @class = "btn btn-primary" })</td>
+                            </tr>
+                        }
 
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    }
     </div>
-}
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
 
-    $(document).ready(function () {
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-        $('#example').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
-    });
 
-</script>
+    </script>
 
 

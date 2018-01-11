@@ -8,103 +8,104 @@
 
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
-<div class="box box-widget widget-user">
-    
-    <!-- Add the bg color to the header using any of the bg-* classes -->
-    <div class="widget-user-header bg-aqua-active">
-        <h3 class="widget-user-username"><strong>Record</strong> <br />@Model.Client.Names @Model.Client.Last_Names</h3>
-        <h5 class="widget-user-desc"></h5>
-    </div>
-    <div class="box-footer">
-        <div class="row">
-            <div class="col-sm-4 border-right">
-                <div class="description-block">
-                    <h5 class="description-header">@Model.Client.Phone </h5>
-                    <span class="description-text">Telefono</span>
-                </div>
-                <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-4 border-right">
-                <div class="description-block">
-                    <h5 class="description-header">@Model.Client.Email</h5>
-                    <span class="description-text">Correo</span>
-                </div>
-                <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-4">
-                <div class="description-block">
-                    <h5 class="description-header">@Model.Client.IdentificationCard</h5>
-                    <span class="description-text">Cedula</span>
-                </div>
-                <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
+<div class="container">
+    <div class="box box-widget widget-user">
+
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-aqua-active">
+            <h3 class="widget-user-username"><strong>Record</strong> <br />@Model.Client.Names @Model.Client.Last_Names</h3>
+            <h5 class="widget-user-desc"></h5>
         </div>
-        <!-- /.row -->
-    </div>
-</div>
-
-
-@if (Model.Records != null)
-{
-
-    <div class="box box-success box-solid ">
-        <div class="box-header">
-            <h1 class="panel-title">Record del paciente:</h1>
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <h5 class="description-header">@Model.Client.Phone </h5>
+                        <span class="description-text">Telefono</span>
+                    </div>
+                    <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <h5 class="description-header">@Model.Client.Email</h5>
+                        <span class="description-text">Correo</span>
+                    </div>
+                    <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4">
+                    <div class="description-block">
+                        <h5 class="description-header">@Model.Client.IdentificationCard</h5>
+                        <span class="description-text">Cedula</span>
+                    </div>
+                    <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-        <div class="box-body">
+    </div>
 
-            <table id="record" class="hover stripe table-bordered" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Doctor </th>
-                        <th>Descripcion</th>
-                
 
-                    </tr>
-                </thead>
-        
-                <tbody>
+    @if (Model.Records != null)
+    {
 
-                    @foreach (var record in Model.Records)
-                    {
+        <div class="box box-success box-solid ">
+            <div class="box-header">
+                <h1 class="panel-title">Record del paciente:</h1>
+            </div>
+            <div class="box-body">
+
+                <table id="record" class="hover stripe table-bordered" width="100%" cellspacing="0">
+                    <thead>
                         <tr>
+                            <th>Fecha</th>
+                            <th>Doctor </th>
+                            <th>Descripcion</th>
 
-                            <td>@record.Date.ToShortDateString()</td>
-                            <td>@record.DoctorFullName</td>
-                            <td>@record.Description</td>
+
                         </tr>
-                    }
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var record in Model.Records)
+                        {
+                            <tr>
+
+                                <td>@record.Date.ToShortDateString()</td>
+                                <td>@record.DoctorFullName</td>
+                                <td>@record.Description</td>
+                            </tr>
+                        }
 
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    }
+
+    <div>
+
+        <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Atras" class="btn btn-danger" />
     </div>
-}
+    </div>
 
-<div>
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-    <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Atras" class="btn btn-danger" />
-</div>
+        $(document).ready(function () {
 
-
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        $('#record').DataTable({
-            dom: 'Bfrtip',
-            "bFilter": false,
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+            $('#record').DataTable({
+                dom: 'Bfrtip',
+                "bFilter": false,
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
-    });
-
-</script>
+       
+    </script>

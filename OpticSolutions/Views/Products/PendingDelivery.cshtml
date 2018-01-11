@@ -6,59 +6,61 @@
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
+<div class="container">
+    @if (Model != null)
+    {
 
-@if (Model != null)
-{
-
-    <div class="box box-primary box-solid ">
-        <div class="box-header">
-            <h2><i class="fa fa-envelope-open-o"></i> Entregas pendientes</h2>
-        </div>
-        <div class="box-body">
-            <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Telefono</th>
-                        <th>Descripcion</th>
-                        <th>Fecha</th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    @foreach (var PenWork in Model)
-                    {
+        <div class="box box-primary box-solid ">
+            <div class="box-header">
+                <h2><i class="fa fa-envelope-open-o"></i> Entregas pendientes</h2>
+            </div>
+            <div class="box-body">
+                <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
+                    <thead>
                         <tr>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Descripcion</th>
+                            <th>Fecha</th>
+                            <th></th>
 
-                            <td>@PenWork.ClientName</td>
-                            <td>@PenWork.Phone</td>
-                            <td>@PenWork.ProductName</td>
-                            <td>@PenWork.AssignDate</td>
-                            <td>@Html.ActionLink("Completar entrega", "CompleteDelivery", "Products", new { OrderId = PenWork.OrderId }, new { @class = "btn btn-success" })</td>
                         </tr>
-                    }
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var PenWork in Model)
+                        {
+                            <tr>
+
+                                <td>@PenWork.ClientName</td>
+                                <td>@PenWork.Phone</td>
+                                <td>@PenWork.ProductName</td>
+                                <td>@PenWork.AssignDate</td>
+                                <td>@Html.ActionLink("Completar entrega", "CompleteDelivery", "Products", new { OrderId = PenWork.OrderId }, new { @class = "btn btn-success" })</td>
+                            </tr>
+                        }
 
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    }
     </div>
-}
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
 
-    $(document).ready(function () {
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-        $('#example').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
-    });
 
-</script>
+    </script>
