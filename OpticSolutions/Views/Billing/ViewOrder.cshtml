@@ -3,128 +3,130 @@
 
 }
 
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Factura
-            <small>#@Model.OrderId</small>
-        </h1>
+<div class="container">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Factura
+                <small>#@Model.OrderId</small>
+            </h1>
 
-    </section>
-    <!-- Main content -->
-    <section class="invoice">
-        <!-- title row -->
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 class="page-header">
-                    <span class="logo-lg"><img src="~/OSContent/img/Optic solutions logo.png" style="height:50px; width:auto" /><b>Optic</b>Solutions</span>
-      
-                    <small class="pull-right">Fecha: @Model.CreatedDate.ToShortDateString()</small>
-                </h2>
-            </div><!-- /.col -->
-        </div>
-        <!-- info row -->
-        <div class="row invoice-info">
-            <div class="col-sm-4 invoice-col">
-                <b>Factura #@Model.OrderId</b><br />
-                <b>Fecha y hora:</b> @Model.CreatedDate<br />
-                <b>Atendido por:</b> @Model.CreatedBy<br />
-            </div><!-- /.col -->
-        
-        </div><!-- /.row -->
-        <!-- Table row -->
-        <div class="row">
-            <div class="col-xs-12 table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Cantidad</th>
-                            <th>Detalle</th>
-                            <th>Descripcion</th>
-                            <th>Subtotal</th>
-                            <th>ITBIS</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        </section>
+        <!-- Main content -->
+        <section class="invoice">
+            <!-- title row -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="page-header">
+                        <span class="logo-lg"><img src="~/OSContent/img/Optic solutions logo.png" style="height:50px; width:auto" /><b>Optic</b>Solutions</span>
 
-                        @foreach (var item in Model.OrderDetails)
-                        {
-                            System.Globalization.CultureInfo us = new System.Globalization.CultureInfo("en-US");
+                        <small class="pull-right">Fecha: @Model.CreatedDate.ToShortDateString()</small>
+                    </h2>
+                </div><!-- /.col -->
+            </div>
+            <!-- info row -->
+            <div class="row invoice-info">
+                <div class="col-sm-4 invoice-col">
+                    <b>Factura #@Model.OrderId</b><br />
+                    <b>Fecha y hora:</b> @Model.CreatedDate<br />
+                    <b>Atendido por:</b> @Model.CreatedBy<br />
+                </div><!-- /.col -->
 
+            </div><!-- /.row -->
+            <!-- Table row -->
+            <div class="row">
+                <div class="col-xs-12 table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Cantidad</th>
+                                <th>Detalle</th>
+                                <th>Descripcion</th>
+                                <th>Subtotal</th>
+                                <th>ITBIS</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model.OrderDetails)
+                            {
+                                System.Globalization.CultureInfo us = new System.Globalization.CultureInfo("en-US");
+
+
+                                <tr>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td>@((item.Quantity * item.Price).ToString("c", us))</td>
+                                    <td>
+                                        @((item.Quantity * item.Price * 0.18).ToString("c", us))
+                                    </td>
+                                    <td> @((item.Quantity * item.Price * 1.18).ToString("c", us))</td>
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-xs-6">
+                    <p class="lead">Metodo de pago:</p>
+
+                </div><!-- /.col -->
+                <div class="col-xs-6">
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th style="width:50%">Subtotal:</th>
+                                <td>
+                                    @{
+                                        System.Globalization.CultureInfo usd = new System.Globalization.CultureInfo("en-US");
+
+                                        @Model.Total.ToString("c", usd);
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>ITBIS (18%)</th>
+                                <td>
+
+
+                                    @((@Model.Total * 0.18).ToString("c", usd))
+
+                                </td>
+                            </tr>
 
                             <tr>
-                                <td>@item.Quantity</td>
-                                <td>@item.Name</td>
-                                <td>@item.Description</td>
-                                <td>@((item.Quantity * item.Price).ToString("c", us))</td>
-                                <td>
-                                    @((item.Quantity * item.Price * 0.18).ToString("c", us))</td>
-                                <td> @((item.Quantity * item.Price * 1.18).ToString("c", us))</td>
+                                <th>Total:</th>
+                                <td>@((@Model.Total * 1.18).ToString("c", usd))</td>
                             </tr>
-                        }
-                 
-                        
-                       
-                    </tbody>
-                </table>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-        <div class="row">
-            <!-- accepted payments column -->
-            <div class="col-xs-6">
-                <p class="lead">Metodo de pago:</p>
-           
-            </div><!-- /.col -->
-            <div class="col-xs-6">
-             
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th style="width:50%">Subtotal:</th>
-                            <td>
-                                @{
-                                    System.Globalization.CultureInfo usd = new System.Globalization.CultureInfo("en-US");
-
-                                   @Model.Total.ToString("c", usd);
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>ITBIS (18%)</th>
-                            <td>
-                            
-
-                                @((@Model.Total * 0.18).ToString("c", usd))
-                              
-                            </td>
-                        </tr>
-               
-                        <tr>
-                            <th>Total:</th>
-                            <td>@((@Model.Total * 1.18).ToString("c", usd))</td>
-                        </tr>
-                    </table>
+                        </table>
+                    </div>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <!-- this row will not appear when printing -->
+            <div class="row no-print">
+                <div class="col-xs-12">
+                    <a onclick="printPage()" class="btn btn-success btn-lg"><i class="fa fa-print"></i> Print</a>
                 </div>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-        <!-- this row will not appear when printing -->
-        <div class="row no-print">
-            <div class="col-xs-12">
-                <a  onclick="printPage()"  class="btn btn-success btn-lg"><i class="fa fa-print"></i> Print</a>
             </div>
-        </div>
-    </section><!-- /.content -->
-    <div class="clearfix"></div>
-</div><!-- /.content-wrapper -->
+        </section><!-- /.content -->
+        <div class="clearfix"></div>
+    </div><!-- /.content-wrapper -->
+</div>
 
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        function printPage() {
+            window.print();
+        }
 
-    function printPage() {
-        window.print();
-    }
-
-</script>
+    </script>
 

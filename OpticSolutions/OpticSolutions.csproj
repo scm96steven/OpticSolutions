@@ -173,6 +173,10 @@
     <Content Include="Views\Billing\OrderList.cshtml" />
     <Content Include="Views\Billing\ViewOrder.cshtml" />
     <Content Include="Views\Products\PendingDelivery.cshtml" />
+    <Content Include="Views\Shared\Menu\_AdminMenu.cshtml" />
+    <Content Include="Views\Shared\Menu\_AssitantMenu.cshtml" />
+    <Content Include="Views\Shared\Menu\_DoctorMenu.cshtml" />
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,6 +195,7 @@
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\FilterConfig.cs" />
     <Compile Include="Models\LogInModel.cs" />
+    <Compile Include="Models\MyAuthorizeAtribute.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">
