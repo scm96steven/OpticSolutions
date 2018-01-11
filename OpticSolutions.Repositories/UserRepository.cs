@@ -39,7 +39,7 @@ namespace OpticSolutions.Repositories
             queryParameters.Add("@firstname", user.FirstName);
             queryParameters.Add("@lastname", user.LastName);
             queryParameters.Add("@phone", user.Phone);
-            queryParameters.Add("@userphoto", user.UserPhoto);
+            queryParameters.Add("@userphoto", user.UserPhoto, System.Data.DbType.Binary,System.Data.ParameterDirection.Input, -1);
             queryParameters.Add("@username", user.UserName);
 
             conn.Query("EDIT_PROFILE", queryParameters, commandType: System.Data.CommandType.StoredProcedure);

@@ -99,6 +99,17 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public List<PendingWork> GetPendingDelivery()
+        {
+            conn.Open();
+            var data = conn.Query<PendingWork>("GET_PENDING_DELIVERY", null,
+                commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            conn.Close();
+            return data;
+        }
+
+
         public void CompletePendingWork(PendingWork pw)
         {
             conn.Open();
@@ -106,6 +117,17 @@ namespace OpticSolutions.Repositories
             queryParameters.Add("@order_id", pw.OrderId);
 
             conn.Query("COMPLETE_PENDING_WORK", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            conn.Close();
+        }
+
+
+        public void CompletePendingDelivery(PendingWork pw)
+        {
+            conn.Open();
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@order_id", pw.OrderId);
+
+            conn.Query("COMPLETE_PENDING_DELIVERY", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
             conn.Close();
         }
 

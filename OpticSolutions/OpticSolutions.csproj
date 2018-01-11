@@ -172,6 +172,7 @@
     <Content Include="Views\Billing\CreateOrder.cshtml" />
     <Content Include="Views\Billing\OrderList.cshtml" />
     <Content Include="Views\Billing\ViewOrder.cshtml" />
+    <Content Include="Views\Products\PendingDelivery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

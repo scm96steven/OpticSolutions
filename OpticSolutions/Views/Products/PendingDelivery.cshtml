@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OpticSolutions.Repositories.Entitys.PendingWork>
+
+@{
+
+}
+
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+@if (Model != null)
+{
+
+    <div class="box box-primary box-solid ">
+        <div class="box-header">
+            <h2>Entregas pendientes</h2>
+        </div>
+        <div class="box-body">
+            <table id="example" class="hover stripe table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Fecha</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var PenWork in Model)
+                    {
+                        <tr>
+
+                            <td>@PenWork.Name</td>
+                            <td>@PenWork.Description</td>
+                            <td>@PenWork.AssignDate</td>
+                            <td>@Html.ActionLink("Completar pendiente", "CompletePending", "Products", new { OrderId=PenWork.OrderId }, new { @class = "btn btn-success" })</td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+
+</script>

@@ -74,6 +74,14 @@ namespace OpticSolutions.Controllers
             return View(data);
         }
 
+        public ActionResult PendingDelivery()
+        {
+            ProductService svc = new ProductService();
+            var data = svc.GetPendingDelivery();
+
+            return View(data);
+        }
+
         [HttpGet]
         public ActionResult CompletePending(PendingWork pw)
         {
@@ -81,6 +89,15 @@ namespace OpticSolutions.Controllers
 
            return RedirectToAction("PenWork");
         }
+
+        [HttpGet]
+        public ActionResult CompleteDelivery(PendingWork pw)
+        {
+            repo.CompletePendingDelivery(pw);
+
+            return RedirectToAction("PendingDelivery");
+        }
+
 
 
 

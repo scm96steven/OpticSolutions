@@ -188,14 +188,16 @@ namespace OpticSolutions.Controllers
         {
             // To convert the user uploaded Photo as Byte Array before save to DB
             byte[] imageData = null;
-            if (Request.Files.Count > 0)
-            {
-                HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+            HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
 
-                using (var binary = new BinaryReader(poImgFile.InputStream))
-                {
-                    imageData = binary.ReadBytes(poImgFile.ContentLength);
-                }
+            using (var binary = new BinaryReader(poImgFile.InputStream))
+            {
+                imageData = binary.ReadBytes(poImgFile.ContentLength);
+            }
+
+
+            if (imageData.Length > 0)
+            {
                 pro.UserPhoto = imageData;
             }
             else

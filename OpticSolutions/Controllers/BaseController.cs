@@ -21,7 +21,6 @@ namespace OpticSolutions.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                // AppUser data = repo.GetUserInfoById(model.Email);
                
                 var userImage = repo.GetUserInfoById(User.Identity.Name);
                 if (userImage.UserPhoto==null)
@@ -36,14 +35,11 @@ namespace OpticSolutions.Controllers
                     imageData = br.ReadBytes((int)imageFileLength);
 
                     return File(imageData, "image/jpeg");
-
                 }
 
 
                 // to get the user details to load user Image
                
-                
-
                 return new FileContentResult(userImage.UserPhoto, "image/jpeg");
             }
             else

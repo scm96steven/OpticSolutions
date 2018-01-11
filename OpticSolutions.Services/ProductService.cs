@@ -64,5 +64,18 @@ namespace OpticSolutions.Services
             repo.CompletePendingWork(pw);
         }
 
+        public void CompletePendingDelivery(PendingWork pw)
+        {
+
+            repo.CompletePendingDelivery(pw);
+        }
+
+        public List<PendingWork> GetPendingDelivery()
+        {
+            var data = repo.GetPendingDelivery();
+
+            return data;
+        }
+
     }
 }
