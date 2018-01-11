@@ -5,119 +5,119 @@
 
     
 
-
+<div class="container">
 
     <div class="box box-primary box-solid ">
-    <div class="box-header">
-        <h1>Editar Perfil</h1>
-    </div>
-    <div class="box-body">
+        <div class="box-header">
+            <h1>Editar Perfil</h1>
+        </div>
+        <div class="box-body">
 
 
 
-        <div class="container">
-          
-            <hr>
-            <div class="row">
+            <div class="container">
+
+                <hr>
+                <div class="row">
 
 
 
-@using (Html.BeginForm("ProfileMenu", "Auth", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
-{
+                    @using (Html.BeginForm("ProfileMenu", "Auth", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                    {
                 <!-- left column -->
-                <div class="col-md-3">
-                    <div class="text-center">
-                        <img src="@Url.Action("UserPhotos", "Base" )" class="avatar img-circle" alt="avatar" id="photoPreview" style="height:100px; width:100px;">
-                        <h6>subir una foto diferente</h6>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <img src="@Url.Action("UserPhotos", "Base" )" class="avatar img-circle" alt="avatar" id="photoPreview" style="height:100px; width:100px;">
+                                <h6>subir una foto diferente</h6>
 
-                        <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" />
+                                <input type="file" name="UserPhoto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" />
 
 
-                    </div>
-                </div>
+                            </div>
+                        </div>
 
                 <!-- edit form column -->
-                <div class="col-md-9 personal-info">
+                        <div class="col-md-9 personal-info">
 
-                    <h3>Información Personal</h3>
+                            <h3>Información Personal</h3>
 
-                
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label" for="FirstName">Nombre:</label>
-                            <div class="col-lg-8">
-                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-             
 
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label" for="LastName">Apellido:</label>
-                            <div class="col-lg-8">
-                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="FirstName">Nombre:</label>
+                                <div class="col-lg-8">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
 
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label" for="Phone">Telefono:</label>
-                        <div class="col-lg-8">
-                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
 
-             
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                
-                
-                        @*<div class="form-group">
-                            <label class="col-md-3 control-label">Contraseña:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="password" value="11111122333">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="LastName">Apellido:</label>
+                                <div class="col-lg-8">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="Phone">Telefono:</label>
+                                <div class="col-lg-8">
+                                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                            @*<div class="form-group">
+                                    <label class="col-md-3 control-label">Contraseña:</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" type="password" value="11111122333">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Confirmar Contraseña:</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" type="password" value="11111122333">
+                                    </div>
+                                </div>*@
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <input type="submit" class="btn btn-primary" value="Guardar Cambios">
+                                    <span></span>
+                                    <input type="reset" class="btn btn-default" value="Cancelar">
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Confirmar Contraseña:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="password" value="11111122333">
-                            </div>
-                        </div>*@
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-8">
-                                <input type="submit" class="btn btn-primary" value="Guardar Cambios">
-                                <span></span>
-                                <input type="reset" class="btn btn-default" value="Cancelar">
-                            </div>
-                        </div>
-             
+                    }
                 </div>
-}
             </div>
         </div>
     </div>
-</div>
+    </div>
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
 
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-<script type="text/javascript">
+        function readURL(input) {
 
-    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#photoPreview').attr('src', e.target.result);
+                }
 
-    reader.onload = function(e) {
-        $('#photoPreview').attr('src', e.target.result);
-    }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
-    reader.readAsDataURL(input.files[0]);
-  }
-}
+        $("#fileUpload").change(function () {
+            readURL(this);
+        });
 
-    $("#fileUpload").change(function() {
-  readURL(this);
-});
-
-</script>
+    </script>

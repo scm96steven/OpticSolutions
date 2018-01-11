@@ -3,176 +3,177 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
-@using (Html.BeginForm("CrearCita", "Appointments", FormMethod.Post, null))
-{
-<div class="box box-primary box-solid">
-    <div class="box-header">
-        <p class="box-title"><i class="fa fa-pencil-square"></i> Crear Nueva Cita</p>
-    </div>
-    <div class="box-body">
+<div class="container">
+    @using (Html.BeginForm("CrearCita", "Appointments", FormMethod.Post, null))
+    {
+        <div class="box box-primary box-solid">
+            <div class="box-header">
+                <p class="box-title"><i class="fa fa-pencil-square"></i> Crear Nueva Cita</p>
+            </div>
+            <div class="box-body">
 
-        <div class="col-md-6">
+                <div class="col-md-6">
 
-                @Html.AntiForgeryToken()
-        
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label for="StartDateStr" class="control-label col-md-3">Seleccione una fecha</label>
-                        <div class="col-md-4">
+                    @Html.AntiForgeryToken()
 
-                            <input type="date" name="StartDateStr" id="appDate" class = "form-control datepicker" value="@Model.StartDateStr">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="StartDateStr" class="control-label col-md-3">Seleccione una fecha</label>
+                            <div class="col-md-4">
 
-                            @*@Html.TextBoxFor(m => m.StartDateStr, "{0:yyyy-MM-dd}", new { @type = "date", name = "StartDateStr", id = "appDate", @class = "form-control datepicker", value = @Model.StartDateStr })*@
+                                <input type="date" name="StartDateStr" id="appDate" class="form-control datepicker" value="@Model.StartDateStr">
 
+                                @*@Html.TextBoxFor(m => m.StartDateStr, "{0:yyyy-MM-dd}", new { @type = "date", name = "StartDateStr", id = "appDate", @class = "form-control datepicker", value = @Model.StartDateStr })*@
+
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
-            
+            </div>
         </div>
-    </div>
-</div>
 
 
 
- <div class="box box-success box-solid" id="test" style="display:none">
+        <div class="box box-success box-solid" id="test" style="display:none">
             <div class="box-header">
                 <p class="box-title">Disponibilidad del dia</p>
 
             </div>
             <div class="box-body">
-         
-                <div id="timeline" >
+
+                <div id="timeline">
 
                 </div>
 
-     
+
                 <div class="col-md-6">
 
-                            <div class="form-horizontal">
-                             
-                          
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="form-group">
-
-                                    <label for="DoctorUsername" class="control-label col-md-2">Doctor</label>
-                                    <div class="col-md-10">
-                                        <select style="width:100%" id="doctorSelect" name="DoctorUsername"></select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Names" class="control-label col-md-2">Nombres</label>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Names, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Names, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Last_Names" class="control-label col-md-2">Apellidos</label>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Last_Names, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Last_Names, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="IdentificationCard" class="control-label col-md-2">Cedula</label>
-                                    <div class="col-md-10">
-
-                                        <input type="number" name="IdentificationCard"
-                                               pattern="[1-9]{11}" title="Cedula sin guiones" class="form-control col-md-2" placeholder="01026505475">
-                                        @Html.ValidationMessageFor(model => model.IdentificationCard, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-
-                                    </div>
-                                </div>
+                    <div class="form-horizontal">
 
 
-                                <div class="form-group">
-                                    <label for="Phone" class="control-label col-md-2">Telefono</label>
-                                    <div class="col-md-10">
-                                        @if (Model.Phone != null)
-                                        {
-                                            <input type="text" name="Phone"
-                                                   pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355"
-                                                   value="@Model.Phone">
-                                        }
-                                        else
-                                        {
-                                            <input type="text" name="Phone"
-                                                   pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355">
-                                        }
-                                  
-                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
 
+                            <label for="DoctorUsername" class="control-label col-md-2">Doctor</label>
+                            <div class="col-md-10">
+                                <select style="width:100%" id="doctorSelect" name="DoctorUsername"></select>
+                            </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label for="Comment" class="control-label col-md-2">Comentario</label>
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <label for="Names" class="control-label col-md-2">Nombres</label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Names, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Names, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="Last_Names" class="control-label col-md-2">Apellidos</label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Last_Names, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Last_Names, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="IdentificationCard" class="control-label col-md-2">Cedula</label>
+                            <div class="col-md-10">
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Hora de inicio</label>
-                                    <div class="col-md-10">
-                                        @if (Model.StartHourStr != null)
-                                        {
-                                            <input name="StartHourStr" id="startHour" class="timepicker" type="time" 
-                                                   value="@Model.StartHourStr"/>
-                                        }
-                                        else
-                                        {
-                                            <input name="StartHourStr" id="startHour" class="timepicker" type="time" />
-                                        }
-                                      
-                                        @Html.ValidationMessageFor(model => model.StartHourStr, "", new { @class = "text-danger" })
+                                <input type="number" name="IdentificationCard"
+                                       pattern="[1-9]{11}" title="Cedula sin guiones" class="form-control col-md-2" placeholder="01026505475">
+                                @Html.ValidationMessageFor(model => model.IdentificationCard, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-                                        @if (Model.NumberOfAppointments > 0)
-                                        {
-                                            <p class="text-danger">Seleccione otra hora, @Model.StartHourStr no esta disponible</p>
-                                        }
-                                    </div>
-                                </div>
-                              
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                       
-                                        <input type="submit" value="Siguiente" class="btn btn-success form-control" />
-                                    </div>
-                                </div>
-
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
                             </div>
-                            
-</div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="Phone" class="control-label col-md-2">Telefono</label>
+                            <div class="col-md-10">
+                                @if (Model.Phone != null)
+                                {
+                                    <input type="text" name="Phone"
+                                           pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355"
+                                           value="@Model.Phone">
+                                }
+                                else
+                                {
+                                    <input type="text" name="Phone"
+                                           pattern="[0-9]{5-11}" title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355">
+                                }
+
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="Comment" class="control-label col-md-2">Comentario</label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Hora de inicio</label>
+                            <div class="col-md-10">
+                                @if (Model.StartHourStr != null)
+                                {
+                                    <input name="StartHourStr" id="startHour" class="timepicker" type="time"
+                                           value="@Model.StartHourStr" />
+                                }
+                                else
+                                {
+                                    <input name="StartHourStr" id="startHour" class="timepicker" type="time" />
+                                }
+
+                                @Html.ValidationMessageFor(model => model.StartHourStr, "", new { @class = "text-danger" })
+
+                                @if (Model.NumberOfAppointments > 0)
+                                {
+                                    <p class="text-danger">Seleccione otra hora, @Model.StartHourStr no esta disponible</p>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+
+                                <input type="submit" value="Siguiente" class="btn btn-success form-control" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
 
-}
+    }
+    </div>
 
 
 
-
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
 
 
 
@@ -240,7 +241,7 @@
                         });
                         $("#timeline").append(text);
                     }
-                 
+
                 }
                  });
 
@@ -249,9 +250,9 @@
         }
     };
 
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-<script type="text/javascript">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script type="text/javascript">
 
       $(document).ready(function () {
 
@@ -272,8 +273,8 @@
           }
           else
           {
-            
-             
+
+
 
           }
 
@@ -294,8 +295,8 @@
                   setTimeout(drawDoctorChart, 600);
               }
               else {
-            
-          
+
+
               }
 
 
@@ -319,12 +320,12 @@
                       var p = new Option(item.FirstName + " " + item.LastName, item.UserName);
                       console.log(selected);
                       $("#doctorSelect").append(p);
-                      
+
                   });
                   $("#doctorSelect").val(selected);
               }
           });
     });
 
-</script>
+    </script>
 

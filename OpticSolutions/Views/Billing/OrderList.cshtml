@@ -6,70 +6,71 @@
 
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
-<div class="box box-primary box-solid ">
-    <div class="box-header">
-        <h2><i class="fa fa-archive"></i> Facturas</h2>
+<div class="container">
+    <div class="box box-primary box-solid ">
+        <div class="box-header">
+            <h2><i class="fa fa-archive"></i> Facturas</h2>
+        </div>
+        <div class="box-body">
+            <table class="hover stripe table-bordered" width="100%" cellspacing="0" id="orders">
+                <tr>
+                    <th>
+                        Id Factura
+                    </th>
+                    <th>
+                        Fecha de cracion
+                    </th>
+
+                    <th>
+                        Estado
+                    </th>
+                    <th></th>
+                </tr>
+
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderId)
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderStatusDescription)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Mostrar Detalles", "ViewOrder", new { OrderId = item.OrderId }, new { @class = "btn btn-success" })
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+
+        </div>
+
     </div>
-    <div class="box-body">
-        <table class="hover stripe table-bordered" width="100%" cellspacing="0" id="orders">
-            <tr>
-                <th>
-                    Id Factura
-                </th>
-                <th>
-                    Fecha de cracion
-                </th>
-      
-                <th>
-                   Estado
-                </th>
-                <th></th>
-            </tr>
 
+    <br />
 
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                @item.CreatedDate
-            </td>
-          
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderStatusDescription)
-            </td>
-            <td>
-                @Html.ActionLink("Mostrar Detalles", "ViewOrder", new {OrderId = item.OrderId }, new {@class = "btn btn-success"})
-            </td>
-        </tr>
-}
-
-
-        </table>
 
     </div>
 
-</div>
+    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
 
-<br />
+        $(document).ready(function () {
 
+            $('#orders').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
 
-
-
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
-
-                $(document).ready(function () {
-
-                    $('#orders').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: [
-                            'copy', 'csv', 'excel', 'pdf', 'print'
-                        ]
-                    });
-                });
-
-</script>
+    </script>
