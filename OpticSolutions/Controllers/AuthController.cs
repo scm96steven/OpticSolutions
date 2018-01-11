@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using OpticSolutions.Models;
 using OpticSolutions.Repositories.Entitys;
@@ -205,6 +206,8 @@ namespace OpticSolutions.Controllers
           
             pro.UserName = User.Identity.Name;
             repo.EditProfile(pro);
+            //AddUserToRole(pro.UserName, "Administrador");
+
            var data = repo.GetUserInfoById(HttpContext.User.Identity.Name);
             return View(data);
         }
@@ -217,7 +220,22 @@ namespace OpticSolutions.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        internal void AddUserToRole(string userName, string roleName)
+        {
+            AppDbContext context = new AppDbContext();
+            var UserManager = new UserManager<AppUser>(new UserStore<AppUser>(context));
 
+            try
+            {
+                var user = UserManager.FindByName(userName);
+                UserManager.AddToRole(user.Id, roleName);
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
     }
 }
