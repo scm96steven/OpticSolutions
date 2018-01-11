@@ -2,158 +2,170 @@
 @{
 //ViewBag.Title = "CreateOrder";
 }
-
 <div class="container">
-    <div class="jumbotron">
-        <h1>Facturacion</h1>
-    </div>
-    @*<p>This is some text.</p>
-        <p>This is another text.</p>*@
-
-</div>
-
-
-<div class="box box-primary box-solid ">
-    <div class="box-header">
-        <p class="box-title">Agregar productos y/o servicios</p>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Facturacion</h1>
+        </div>
+        @*<p>This is some text.</p>
+            <p>This is another text.</p>*@
 
     </div>
-    <div class="box-body">
 
-        <div class="well well-sm">
-            <div class="row">
-                <div class="col-xs-7">
-                    <select style="width:100%" id="productSelect" name="productSelect"></select>
-                
-                </div>
-                <div class="col-xs-2">
-                    Cantidad
-                    <input type="number" value="1" id="quantity" />
-                </div>
-                @*<div class="col-xs-2">
+
+    <div class="box box-primary box-solid ">
+        <div class="box-header">
+            <p class="box-title">Agregar productos y/o servicios</p>
+
+        </div>
+        <div class="box-body">
+
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-7">
+                        <label for="productSelect">Producto</label>
+                        <select style="width:100%" id="productSelect" name="productSelect"></select>
+
+                    </div>
+                    <div class="col-xs-2">
+                        <label for="quantity">Cantidad</label>
+                        <input type="number" value="1" id="quantity" name="quantity" />
+                    </div>
+
+
+                    <div class="col-xs-2">
+
                         <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">S/.</span>
 
+                            <label for="price">Modificar precio</label>
+                            <input type="number" id="itemPrice" name="price" />
                         </div>
-                    </div>*@
-                <div class="col-xs-1">
-                    <button class="btn btn-primary plusButton" type="submit" name="plusButton">
-                        <i class="glyphicon glyphicon-plus"></i>
-                    </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <br />
+                        <button class="btn btn-primary plusButton" type="submit" name="plusButton">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
-<div class="box box-success ">
-    <div class="box-header">
-        <p class="box-title">
-            Lista de productos
-        </p>
+    <div class="box box-success ">
+        <div class="box-header">
+            <p class="box-title">
+                Lista de productos
+            </p>
 
-    </div>
-    <div class="box-body">
-        <ul id="billDetail" class="list-group pad">
-            <li class="list-group-item list-group-item-info">
+        </div>
+        <div class="box-body">
+            <ul id="billDetail" class="list-group pad">
+                <li class="list-group-item list-group-item-info">
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-3">
+                            <b>Descripcion</b>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <b>Cantidad</b>
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <b>Precio Unitario</b>
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <b>ITBIS</b>
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <b>Valor</b>
+                        </div>
+                    </div>
+                </li>
+
+
+
+            </ul>
+
+            <hr />
+        </div>
+
+        <ul id="" class="list-group pad">
+            <li class="list-group-item list-group-item-success">
                 <div class="row">
                     <div class="col-xs-1"></div>
                     <div class="col-xs-3">
-                        <b>Descripcion</b>
+                        @*<b>Producto</b>*@
                     </div>
                     <div class="col-xs-2 text-center">
-                        <b>Cantidad</b>
+                        @*<b>Cantidad</b>*@
                     </div>
                     <div class="col-xs-2 text-right">
-                        <b>Precio Unitario</b>
+
                     </div>
                     <div class="col-xs-2 text-right">
-                        <b>ITBIS</b>
+                        <b>Total ITBIS: </b><span id="Itbis">0</span>
                     </div>
+
                     <div class="col-xs-2 text-right">
-                        <b>Valor</b>
+                        <b>Subtotal: </b><span id="Subtotal">0</span><br />
+                        <b>Total: </b> <span id="Total">0</span>
+
                     </div>
                 </div>
             </li>
-
-
-
         </ul>
-
-        <hr />
     </div>
 
-    <ul id="" class="list-group pad">
-        <li class="list-group-item list-group-item-success">
+
+
+    <div class="box box-primary ">
+        <div class="box-header">
+
+
+        </div>
+        <div class="box-body">
+
             <div class="row">
-                <div class="col-xs-1"></div>
-                <div class="col-xs-3">
-                    @*<b>Producto</b>*@
+                <div class="col-md-6">
+                    <br />
+                    <label for="clientSelect">Cliente y/o paciente:</label>
+                    <select style="width:100%" id="clientSelect" name="clientSelect"></select>
                 </div>
-                <div class="col-xs-2 text-center">
-                    @*<b>Cantidad</b>*@
-                </div>
-                <div class="col-xs-2 text-right">
+                <div class="col-md-4">
+                    <br />
+                    <label for="PaymentMethod">Metodo de pago:</label>
+                    <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod.Id">
+                        <option value="1">
+                            Efectivo
+                        </option>
+                        <option value="2">
+                            Tarjeta de credito
+                        </option>
+                    </select>
+                    <br />
 
                 </div>
-                <div class="col-xs-2 text-right">
-                    <b>Total ITBIS: </b><span id="Itbis">0</span>
+                <div class="col-md-2">
+                    <br /><br />
+                    <input type="button" class="btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
                 </div>
 
-                <div class="col-xs-2 text-right">
-                    <b>Subtotal: </b><span id="Subtotal">0</span><br />
-                    <b>Total: </b> <span id="Total">0</span>
-
-                </div>
             </div>
-        </li>
-    </ul>
-</div>
-
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-6">
-            <br />
-            <label for="clientSelect">Cliente y/o paciente:</label>
-        <select style="width:100%" id="clientSelect" name="clientSelect"></select>
-        </div>
-        <div class="col-md-4">
-            <br />
-            <label for="PaymentMethod">Metodo de pago:</label>
-            <select style="width:100%" class="pad" id="PaymentMethod" name="PaymentMethod.Id">
-                <option value="1">
-                    Efectivo
-                </option>
-                <option value="2">
-                    Tarjeta de credito
-                </option>
-            </select>
-            <br />
 
         </div>
-        <div class="col-md-2">
-            <br /><br />
-            <input type="button" class="btn btn-success btn-lg" id="confirmOrder" value="Completar orden" />
-        </div>
-
     </div>
 
 
 
 
-
-    @*<p>This is some text.</p>
-        <p>This is another text.</p>*@
-
 </div>
 
 
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+        <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
 
-<script type="text/javascript">
+        <script type="text/javascript">
 
             $(document).ready(function () {
 
@@ -162,6 +174,21 @@
                 var total = 0;
                 var itbis = 0;
 
+                //Si se desea cambiar precio de producto o servicio
+
+                $('#isModified').click(function () {
+                    var checked = $(this).attr('checked');
+                    alert(checked);
+                    if (checked) {
+                        $(this).attr('checked', false);
+                    }
+                    else {
+                        $(this).attr('checked', true);
+                    }
+                });
+
+             
+            
 
         //boton de confirmar orden
 
@@ -238,6 +265,7 @@
                     $(".plusButton").on("click", function () {
 
                         var id = $("#productSelect").val();
+                        var priceModified = $("#itemPrice").val();
                         var exist = $(".productId" + id);
 
 
@@ -290,6 +318,12 @@
 
 
                                     var prod = data;
+
+                                    if (priceModified != 0)
+                                    {
+                                        prod.Price = priceModified;
+                                    }
+
                                     var cantidad = Math.abs($("#quantity").val());
 
                                     var html = ' <li class="list-group-item productDetail productId' + prod.ProductId + '" >' +
@@ -340,7 +374,7 @@
 
                         }
 
-
+                        $("#itemPrice").val(0);
 
                     });
 
@@ -352,7 +386,7 @@
                         success: function (data) {
 
                             $("#productSelect").empty();
- 
+
 
                             $.each(data, function (index, item) {
                                 var userName = item.UserName;
@@ -374,13 +408,13 @@
                         success: function (data) {
 
                             $.each(data, function (index, item) {
-                               
+
                                 var p = new Option(item.Names+ " " + item.Last_Names, item.ClientId);
 
                                 $("#clientSelect").append(p);
 
                             });
-                   
+
                         }
                     });
 
@@ -391,4 +425,4 @@
 
 
 
-</script>
+        </script>
