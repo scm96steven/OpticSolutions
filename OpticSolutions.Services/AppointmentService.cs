@@ -41,6 +41,13 @@ namespace OpticSolutions.Services
             return data;
         }
 
+        public void DeleteAppointment(Appointment app)
+        {
+
+            repo.DeleteAppointment(app);
+
+        }
+
     }
 
 }
