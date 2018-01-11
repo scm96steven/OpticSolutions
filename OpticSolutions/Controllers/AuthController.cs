@@ -102,6 +102,7 @@ namespace OpticSolutions.Controllers
 
             if (result.Succeeded)
             {
+                AddUserToRole(model.Email, model.UserRole);
                 await SignIn(user);
                 return RedirectToAction("index", "home");
             }
