@@ -28,6 +28,9 @@
         <div class="row invoice-info">
             <div class="col-sm-4 invoice-col">
                 <b>Factura #@Model.OrderId</b><br />
+                <b>Cliente: </b>@Model.ClientName<br />
+                <b>Telefono: </b>@Model.ClientPhone<br />
+                <b>Seguro: </b>@Model.Insurance<br />
                 <b>Fecha y hora:</b> @Model.CreatedDate<br />
                 <b>Atendido por:</b> @Model.CreatedBy<br />
             </div><!-- /.col -->

@@ -72,6 +72,7 @@ namespace OpticSolutions.Repositories
             queryParameters.Add("@created_by", Ord.CreatedBy);
             queryParameters.Add("@payment_method", Ord.PaymentMethod.Id);
             queryParameters.Add("@client_id", Ord.Client.ClientId);
+            queryParameters.Add("@insurance", Ord.Insurance);
 
             con.Query<Orders>("CREATE_ORDER", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
 
