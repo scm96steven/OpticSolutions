@@ -1,0 +1,449 @@
+﻿@model OpticSolutions.ViewModels.ReportViewModel
+
+@{
+   
+}
+<div class="container">
+    <div class="box box-info  ">
+        <div class="box-header">
+            <p class="box-title">Generar reporte</p>
+
+        </div>
+        <div class="box-body">
+
+    
+                <div class="form-horizontal">
+                 
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="TypeOfReport" class="control-label col-md-3">Tipo de reporte</label>
+                        <div class="col-md-4">
+                            <select name="TypeOfReport" style="width:100%" id="TypeOfReport">
+                                <option value="Sales">
+                                    Total de ventas
+                                </option>
+                                <option value="Appointments">
+                                    Cantidad de citas
+                                </option>
+                                <option value="Orders">
+                                    Cantidad de ordenes
+                                </option>
+                                <option value="Consults">
+                                    Cantidad de consultas
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="StartDate" class="control-label col-md-3">Fecha de inicio</label>
+                            <div class="col-md-4">
+
+                                <input type="date" name="StartDate" id="StartDate" class="form-control " >
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="EndDate" class="control-label col-md-3">
+                                Fecha de fin
+                            </label>
+                            <div class="col-md-4">
+
+                                <input type="date" name="EndDate" id="EndDate" class="form-control ">
+
+                           
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="TimeSkip" class="control-label col-md-3">Lapso de tiempo</label>
+                        <div class="col-md-4">
+                            <select name="TimeSkip" style="width:100%" id="TimeSkip">
+                                <option value="Weekly">
+                                   Semanal
+                                </option>
+                                <option value="Monthly">
+                                    Mensual
+                                </option>
+                                <option value="Anual">
+                                    Anual
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+                   
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Crear reporte" class="btn btn-success btn-lg" id="CreateReport"  />
+                        </div>
+                    </div>
+                </div>
+          
+        </div>
+        <br/>
+        <div class="box box-success">
+            <div class="box-body">
+                <div class="col-md-12">
+                    <div id="chart"></div>
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+
+
+</div>
+
+
+<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+ 
+
+
+    });
+
+   
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+
+    $("#CreateReport").click(function(){
+
+
+        var reportType = $("#TypeOfReport").val();
+        var startDate = $("#StartDate").val();
+        var endDate = $("#EndDate").val();
+        var timeSkip = $("#TimeSkip").val();
+
+
+
+        $.ajax({
+            type: 'POST',
+            data: { StartDate: startDate, EndDate: endDate, TypeOfReport: reportType, TimeSkip: timeSkip },
+            url: '@Url.Action("CreateReport", "Reports")',
+            dataType: "json",
+            success: function (json) {
+
+                //pintar grafico
+                console.log(json);
+
+
+
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+
+                    var data = new google.visualization.DataTable();
+                    var start = new Date($("#StartDate").val());
+                    var end = new Date($("#EndDate").val());
+                    var subtitle = ' de ' + start.toString('dd/MM/yyyy') + " a " + end.toString('dd/MM/yyyy');
+
+                    console.log(reportType + timeSkip)
+                    if (reportType == "Sales")
+                    {
+
+                        if (timeSkip=="Anual")
+                        {
+                            data.addColumn('string', 'Año');
+                            data.addColumn('number', 'Ventas');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Year);
+                                var sales = item.Sales;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte de ventas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ventas'
+                                },
+                                hAxis: {
+                                    title: 'Año'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Weekly")
+                        {
+                            data.addColumn('string', 'Semana');
+                            data.addColumn('number', 'Ventas');
+
+                            $.each(json, function (index, item) {
+                                var week = String(item.Week);
+                                var sales = item.Sales;
+                                data.addRow([week, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte de ventas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ventas'
+                                },
+                                hAxis: {
+                                    title: 'Semana'
+                                }
+                            };
+
+                        }
+                        else if (timeSkip == "Monthly")
+                        {
+                            data.addColumn('string', 'Mes');
+                            data.addColumn('number', 'Ventas');
+
+                            $.each(json, function (index, item) {
+                                var month = String(item.Month);
+                                var sales = item.Sales;
+                                data.addRow([month, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte de ventas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ventas'
+                                },
+                                hAxis: {
+                                    title: 'Mes'
+                                }
+                            };
+                        }
+
+
+                    }
+                    else if (reportType == "Appointments")
+                    {
+                        if (timeSkip == "Anual")
+                        {
+                            data.addColumn('string', 'Año');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Year);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de citas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Citas'
+                                },
+                                hAxis: {
+                                    title: 'Año'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Weekly")
+                        {
+                            data.addColumn('string', 'Semana');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Week);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de citas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Citas'
+                                },
+                                hAxis: {
+                                    title: 'Semana'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Monthly")
+                        {
+                            data.addColumn('string', 'Mes');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Month);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de citas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Citas'
+                                },
+                                hAxis: {
+                                    title: 'Mes'
+                                }
+                            };
+                        }
+                    }
+
+                    else if (reportType == "Orders")
+                    {
+                        if (timeSkip == "Anual")
+                        {
+                            data.addColumn('string', 'Año');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Year);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de ordenes' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ordenes'
+                                },
+                                hAxis: {
+                                    title: 'Año'
+                                }
+                            };   
+                        }
+                        else if (timeSkip == "Weekly")
+                        {
+                            data.addColumn('string', 'Semana');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Week);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de ordenes' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ordenes'
+                                },
+                                hAxis: {
+                                    title: 'Año'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Monthly")
+                        {
+                            data.addColumn('string', 'Mes');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Month);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de ordenes' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Ordenes'
+                                },
+                                hAxis: {
+                                    title: 'Mes'
+                                }
+                            };
+                        }
+                    }
+
+                    else if (reportType == "Consults")
+                    {
+                        if (timeSkip == "Anual")
+                        {
+                            data.addColumn('string', 'Año');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Year);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de consultas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Consultas'
+                                },
+                                hAxis: {
+                                    title: 'Año'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Weekly")
+                        {
+                            data.addColumn('string', 'Semana');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Week);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de consultas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Consultas'
+                                },
+                                hAxis: {
+                                    title: 'Semana'
+                                }
+                            };
+                        }
+                        else if (timeSkip == "Monthly")
+                        {
+                            data.addColumn('string', 'Mes');
+                            data.addColumn('number', 'Cantidad');
+
+                            $.each(json, function (index, item) {
+                                var year = String(item.Month);
+                                var sales = item.Quantity;
+                                data.addRow([year, sales]);
+                            });
+                            var options = {
+                                title: 'Reporte cantidad de consultas' + subtitle,
+                                width: 900,
+                                height: 500,
+                                vAxis: {
+                                    title: 'Consultas'
+                                },
+                                hAxis: {
+                                    title: 'Mes'
+                                }
+                            };
+                        }
+                    }
+
+
+                  
+                   
+                   
+                
+                    var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
+
+                    chart.draw(data,options);
+                }
+
+            }
+        });
+
+    });
+
+
+</script>
+
