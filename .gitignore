@@ -503,3 +503,7 @@ OpticSolutions.Services/bin/Debug/OpticSolutions.Repositories.pdb
 *.dll
 *.pdb
 *.cache
+*.config
+*.dll
+*.pdb
+*.cache

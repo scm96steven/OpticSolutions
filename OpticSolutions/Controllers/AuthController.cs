@@ -171,8 +171,16 @@ namespace OpticSolutions.Controllers
         {
             var identity = await userManager.CreateIdentityAsync(
                 user, DefaultAuthenticationTypes.ApplicationCookie);
-           
-             GetAuthenticationManager().SignIn(identity);
+
+            //AppUser data = repo.GetUserInfoById(user.Email);
+
+            //identity.AddClaims(new[] {
+            //    new Claim("FullName",data.FirstName+" "+data.LastName),
+            //   new Claim("UserCreatedDate",data.CreatedDate.ToShortDateString())
+            //       });
+
+            GetAuthenticationManager().SignIn(identity);
+         
         }
 
         public ActionResult LogOut()
