@@ -34,6 +34,7 @@ namespace OpticSolutions.Controllers
         {
             string start = ap.StartDateStr + " " + ap.StartHourStr;
             ap.StartDate = DateTime.Parse(start);
+            ap.EndDate = ap.StartDate.AddMinutes(29);
 
             ap.NumberOfAppointments = repo.CheckAppointments(ap);
             if (!ModelState.IsValid || ap.NumberOfAppointments>0)
