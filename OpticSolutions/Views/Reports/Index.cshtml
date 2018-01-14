@@ -4,7 +4,11 @@
    
 }
 <div class="container">
-    <div class="box box-info  ">
+
+    <div id="alert">
+
+    </div>
+    <div class="box box-info">
         <div class="box-header">
             <p class="box-title">Generar reporte</p>
 
@@ -83,17 +87,17 @@
           
         </div>
         <br/>
-        <div class="box box-success">
-            <div class="box-body">
-                <div class="col-md-12">
-                    <div id="chart"></div>
-                </div>
-
-            </div>
-        </div>
     
     </div>
 
+    <div class="box box-success" id="reportContainer" style="display:none;">
+        <div class="box-body">
+            <div class="col-md-12">
+                <div id="chart"></div>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 
@@ -122,8 +126,11 @@
         var timeSkip = $("#TimeSkip").val();
 
 
-
-        $.ajax({
+        if (startDate.length>0 && endDate.length>0)
+        {
+            $("#reportContainer").show("slow");
+            $("#alert").empty();
+                $.ajax({
             type: 'POST',
             data: { StartDate: startDate, EndDate: endDate, TypeOfReport: reportType, TimeSkip: timeSkip },
             url: '@Url.Action("CreateReport", "Reports")',
@@ -135,14 +142,16 @@
 
 
 
-                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.load('current', { 'packages': ['bar'] });
                 google.charts.setOnLoadCallback(drawChart);
 
                 function drawChart() {
 
                     var data = new google.visualization.DataTable();
-                    var start = new Date($("#StartDate").val());
-                    var end = new Date($("#EndDate").val());
+                    var start = new Date($("#StartDate").val() + " 11:13");
+                    var end = new Date($("#EndDate").val() + " 11:13");
+
+
                     var subtitle = ' de ' + start.toString('dd/MM/yyyy') + " a " + end.toString('dd/MM/yyyy');
 
                     console.log(reportType + timeSkip)
@@ -164,11 +173,16 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ventas'
+                                    title: 'Ventas',
+                                    format:"decimal"
                                 },
                                 hAxis: {
-                                    title: 'Año'
-                                }
+                                    title: 'Año',
+                                    colors: ['red', 'green'],
+                                is3D: true
+                                },
+                                bar: { groupWidth: "25%" }
+                           
                             };
                         }
                         else if (timeSkip == "Weekly")
@@ -177,7 +191,7 @@
                             data.addColumn('number', 'Ventas');
 
                             $.each(json, function (index, item) {
-                                var week = String(item.Week);
+                                var week = String(item.Week) + "/" + String(item.Year);
                                 var sales = item.Sales;
                                 data.addRow([week, sales]);
                             });
@@ -186,11 +200,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ventas'
+                                    title: 'Ventas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Semana'
-                                }
+                                },
+                             colors: ['red', 'green'],
+                                is3D: true
                             };
 
                         }
@@ -200,7 +217,7 @@
                             data.addColumn('number', 'Ventas');
 
                             $.each(json, function (index, item) {
-                                var month = String(item.Month);
+                                var month = String(item.Month) + "/" + String(item.Year);
                                 var sales = item.Sales;
                                 data.addRow([month, sales]);
                             });
@@ -209,11 +226,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ventas'
+                                    title: 'Ventas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Mes'
-                                }
+                                },
+                              colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
 
@@ -236,11 +256,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Citas'
+                                    title: 'Citas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Año'
-                                }
+                                },
+                             colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                         else if (timeSkip == "Weekly")
@@ -249,7 +272,7 @@
                             data.addColumn('number', 'Cantidad');
 
                             $.each(json, function (index, item) {
-                                var year = String(item.Week);
+                                var year = String(item.Week) + "/" + String(item.Year);
                                 var sales = item.Quantity;
                                 data.addRow([year, sales]);
                             });
@@ -258,11 +281,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Citas'
+                                    title: 'Citas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Semana'
-                                }
+                                },
+                            colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                         else if (timeSkip == "Monthly")
@@ -271,7 +297,7 @@
                             data.addColumn('number', 'Cantidad');
 
                             $.each(json, function (index, item) {
-                                var year = String(item.Month);
+                                var year =  String(item.Month) + "/" + String(item.Year);
                                 var sales = item.Quantity;
                                 data.addRow([year, sales]);
                             });
@@ -280,11 +306,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Citas'
+                                    title: 'Citas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Mes'
-                                }
+                                },
+                              colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                     }
@@ -306,12 +335,15 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ordenes'
+                                    title: 'Ordenes',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Año'
-                                }
-                            };   
+                                },
+                               colors: ['red', 'green'],
+                                is3D: true
+                            };
                         }
                         else if (timeSkip == "Weekly")
                         {
@@ -319,7 +351,7 @@
                             data.addColumn('number', 'Cantidad');
 
                             $.each(json, function (index, item) {
-                                var year = String(item.Week);
+                                var year = String(item.Week) + "/" + String(item.Year);
                                 var sales = item.Quantity;
                                 data.addRow([year, sales]);
                             });
@@ -328,11 +360,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ordenes'
+                                    title: 'Ordenes',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Año'
-                                }
+                                },
+                               colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                         else if (timeSkip == "Monthly")
@@ -341,7 +376,7 @@
                             data.addColumn('number', 'Cantidad');
 
                             $.each(json, function (index, item) {
-                                var year = String(item.Month);
+                                var year = String(item.Month) + "/" + String(item.Year);
                                 var sales = item.Quantity;
                                 data.addRow([year, sales]);
                             });
@@ -350,11 +385,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Ordenes'
+                                    title: 'Ordenes',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Mes'
-                                }
+                                },
+                               colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                     }
@@ -376,11 +414,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Consultas'
+                                    title: 'Consultas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Año'
-                                }
+                                },
+                                colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                         else if (timeSkip == "Weekly")
@@ -398,11 +439,14 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Consultas'
+                                    title: 'Consultas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Semana'
-                                }
+                                },
+                                colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                         else if (timeSkip == "Monthly")
@@ -420,27 +464,40 @@
                                 width: 900,
                                 height: 500,
                                 vAxis: {
-                                    title: 'Consultas'
+                                    title: 'Consultas',
+                                    format: "decimal"
                                 },
                                 hAxis: {
                                     title: 'Mes'
-                                }
+                                },  colors: ['red', 'green'],
+                                is3D: true
                             };
                         }
                     }
 
 
-                  
-                   
-                   
-                
-                    var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
 
-                    chart.draw(data,options);
+
+
+
+                    var chart = new google.charts.Bar(document.getElementById('chart'));
+
+                    chart.draw(data, google.charts.Bar.convertOptions(options));
                 }
 
             }
         });
+        }
+        else
+        {
+            $("#reportContainer").hide("slow");
+            var text = '<div class="alert alert-danger alert-dismissible"> <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'+
+            '<h4><i class="icon fa fa-info"></i> ¡Atencion!</h4>' +
+                'Favor llenar todos los campos correctamente.' +
+                ' </div>';
+            $("#alert").append(text);
+        }
+
 
     });
 
