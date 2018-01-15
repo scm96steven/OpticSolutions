@@ -22,9 +22,9 @@ namespace OpticSolutions.Services
             return data;
          }
 
-        public List<Appointment> GetAllAppointments(Appointment ap)
+        public List<Appointment> GetAllAppointments()
         {
-            var data = repo.GetAllAppointments(ap);
+            var data = repo.GetAllAppointments();
 
             return data;
         }
@@ -41,6 +41,10 @@ namespace OpticSolutions.Services
             return data;
         }
 
+        public void DeleteAppointment(Appointment ap)
+        {
+            repo.DeleteAppointment(ap);
+        }
     }
 
 }

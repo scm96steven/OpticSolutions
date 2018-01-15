@@ -79,11 +79,11 @@ namespace OpticSolutions.Controllers
             return RedirectToAction("Index", "Home",null);
         }
 
-        public ActionResult PendingAppointment(Appointment ap)
+        public ActionResult PendingAppointment()
         {
             AppointmentService asv = new AppointmentService();
-            ap.Date = new DateTime(2001, 1, 1);
-            var data = asv.GetAllAppointments(ap);
+       
+            var data = asv.GetAllAppointments();
             return View(data);
         }
         
@@ -95,6 +95,14 @@ namespace OpticSolutions.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult DeleteAppointment(Appointment ap)
+        {
+
+            repo.DeleteAppointment(ap);
+
+
+            return RedirectToAction("PendingAppointment");
+        }
 
 
     }

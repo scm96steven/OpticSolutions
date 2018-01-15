@@ -90,6 +90,36 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public void DeleteClient(Client cli)
+        {
+            conn.Open();
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@client_id", cli.ClientId);
+
+            var data = conn.Query<Client>("DELETE_CLIENT", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            conn.Close();
+
+        }
+
+
+        public void SaveClient(Client cli)
+        {
+            conn.Open();
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@client_id", cli.ClientId);
+            queryParameters.Add("@names", cli.Names);
+            queryParameters.Add("@last_names", cli.Last_Names);
+            queryParameters.Add("@email", cli.Email);
+            queryParameters.Add("@phone", cli.Phone.ToString());
+            queryParameters.Add("@address", cli.Address);
+            queryParameters.Add("@cedula", cli.IdentificationCard.ToString());
+
+            conn.Query("EDIT_CLIENT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            conn.Close();
+        }
+
+
+
 
     }
 }

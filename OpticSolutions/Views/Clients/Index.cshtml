@@ -30,15 +30,7 @@
 
                         </tr>
                     </thead>
-                    @*<tfoot>
-                            <tr>
-                                <th>Nombres</th>
-                                <th>Apellidos </th>
-                                <th>Email</th>
-                                <th>Telefono</th>
-                                <th>Cedula</th>
-                            </tr>
-                        </tfoot>*@
+               
                     <tbody>
 
                         @foreach (var client in Model)
@@ -50,7 +42,10 @@
                                 <td>@client.Email</td>
                                 <td>@client.Phone</td>
                                 <td>@client.IdentificationCard</td>
-                                <td>@Html.ActionLink("Historial", "Record", "Clients", new { @class = "btn btn-primary" })</td>
+                                <td>
+                                 @Html.ActionLink("Eliminar", "DeleteClient", "Clients", new { ClientId = client.ClientId }, new { @class = "btn btn-danger" })
+                                    @Html.ActionLink("Editar", "EditClient", "Clients", new { ClientId = client.ClientId }, new { @class = "btn btn-info" })
+                                </td>
                             </tr>
                         }
 

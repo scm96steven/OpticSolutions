@@ -36,7 +36,7 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
-        public List<Appointment> GetAllAppointments(Appointment ap)
+        public List<Appointment> GetAllAppointments()
         {
             conn.Open();
             var data = conn.Query<Appointment>("GET_ALL_APPOINTMENTS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -89,6 +89,18 @@ namespace OpticSolutions.Repositories
             return data;
 
         }
+        public void DeleteAppointment(Appointment ap)
+        {
+            conn.Open();
+
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@app_id", ap.Id);
+      
+
+            conn.Query("DELETE_APPOINTMENT", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            conn.Close();
+        }
+
 
 
     }

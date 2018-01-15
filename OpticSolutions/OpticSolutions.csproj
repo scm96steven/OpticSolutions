@@ -154,7 +154,6 @@
     <Content Include="OSContent\img\Optic solutions logo.png" />
     <Content Include="Web.config" />
     <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
@@ -179,6 +178,7 @@
     <Content Include="Views\Shared\Menu\_DoctorMenu.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
     <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Clients\EditClient.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,6 +34,14 @@ namespace OpticSolutions.Services
 
         }
 
+        public void DeleteClient(Client con)
+        {
+
+            repo.DeleteClient(con);
+
+        }
+
+
         public List<Consult> GetRecord(Client cli, string doctorUserName)
         {
 
@@ -51,7 +59,17 @@ namespace OpticSolutions.Services
 
         }
 
-}
+        public void SaveClient(Client con)
+        {
+
+            repo.SaveClient(con);
+
+
+        }
+
+
+
+    }
 
 
 

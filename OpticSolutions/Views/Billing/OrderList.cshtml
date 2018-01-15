@@ -12,41 +12,42 @@
     </div>
     <div class="box-body">
         <table class="hover stripe table-bordered" width="100%" cellspacing="0" id="orders">
-            <tr>
-                <th>
-                    Id Factura
-                </th>
-                <th>
-                    Fecha de creacion
-                </th>
-      
-                <th>
-                   Estado
-                </th>
-                <th></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>
+                        Id Factura
+                    </th>
+                    <th>
+                        Fecha de creacion
+                    </th>
 
+                    <th>
+                        Estado
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
 
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderId)
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                @item.CreatedDate
-            </td>
-          
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderStatusDescription)
-            </td>
-            <td>
-                @Html.ActionLink("Mostrar Detalles", "ViewOrder", new {OrderId = item.OrderId }, new {@class = "btn btn-success"})
-            </td>
-        </tr>
-}
-
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderStatusDescription)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Mostrar Detalles", "ViewOrder", new { OrderId = item.OrderId }, new { @class = "btn btn-success" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
 
         </table>
 
@@ -59,7 +60,8 @@
 
 
 
-<script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 <script type="text/javascript">
 
                 $(document).ready(function () {

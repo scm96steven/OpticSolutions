@@ -112,6 +112,30 @@ namespace OpticSolutions.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public ActionResult DeleteClient(Client cli)
+        {
+            repo.DeleteClient(cli);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditClient(Client cli)
+        {
+           cli = repo.GetClientById(cli);
+
+            return View(cli);
+        }
+
+        [HttpPost]
+        public ActionResult SaveClient(Client cli)
+        {
+             repo.SaveClient(cli);
+
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

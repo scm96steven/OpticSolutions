@@ -4,103 +4,112 @@
 
 }
 
-<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" />
 
 
+<div class="container">
 <div class="box box-primary box-solid ">
     <div class="box-header">
         <h2><i class="fa fa-clock-o"></i> Citas Pendientes</h2>
     </div>
     <div class="box-body">
-        <table class="hover stripe table-bordered" width="100%" cellspacing="0">
-            <tr>
-                <th>
-                    <label for="DoctorFullname" class="control-label col-md-2">Doctor</label>
-                </th>
-                <th>
-                    <label for="Phone" class="control-label col-md-2">Telefono</label>
-                </th>
-                <th>
-                    <label for="Names" class="control-label col-md-2">Nombre</label>
-                </th>
-                <th>
-                    <label for="Last_Names" class="control-label col-md-2">Apellido</label>
-                </th>
-                <th>
-                    <label for="Email" class="control-label col-md-2">Email</label>
-                </th>
-                <th>
-                    <label for="IdentificationCard" class="control-label col-md-2">Identificación</label>
-                </th>
-                <th>
-                    <label for="Comment" class="control-label col-md-2">Comentario</label>
-                </th>
-                <th>
-                    <label for="StartDate" class="control-label col-md-2">Fecha y Hora</label>
-                </th>
-
-                <th></th>
-            </tr>
 
 
-            @foreach (var item in Model)
-            {
+        <table  width="100%" cellspacing="0" id="pending"  class="table table-bordered table-hover">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DoctorFullname)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Names)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Last_Names)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdentificationCard)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Comment)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
-                        @Html.ActionLink("Borrar", "DeleteAppointment", new { Id = item.Id }, new { @class = "btn btn-danger" })
-                    </td>
+                    <th>
+                        <label for="DoctorFullname" class="control-label col-md-2">Doctor</label>
+                    </th>
+                    <th>
+                        <label for="Phone" class="control-label col-md-2">Telefono</label>
+                    </th>
+                    <th>
+                        <label for="Names" class="control-label col-md-2">Nombre</label>
+                    </th>
+                    <th>
+                        <label for="Last_Names" class="control-label col-md-2">Apellido</label>
+                    </th>
+                    <th>
+                        <label for="Email" class="control-label col-md-2">Email</label>
+                    </th>
+                    <th>
+                        <label for="IdentificationCard" class="control-label col-md-2">Identificación</label>
+                    </th>
+                    <th>
+                        <label for="Comment" class="control-label col-md-2">Comentario</label>
+                    </th>
+                    <th>
+                        <label for="StartDate" class="control-label col-md-2">Fecha y Hora</label>
+                    </th>
 
+                    <th></th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DoctorFullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Names)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Last_Names)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdentificationCard)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+
+                            @Html.ActionLink("Borrar", "DeleteAppointment", new { Id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
 
             </table>
 
         </div>
 
     </div>
-
+  </div>
     <br />
 
 
     <a class="btn btn-primary" @Html.ActionLink("Crear Nueva Cita", "CrearCita")</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 
-    </div>
-    <script src="~/Content/js/plugins/jquery/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript">
 
-        $(document).ready(function () {
 
-            $('#appointment').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            });
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#pending').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
         });
+    });
 
-    </script>
+</script>
