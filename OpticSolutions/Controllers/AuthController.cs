@@ -274,6 +274,13 @@ namespace OpticSolutions.Controllers
 
             return ListOfRoleNames.FirstOrDefault();
         }
+        [MyAuthorize(Roles = "Administrador")]
+        public ActionResult ViewUsers()
+        {
+            var data = repo.GetUsers();
+
+            return View(data);
+        }
 
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Entitys\ProductType.cs" />
     <Compile Include="Entitys\ReportObject.cs" />
     <Compile Include="Entitys\ReportViewModel.cs" />
+    <Compile Include="Entitys\UserViewModel.cs" />
     <Compile Include="ReportRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="ProductRepository.cs" />

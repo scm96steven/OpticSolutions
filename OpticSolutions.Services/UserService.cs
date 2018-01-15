@@ -31,7 +31,12 @@ namespace OpticSolutions.Services
             return data;
         }
 
+        public List<UserViewModel> GetUsers()
+        {
+            var data = repo.GetUsers();
 
+            return data;
+        }
 
     }
 }

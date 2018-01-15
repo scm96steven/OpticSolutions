@@ -54,5 +54,12 @@ namespace OpticSolutions.Repositories
             return data;
         }
 
+        public List<UserViewModel> GetUsers()
+        {
+            conn.Open();
+            var data = conn.Query<UserViewModel>("GET_USERS", null, commandType: System.Data.CommandType.StoredProcedure).ToList();
+            conn.Close();
+            return data;
+        }
     }
 }

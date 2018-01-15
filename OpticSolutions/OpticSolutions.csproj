@@ -179,6 +179,7 @@
     <Content Include="Views\Shared\Unauthorized.cshtml" />
     <Content Include="Views\Reports\Index.cshtml" />
     <Content Include="Views\Clients\EditClient.cshtml" />
+    <Content Include="Views\Auth\ViewUsers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
