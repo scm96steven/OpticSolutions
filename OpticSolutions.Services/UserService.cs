@@ -38,5 +38,16 @@ namespace OpticSolutions.Services
             return data;
         }
 
+        public UserViewModel GetUserInfo(string UserName)
+        {
+            var data = repo.GetUserInfo(UserName);
+            return data;
+        }
+
+        public void DeleteUser(UserViewModel user)
+        {
+            repo.DeleteUser(user);
+        }
+
     }
 }

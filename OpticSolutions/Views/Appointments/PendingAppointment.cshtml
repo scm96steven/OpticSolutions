@@ -11,6 +11,7 @@
 <div class="box box-primary box-solid ">
     <div class="box-header">
         <h2><i class="fa fa-clock-o"></i> Citas Pendientes</h2>
+        <a class="btn btn-success" @Html.ActionLink("Crear Nueva Cita", "CrearCita")</a>
     </div>
     <div class="box-body">
 
@@ -21,9 +22,7 @@
                     <th>
                         <label for="DoctorFullname" class="control-label col-md-2">Doctor</label>
                     </th>
-                    <th>
-                        <label for="Phone" class="control-label col-md-2">Telefono</label>
-                    </th>
+                 
                     <th>
                         <label for="Names" class="control-label col-md-2">Nombre</label>
                     </th>
@@ -32,6 +31,9 @@
                     </th>
                     <th>
                         <label for="Email" class="control-label col-md-2">Email</label>
+                    </th>
+                    <th>
+                        <label for="Phone" class="control-label col-md-2">Telefono</label>
                     </th>
                     <th>
                         <label for="IdentificationCard" class="control-label col-md-2">Identificación</label>
@@ -54,9 +56,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.DoctorFullname)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Phone)
-                        </td>
+                    
                         <td>
                             @Html.DisplayFor(modelItem => item.Names)
                         </td>
@@ -65,6 +65,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.IdentificationCard)
@@ -93,7 +96,7 @@
     <br />
 
 
-    <a class="btn btn-primary" @Html.ActionLink("Crear Nueva Cita", "CrearCita")</a>
+  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
 
