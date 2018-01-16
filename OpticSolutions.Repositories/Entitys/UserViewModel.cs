@@ -15,6 +15,7 @@ namespace OpticSolutions.Repositories.Entitys
             public string Role { get; set; }
             public DateTime CreatedDate { get; set; }
         public string UserName { get; set; }
+        public string Id { get; set; }
         public string Phone { get; set; }
    
             public string FullName()

@@ -10,6 +10,7 @@ namespace OpticSolutions.Repositories.Entitys
     public class Appointment
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "El campo doctor es requerido")]
         public string DoctorUsername { get; set; }
         public string DoctorFullname { get; set; }
 

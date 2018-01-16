@@ -61,5 +61,26 @@ namespace OpticSolutions.Repositories
             conn.Close();
             return data;
         }
+
+
+        public UserViewModel GetUserInfo(string username)
+        {
+            conn.Open();
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@username", username);
+
+            var data = conn.Query<UserViewModel>("GET_USER_BY_UN", queryParameters, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+            conn.Close();
+            return data;
+        }
+        public void DeleteUser(UserViewModel user)
+        {
+            conn.Open();
+            var queryParameters = new DynamicParameters();
+            queryParameters.Add("@user_id", user.Id);
+
+            conn.Query("DELETE_USER", queryParameters, commandType: System.Data.CommandType.StoredProcedure);
+            conn.Close();
+        }
     }
 }

@@ -60,6 +60,7 @@
                                     <label for="DoctorUsername" class="control-label col-md-2">Doctor</label>
                                     <div class="col-md-10">
                                         <select style="width:100%" id="doctorSelect" name="DoctorUsername"></select>
+                                        @Html.ValidationMessageFor(model => model.DoctorUsername, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
@@ -92,7 +93,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @required="required" } })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
                                     </div>
@@ -106,12 +107,12 @@
                                         {
                                             <input type="text" name="Phone"
                                                title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355"
-                                                   value="@Model.Phone">
+                                                   value="@Model.Phone" required pattern="[0-9]{5-10}" >
                                         }
                                         else
                                         {
                                             <input type="text" name="Phone"
-                                             title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355">
+                                             title="telefono sin guiones" class="form-control col-md-2" placeholder="8095003355" required pattern="[0-9]{5-10}" >
                                         }
                                   
                                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })

@@ -49,7 +49,7 @@ namespace OpticSolutions.Repositories
         public void CreateAppointment(Appointment ap)
         {
             conn.Open();
-            ap.EndDate = ap.StartDate.AddMinutes(29);
+            ap.EndDate = ap.StartDate.AddMinutes(14);
           
             ap.Date = DateTime.Now;
 

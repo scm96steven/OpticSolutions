@@ -103,7 +103,7 @@ namespace OpticSolutions.Controllers
             if (result.Succeeded)
             {
                 AddUserToRole(model.Email, model.UserRole);
-                await SignIn(user);
+                //await SignIn(user);
                 return RedirectToAction("index", "home");
             }
 
@@ -280,6 +280,15 @@ namespace OpticSolutions.Controllers
             var data = repo.GetUsers();
 
             return View(data);
+        }
+
+        [MyAuthorize(Roles = "Administrador")]
+        public ActionResult DeleteUser(UserViewModel user)
+        {
+            var data = repo.GetUserInfo(user.UserName);
+            repo.DeleteUser(data);
+
+            return RedirectToAction("ViewUsers");
         }
 
     }
